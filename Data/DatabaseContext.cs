@@ -23,31 +23,34 @@ namespace RayihaRestaurant.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Table>()
-                .HasMany(e => e.Orders)
-                .WithOne(e => e.Table)
-                .HasForeignKey(e => e.TableId)
+            modelBuilder.Entity<Product>()
+                .HasOne(e => e.Category)
+                .WithMany()
+                .HasForeignKey(e => e.CategoryId)
+                .IsRequired();
+            
+            modelBuilder.Entity<Order>()
+                .HasOne(e => e.User)
+                .WithMany()
+                .HasForeignKey(e => e.UserID)
                 .IsRequired();
 
-            modelBuilder.Entity<Category>()
-                .HasMany(e => e.Products)
-                .WithOne(e => e.Category)
-                .HasForeignKey(e => e.CategoryId)
+            modelBuilder.Entity<Order>()
+                .HasOne(e => e.Product)
+                .WithMany()
+                .HasForeignKey(e => e.ProductId)
+                .IsRequired();
+
+            modelBuilder.Entity<Order>()
+                .HasOne(e => e.Table)
+                .WithMany()
+                .HasForeignKey(e => e.TableId)
                 .IsRequired();
 
             modelBuilder.Entity<Order>()
                 .HasMany(e => e.Products)
-                .WithOne(e => e.Order)
-                .HasForeignKey(e => e.OrderId)
+                .WithOne()
                 .IsRequired();
-
-            modelBuilder.Entity<User>()
-                .HasMany(e => e.Orders)
-                .WithOne(e => e.User)
-                .HasForeignKey(e => e.UserId)
-                .IsRequired();
-
-            
         }
 
     }

@@ -1,19 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
 
-namespace RayihaRestaurant.Core.Models    
+namespace RayihaRestaurant.Core.Models
 {
+    [Table("Users")]
     public class User
     {
-        [Key]
-        [Column("id")]
-        public required int Id { get; init; }
-        [Column("name")]
-        public required string Username { get; init; }
-        [Column("password")]
-        public required string Password { get; init; }
-        [Column("type")]
-        public required string Type { get; init; }
-        public ICollection<Order> Orders { get; } = new List<Order>();
+        public int Id { get; init; }
+        public string? Username { get; init; }
+        public string? Password { get; init; }
+        public string? Type { get; init; }
     }
 }
