@@ -5,7 +5,7 @@ using System.Text;
 namespace RayihaRestaurant.Core.Socket
 {
     
-    public class SocketClient : IDisposable
+    public class SocketClient
     {
         private TcpClient tcpClient;
         private NetworkStream stream;
@@ -20,13 +20,6 @@ namespace RayihaRestaurant.Core.Socket
             stream.Write(data, 0, data.Length);
             stream.Close();
             tcpClient.Close();
-        }
-
-        public void Dispose()
-        {
-           
-            stream.Dispose();
-            tcpClient.Dispose();
         }
     }
 }
