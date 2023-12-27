@@ -1,3 +1,5 @@
+using Rayiha.Presentation.Waiter;
+
 namespace RayihaRestaurant
 {
     internal static class Program
