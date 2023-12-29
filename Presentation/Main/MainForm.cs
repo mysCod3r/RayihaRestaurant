@@ -27,5 +27,10 @@ namespace RayihaRestaurant
         private void btnWaiter_Click(object sender, EventArgs e) => new LoginForm().Show();
         private void btnKitchen_Click(object sender, EventArgs e) => new KitchenForm().Show();
         private void btnCashier_Click(object sender, EventArgs e) => new CashierForm().Show();
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _socketServer.Dispose();
+        }
     }
 }

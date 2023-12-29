@@ -76,6 +76,7 @@
             Controls.Add(btnWaiter);
             Name = "MainForm";
             Text = "Main";
+            FormClosed += MainForm_FormClosed;
             ResumeLayout(false);
         }
 
