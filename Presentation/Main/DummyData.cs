@@ -65,7 +65,7 @@ namespace RayihaRestaurant.Presentation.Main
             new Product(3, "ıspanak", categories[1], 12)
         ];
 
-        public static List<User> users = [new User(1, "Fatih" , "123" , "waiter"), new User(2, "Gürkan", "123", "cashier")];
+        public static List<User> users = [new User(1, "f" , "1" , "waiter"), new User(2, "Gürkan", "123", "cashier")];
         public static int GetProductCountByCategory(string categoryName, IEnumerable<Product> productList)
         {
             return productList.Count(product => product.category.name == categoryName);

@@ -1,4 +1,6 @@
-﻿using RayihaRestaurant.Presentation.Main;
+﻿using RayihaRestaurant.Core.Enums;
+using RayihaRestaurant.Core.Extensions;
+using RayihaRestaurant.Presentation.Main;
 using RayihaRestaurant.Presentation.Module.Views;
 using RayihaRestaurant.Presentation.Waiter.Components;
 using RayihaRestaurant.Properties;
@@ -66,7 +68,8 @@ namespace RayihaRestaurant.Presentation.Waiter
         {
             customButtonMenu1.BackColor = ColorTranslator.FromHtml("#00932c");
             customButtonMenu1.ForeColor = Color.White;
-            customButtonMenu1.Image = Image.FromFile("C:\\Users\\Fatih\\source\\repos\\RayihaCustom\\RayihaCustom\\Pictures\\Table_white.png");
+            string? tableWhite = PicturesEnumExtension.PictureConverter((int)Pictures.Table_white);
+            customButtonMenu1.Image = Image.FromFile(tableWhite ?? "");
             customButtonMenu1.ImageAlign = ContentAlignment.MiddleLeft;
 
         }
@@ -75,7 +78,8 @@ namespace RayihaRestaurant.Presentation.Waiter
         {
             customButtonMenu1.BackColor = Color.White;
             customButtonMenu1.ForeColor = Color.Black;
-            customButtonMenu1.Image = Image.FromFile("C:\\Users\\Fatih\\source\\repos\\RayihaCustom\\RayihaCustom\\Pictures\\Table.png");
+            string? table = PicturesEnumExtension.PictureConverter((int)Pictures.Table);
+            customButtonMenu1.Image = Image.FromFile(table ?? "");
             customButtonMenu1.ImageAlign = ContentAlignment.MiddleLeft;
 
         }
@@ -87,7 +91,8 @@ namespace RayihaRestaurant.Presentation.Waiter
         {
             customButtonMenu2.BackColor = ColorTranslator.FromHtml("#00932c");
             customButtonMenu2.ForeColor = Color.White;
-            customButtonMenu2.Image = Image.FromFile("C:\\Users\\Fatih\\source\\repos\\RayihaCustom\\RayihaCustom\\Pictures\\Logout_white.png");
+            string? img = PicturesEnumExtension.PictureConverter((int)Pictures.Logout_white);
+            customButtonMenu2.Image = Image.FromFile(img ?? "");
             customButtonMenu1.ImageAlign = ContentAlignment.MiddleLeft;
         }
 
@@ -95,7 +100,8 @@ namespace RayihaRestaurant.Presentation.Waiter
         {
             customButtonMenu2.BackColor = Color.White;
             customButtonMenu2.ForeColor = Color.Black;
-            customButtonMenu2.Image = Image.FromFile("C:\\Users\\Fatih\\source\\repos\\RayihaCustom\\RayihaCustom\\Pictures\\Logout.png");
+            string? img = PicturesEnumExtension.PictureConverter((int)Pictures.Logout);
+            customButtonMenu2.Image = Image.FromFile(img ?? "");
             customButtonMenu2.ImageAlign = ContentAlignment.MiddleLeft;
         }
 
@@ -300,7 +306,8 @@ namespace RayihaRestaurant.Presentation.Waiter
             // 
             cbmPlus.BackColor = Color.Transparent;
             cbmPlus.BackgroundColor = Color.Transparent;
-            cbmPlus.BackgroundImage = Image.FromFile("C:\\Users\\Fatih\\source\\repos\\RayihaRestaurant\\Pictures\\Plus.png");
+            string? imgPlus = PicturesEnumExtension.PictureConverter((int)Pictures.Plus);
+            cbmPlus.BackgroundImage = Image.FromFile(imgPlus ?? "");
             cbmPlus.BackgroundImageLayout = ImageLayout.Center;
             cbmPlus.BorderColor = Color.PaleVioletRed;
             cbmPlus.BorderRadius = 20;
@@ -330,7 +337,8 @@ namespace RayihaRestaurant.Presentation.Waiter
             // 
             cbmMinus.BackColor = Color.Transparent;
             cbmMinus.BackgroundColor = Color.Transparent;
-            cbmMinus.BackgroundImage = Image.FromFile("C:\\Users\\Fatih\\source\\repos\\RayihaRestaurant\\Pictures\\Minus.png");
+            string? imgMinus = PicturesEnumExtension.PictureConverter((int)Pictures.Minus);
+            cbmMinus.BackgroundImage = Image.FromFile(imgMinus ?? "");
             cbmMinus.BackgroundImageLayout = ImageLayout.Center;
             cbmMinus.BorderColor = Color.PaleVioletRed;
             cbmMinus.BorderRadius = 20;
