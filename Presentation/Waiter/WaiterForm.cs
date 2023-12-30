@@ -1,5 +1,7 @@
 ﻿
 using RayihaRestaurant.Core.Socket;
+using RayihaRestaurant.Data.Service;
+using RayihaRestaurant.Data;
 
 namespace Rayiha.Presentation.Waiter
 {
@@ -7,18 +9,24 @@ namespace Rayiha.Presentation.Waiter
     {
         private readonly SocketClient _socketClient;
         private readonly ClientType _clientType;
+        private readonly WaiterService _service;
         public WaiterForm()
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
             _socketClient = new SocketClient();
             _clientType = ClientType.Waiter;
+            _service = new WaiterService(new DatabaseContext());
         }
 
         private void WaiterForm_Load(object sender, EventArgs e)
         {
             MessageModel messageModel = new MessageModel { sender = _clientType, message = "form açıldı" };
             _socketClient.SendMessage(messageModel);
+            _service.GetTables();
+            _service.GetProducts();
+            _service.GetCategories();
+            _service.AddNewOrder(19.99, 2, 3, "completed", false);
         }
 
         private void WaiterForm_FormClosed(object sender, FormClosedEventArgs e)
