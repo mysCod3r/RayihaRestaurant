@@ -12,15 +12,16 @@ namespace RayihaRestaurant.Data.Service
             _context = context;
         }
 
-        //public void qwerty()
-        //{
-        //    var qwerty = _context.Products.ToList();
-        //}
+        
 
         public void qwerty()
         {
-            var qwerty = _context.Products
-                .Include(p => p.Category)
+            var order = _context.Orders
+                .Include(p => p.User)
+                .Include(p => p.Table)
+                .Include(p => p.OrderDetails)
+                .ThenInclude(b => b.Product)
+                .ThenInclude(b => b.Category)
                 .ToList();
         }
 

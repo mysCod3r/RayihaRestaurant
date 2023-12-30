@@ -12,7 +12,7 @@ namespace RayihaRestaurant.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
-
+        public DbSet<OrderDetail> OrderDetails { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -26,7 +26,7 @@ namespace RayihaRestaurant.Data
             modelBuilder.Entity<Product>()
                 .HasOne(e => e.Category)
                 .WithMany()
-                .HasForeignKey(e => e.CategoryId)
+                .HasForeignKey(e => e.CategoryID)
                 .IsRequired();
             
             modelBuilder.Entity<Order>()
@@ -36,20 +36,27 @@ namespace RayihaRestaurant.Data
                 .IsRequired();
 
             modelBuilder.Entity<Order>()
-                .HasOne(e => e.Product)
-                .WithMany()
-                .HasForeignKey(e => e.ProductId)
+                .HasMany(e => e.OrderDetails)
+                .WithOne()
+                .HasForeignKey(e => e.OrderID)
                 .IsRequired();
 
             modelBuilder.Entity<Order>()
                 .HasOne(e => e.Table)
                 .WithMany()
-                .HasForeignKey(e => e.TableId)
+                .HasForeignKey(e => e.TableID)
                 .IsRequired();
 
-            modelBuilder.Entity<Order>()
-                .HasMany(e => e.Products)
-                .WithOne()
+            //modelBuilder.Entity<OrderDetail>()
+            //    .HasOne(e => e.Order)
+            //    .WithMany()
+            //    .HasForeignKey(e => e.OrderID)
+            //    .IsRequired();
+
+            modelBuilder.Entity<OrderDetail>()
+                .HasOne(e => e.Product)
+                .WithMany()
+                .HasForeignKey(e => e.ProductID)
                 .IsRequired();
         }
 

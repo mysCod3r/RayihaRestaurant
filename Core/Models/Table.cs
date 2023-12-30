@@ -5,8 +5,9 @@ namespace RayihaRestaurant.Core.Models
     [Table("Tables")]
     public class Table
     {
-        public int Id { get; init; }
-        public int? Number { get; init; }
-        public required bool Status { get; init; }
+        public int ID { get; init; }
+        public string? Number { get; init; }
+        [Column("TableStatus")]
+        public required bool TableStatus { get; init; }
     }
 }

@@ -10,12 +10,17 @@ namespace RayihaRestaurant.Core.Models
         public Double? TotalPrice { get; init; }
         public int? UserID { get; init; }
         public User? User { get; init; }
-        public int? ProductId { get; init; }
-        public Product? Product { get; init; }
-        public int? TableId { get; init; }
+        public int? TableID { get; init; }
         public Table? Table { get; init; }
-        public string? Status { get; init; }
+        [Column("OrderStatus")]
+        public string? OrderStatus { get; init; }
         public bool? IsPaid { get; init; }
-        public virtual List<Product>? Products { get; set; }
+        public List<OrderDetail> OrderDetails { get; init;} = new List<OrderDetail>();
     }
+}
+
+enum OrderStatus
+{
+    Available, //0
+    Unavailable //1
 }

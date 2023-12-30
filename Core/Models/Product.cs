@@ -5,10 +5,11 @@ namespace RayihaRestaurant.Core.Models
     [Table("Products")]
     public class Product
     {
-        public int Id { get; init; }
+        public int ID { get; init; }
         public string? Name { get; init; }
         public Double? Price { get; init; }
-        public int? CategoryId { get; init; }
+        public int? CategoryID { get; init; }
         public Category? Category { get; init; }
+        
     }
 }
