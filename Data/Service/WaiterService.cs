@@ -17,7 +17,6 @@ namespace RayihaRestaurant.Data.Service
             _context = context;
         }
 
-        // products, categories, tables, 
 
         public void AddNewOrder(Double totalPrice, int userId, int tableId, 
             string orderStatus, bool isPaid)
@@ -29,7 +28,7 @@ namespace RayihaRestaurant.Data.Service
                 TableID = tableId,
                 OrderStatus = orderStatus,
                 IsPaid = isPaid
-                // orderDetail ????
+                // TO DO gurkanmutllu orderDetail
             };
 
             _context.Orders.Add(order);
