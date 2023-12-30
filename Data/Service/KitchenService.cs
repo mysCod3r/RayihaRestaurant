@@ -12,17 +12,11 @@ namespace RayihaRestaurant.Data.Service
             _context = context;
         }
 
-        
-
-        public void qwerty()
+        public Order GetOrder(int tableId)
         {
-            var order = _context.Orders
-                .Include(p => p.User)
-                .Include(p => p.Table)
-                .Include(p => p.OrderDetails)
-                .ThenInclude(b => b.Product)
-                .ThenInclude(b => b.Category)
-                .ToList();
+            var order = _context.Orders.FirstOrDefault(a => a.TableID == 4);
+
+            return order;
         }
 
     }
