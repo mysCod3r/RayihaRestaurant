@@ -12,9 +12,9 @@ namespace RayihaRestaurant.Data.Service
             _context = context;
         }
 
-        public Order GetOrder(int tableId)
+        public List<Order>? GetOrders(int tableId)
         {
-            var order = _context.Orders.FirstOrDefault(a => a.TableID == 4);
+            var order = _context.Orders.Where(a => a.TableID == tableId).ToList();
 
             return order;
         }
