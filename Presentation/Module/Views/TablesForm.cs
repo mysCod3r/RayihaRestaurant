@@ -42,7 +42,7 @@ namespace RayihaRestaurant.Presentation.Module.Views
             for (int i = 1; i <= 20; i++)
             {
                 string tableName = "Masa " + i;
-                CustomButtonMenu tableButton = new CustomButtonMenu();
+                CustomButton tableButton = new CustomButton();
                 tableButton.Text = tableName;
                 tableButton.Click += (sender, e) => OpenWaiterForm(tableName);
                 flowLayoutPanel1.Controls.Add(tableButton);

@@ -19,6 +19,10 @@ namespace RayihaRestaurant.Presentation.Main
     }
     public class Product
     {
+        public Product()
+        {
+        }
+
         public Product(int id, string name, Category category, int price)
         {
             this.id = id;

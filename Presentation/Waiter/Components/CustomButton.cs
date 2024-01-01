@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace RayihaRestaurant.Presentation.Waiter.Components
 {
-    public class CustomButtonMenu : Button
+    public class CustomButton : Button
     {
         //Fields
         private int borderSize = 0;
@@ -58,7 +58,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             set { ForeColor = value; }
         }
         //Constructor
-        public CustomButtonMenu()
+        public CustomButton()
         {
             FlatStyle = FlatStyle.Flat;
             FlatAppearance.BorderSize = 0;

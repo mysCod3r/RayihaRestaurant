@@ -1,15 +1,21 @@
 ﻿using RayihaRestaurant.Core.Socket;
+using RayihaRestaurant.Data;
+using RayihaRestaurant.Data.Service;
+
 
 namespace Rayiha.Presentation.Kitchen
 {
+
     public partial class KitchenForm : Form
     {
+        private readonly KitchenService _service;
         private readonly SocketClient _socketClient;
         private readonly ClientType _clientType;
         public KitchenForm()
         {
             _socketClient = new SocketClient();
             _clientType = ClientType.Kitchen;
+            _service = new KitchenService(new DatabaseContext());
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
         }
@@ -18,7 +24,6 @@ namespace Rayiha.Presentation.Kitchen
         {
             MessageModel messageModel = new MessageModel { sender = _clientType, message = "form açıldı" };
             _socketClient.SendMessage(messageModel);
-
         }
 
         private void KitchenForm_FormClosing(object sender, FormClosingEventArgs e)
