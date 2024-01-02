@@ -24,7 +24,7 @@ namespace Rayiha.Presentation.Kitchen
         {
             MessageModel messageModel = new MessageModel { sender = _clientType, message = "form açıldı" };
             _socketClient.SendMessage(messageModel);
-            _service.qwerty();
+            _service.GetOrder(3);
 
         }
 

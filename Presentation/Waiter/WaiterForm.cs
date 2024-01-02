@@ -26,7 +26,6 @@ namespace Rayiha.Presentation.Waiter
             _service.GetTables();
             _service.GetProducts();
             _service.GetCategories();
-            _service.AddNewOrder(19.99, 2, 3, "completed", false);
         }
 
         private void WaiterForm_FormClosed(object sender, FormClosedEventArgs e)
