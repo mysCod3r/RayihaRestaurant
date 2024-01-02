@@ -14,6 +14,7 @@ namespace RayihaRestaurant.Presentation.Waiter
     public partial class Form1 : Form
 
     {
+        TablesForm tablesForm = new TablesForm();
         private readonly WaiterService _service;
         private List<Category> _categories;
         private List<Product> _products;
@@ -39,7 +40,7 @@ namespace RayihaRestaurant.Presentation.Waiter
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
- 
+
             foreach (Category category in _categories)
             {
                 GetCategoryPanel(category);
@@ -130,17 +131,15 @@ namespace RayihaRestaurant.Presentation.Waiter
                 {
                     CopyProductPanel(item);
                 }
-                
+
             }
         }
 
         private void customButtonMenu1_Click(object sender, EventArgs e)
         {
-            TablesForm tablesForm = new TablesForm();
+            tablesForm.Hide();
             this.Hide();
-
-            tablesForm.Show();
-        }  
+        }
 
         private void customButtonMenu3_Click(object sender, EventArgs e)
         {
@@ -150,9 +149,10 @@ namespace RayihaRestaurant.Presentation.Waiter
                 orderItems.Add(item.orderItem);
             }
             _service.AddNewOrder(1, orderItems);
-            MessageModel msg = new MessageModel{sender = _clientType, message = "Sipariş mutfağa iletildi"};
+            MessageModel msg = new MessageModel { sender = _clientType, message = "Sipariş mutfağa iletildi" };
             _socketClient.SendMessage(msg);
             MessageBox.Show(msg.message);
         }
+
     }
 }

@@ -28,7 +28,7 @@ namespace RayihaRestaurant.Presentation.Module.Views
            int nWidthEllipse, // width of ellipse
            int nHeightEllipse // height of ellipse
        );
-       
+
 
         public TablesForm()
         {
@@ -64,7 +64,7 @@ namespace RayihaRestaurant.Presentation.Module.Views
                 waiterForms[tableName].Focus();
             }
         }
-        
+
 
         private void Panel_Click(object sender, EventArgs e)
         {
@@ -77,11 +77,11 @@ namespace RayihaRestaurant.Presentation.Module.Views
         {
             // Burada, tableNumber kullanarak formunuzu açabilir ve ilgili masanın bilgilerini gösterebilirsiniz.
             // Örneğin:
-            
-        }
-    
 
-    private void button1_Click(object sender, EventArgs e)
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
         {
             Close();
         }
@@ -120,10 +120,10 @@ namespace RayihaRestaurant.Presentation.Module.Views
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+
+        private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
-
     }
 }

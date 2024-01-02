@@ -37,6 +37,11 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             Controls.Add(lblName);
         }
 
+        private void _pictures(Category category)
+        {
+
+        }
+
 
     }
 }

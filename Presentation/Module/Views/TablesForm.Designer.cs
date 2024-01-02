@@ -32,24 +32,9 @@ namespace RayihaRestaurant.Presentation.Module.Views
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TablesForm));
-            button1 = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            btnClose = new Button();
             SuspendLayout();
-            // 
-            // button1
-            // 
-            button1.AutoSize = true;
-            button1.BackColor = Color.Transparent;
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(1698, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(59, 47);
-            button1.TabIndex = 0;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click_1;
             // 
             // flowLayoutPanel1
             // 
@@ -57,6 +42,21 @@ namespace RayihaRestaurant.Presentation.Module.Views
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(1780, 770);
             flowLayoutPanel1.TabIndex = 1;
+            // 
+            // btnClose
+            // 
+            btnClose.AutoSize = true;
+            btnClose.BackColor = Color.Transparent;
+            btnClose.BackgroundImage = (Image)resources.GetObject("btnClose.BackgroundImage");
+            btnClose.BackgroundImageLayout = ImageLayout.Stretch;
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Location = new Point(1711, 12);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(59, 47);
+            btnClose.TabIndex = 3;
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
             // 
             // TablesForm
             // 
@@ -66,8 +66,8 @@ namespace RayihaRestaurant.Presentation.Module.Views
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1782, 853);
             ControlBox = false;
+            Controls.Add(btnClose);
             Controls.Add(flowLayoutPanel1);
-            Controls.Add(button1);
             DoubleBuffered = true;
             MinimizeBox = false;
             Name = "TablesForm";
@@ -77,8 +77,7 @@ namespace RayihaRestaurant.Presentation.Module.Views
         }
 
         #endregion
-
-        private Button button1;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Button btnClose;
     }
 }

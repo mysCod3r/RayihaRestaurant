@@ -1,4 +1,6 @@
-﻿using RayihaRestaurant.Core.Models;
+﻿using RayihaRestaurant.Core.Enums;
+using RayihaRestaurant.Core.Extensions;
+using RayihaRestaurant.Core.Models;
 
 namespace RayihaRestaurant.Presentation.Waiter.Components
 {
@@ -24,6 +26,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             _writeName(_product);
             _writePrice(_product);
             _addToCart(_product);
+            _productImage(_product);
         }
 
         private void _writeName(Product product)
@@ -59,6 +62,19 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
         {
             AddToCartPanel addToCartPanel = new AddToCartPanel(product, _flowLayoutCart);
             Controls.Add(addToCartPanel);
+        }
+
+        private void _productImage(Product product)
+        {
+            PictureBox pbProduct = new PictureBox();
+            pbProduct.Location = new Point(28, 23);
+            pbProduct.Size = new Size(205, 131);
+            pbProduct.TabIndex = 0;
+            pbProduct.TabStop = false;
+            //string? image = ProductPictureExtension.PictureConverter(product.ID);
+            //pbProduct.Image = Image.FromFile(image ?? "");
+            //pbProduct.SizeMode = PictureBoxSizeMode.StretchImage;
+            Controls.Add(pbProduct);
         }
     }
 }

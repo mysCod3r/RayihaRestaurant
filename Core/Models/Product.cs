@@ -10,6 +10,7 @@ namespace RayihaRestaurant.Core.Models
         public Double? Price { get; init; }
         public int? CategoryID { get; init; }
         public Category? Category { get; init; }
+        public string? Path { get; init; }
 
         public override bool Equals(object? obj)
         {
