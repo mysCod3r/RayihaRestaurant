@@ -38,7 +38,6 @@ namespace RayihaRestaurant.Presentation.Waiter
             customButtonMenu3 = new Components.CustomButton();
             panel3 = new Panel();
             panel4 = new Panel();
-            lblTotalAmount = new Label();
             flowLayoutPanelCart = new FlowLayoutPanel();
             button1 = new Button();
             label6 = new Label();
@@ -48,7 +47,6 @@ namespace RayihaRestaurant.Presentation.Waiter
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -170,22 +168,11 @@ namespace RayihaRestaurant.Presentation.Waiter
             // 
             // panel4
             // 
-            panel4.Controls.Add(lblTotalAmount);
-            panel4.Location = new Point(0, 609);
+            panel4.Location = new Point(0, 457);
+            panel4.Margin = new Padding(3, 2, 3, 2);
             panel4.Name = "panel4";
             panel4.Size = new Size(515, 163);
             panel4.TabIndex = 8;
-            // 
-            // lblTotalAmount
-            // 
-            lblTotalAmount.AutoSize = true;
-            lblTotalAmount.BackColor = Color.Transparent;
-            lblTotalAmount.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblTotalAmount.Location = new Point(37, 75);
-            lblTotalAmount.Name = "lblTotalAmount";
-            lblTotalAmount.Size = new Size(155, 28);
-            lblTotalAmount.TabIndex = 0;
-            lblTotalAmount.Text = "Amount Total: ";
             // 
             // flowLayoutPanelCart
             // 
@@ -263,8 +250,6 @@ namespace RayihaRestaurant.Presentation.Waiter
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -292,7 +277,6 @@ namespace RayihaRestaurant.Presentation.Waiter
         private FlowLayoutPanel flowLayoutPanel2;
         private FlowLayoutPanel flowLayoutPanelCart;
         private Panel panel4;
-        private Label lblTotalAmount;
         private Components.CustomButton customButtonMenu3;
     }
 }

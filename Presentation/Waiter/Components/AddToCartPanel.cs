@@ -47,7 +47,6 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             _lblAddToDish.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             _lblAddToDish.ForeColor = Color.Black;
             _lblAddToDish.Location = new Point(73, 8);
-            _lblAddToDish.Name = "lblAddToDish";
             _lblAddToDish.Size = new Size(87, 19);
             _lblAddToDish.TabIndex = 0;
             _lblAddToDish.Text = "Add to Dish";
@@ -133,6 +132,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
         private void _decrease()
         {
             _quantity -= 1;
+            _productRemoved();
             _lblCount.Text = _quantity.ToString();
             if (_quantity != 0)
             {
@@ -169,16 +169,34 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
 
             if (_flowLayoutCart.Controls.Contains(item))
             {
-                CartItem a = (CartItem)_flowLayoutCart.Controls[0];
-                a.orderItem.Quantity += 1;
+                int index = _flowLayoutCart.Controls.GetChildIndex(item);
+                CartItem x = (CartItem)_flowLayoutCart.Controls[index];
+                x.orderItem.Quantity += 1;
+                x.refreshTexts();
             }
-
-            _flowLayoutCart.Controls.Add(item);
+            else
+            {
+                _flowLayoutCart.Controls.Add(item);
+            }
         }
 
         private void _productRemoved()
         {
+            OrderItem order = new OrderItem(_product);
+            CartItem item = new CartItem(order);
 
+            int index = _flowLayoutCart.Controls.GetChildIndex(item);
+            CartItem x = (CartItem)_flowLayoutCart.Controls[index];
+
+            if (x.orderItem.Quantity > 1)
+            {
+                x.orderItem.Quantity -= 1;
+            }
+            else
+            {
+                _flowLayoutCart.Controls.Remove(x);
+            }
+            x.refreshTexts();
         }
     }
 }

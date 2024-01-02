@@ -5,7 +5,7 @@
         public OrderItem(Product product)
         {
             Product = product;
-            Quantity = 0;
+            Quantity = 1;
         }
 
         public Product Product { get; init; }

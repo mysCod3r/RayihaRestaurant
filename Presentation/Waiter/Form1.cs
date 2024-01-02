@@ -1,6 +1,7 @@
 ﻿using RayihaRestaurant.Core.Enums;
 using RayihaRestaurant.Core.Extensions;
 using RayihaRestaurant.Core.Models;
+using RayihaRestaurant.Core.Socket;
 using RayihaRestaurant.Data;
 using RayihaRestaurant.Data.Service;
 using RayihaRestaurant.Presentation.Module.Views;
@@ -16,7 +17,8 @@ namespace RayihaRestaurant.Presentation.Waiter
         private readonly WaiterService _service;
         private List<Category> _categories;
         private List<Product> _products;
-
+        private readonly SocketClient _socketClient;
+        private readonly ClientType _clientType;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -29,32 +31,19 @@ namespace RayihaRestaurant.Presentation.Waiter
         );
         public Form1()
         {
+            _socketClient = new SocketClient();
+            _clientType = ClientType.Waiter;
             _service = new WaiterService(new DatabaseContext());
             _categories = _service.GetCategories();
             _products = _service.GetProducts();
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            //CountControl();
-            flowLayoutPanelCart.ControlAdded += FlowLayoutPanel_ControlAdded;
-            flowLayoutPanelCart.ControlRemoved += FlowLayoutPanel_ControlRemoved;
-
+ 
             foreach (Category category in _categories)
             {
                 GetCategoryPanel(category);
             }
-        }
-
-        private void FlowLayoutPanel_ControlAdded(object? sender, ControlEventArgs e)
-        {
-            // TOTAL PRICE YÖNET
-            MessageBox.Show($"Öğe eklendi: {e.Control?.Name}");
-        }
-
-        private void FlowLayoutPanel_ControlRemoved(object? sender, ControlEventArgs e)
-        {
-            // TOTAL PRICE YÖNET
-            MessageBox.Show($"Öğe kaldırıldı: {e.Control?.Name}");
         }
 
         private void customButtonMenu1_MouseEnter(object sender, EventArgs e)
@@ -153,5 +142,17 @@ namespace RayihaRestaurant.Presentation.Waiter
             tablesForm.Show();
         }  
 
+        private void customButtonMenu3_Click(object sender, EventArgs e)
+        {
+            List<OrderItem> orderItems = new List<OrderItem>();
+            foreach (CartItem item in flowLayoutPanelCart.Controls)
+            {
+                orderItems.Add(item.orderItem);
+            }
+            _service.AddNewOrder(1, orderItems);
+            MessageModel msg = new MessageModel{sender = _clientType, message = "Sipariş mutfağa iletildi"};
+            _socketClient.SendMessage(msg);
+            MessageBox.Show(msg.message);
+        }
     }
 }
