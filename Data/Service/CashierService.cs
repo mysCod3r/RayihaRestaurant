@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using RayihaRestaurant.Core.Models;
+﻿using RayihaRestaurant.Core.Models;
 
 namespace RayihaRestaurant.Data.Service
 {
@@ -17,9 +11,9 @@ namespace RayihaRestaurant.Data.Service
             _context = context;
         }
 
-        public Order GetOrder(int tableId)
+        public List<Order>? GetOrders(int tableId)
         {
-            var order = _context.Orders.FirstOrDefault(a => a.TableID == 4);
+            var order = _context.Orders.Where(a => a.TableID == tableId).ToList();
 
             return order;
         }

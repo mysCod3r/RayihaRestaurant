@@ -5,32 +5,54 @@ using RayihaRestaurant.Core.Helper;
 
 namespace RayihaRestaurant.Core.Socket
 {
-    public class SocketServer
+    public class SocketServer : IDisposable
     {
         public SocketServer(int port)
         {
             _tcpListener = new TcpListener(IPAddress.Any, port);
+            _tcpListener.Start();
         }
+        private CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
         private TcpListener _tcpListener;
         private NetworkStream? stream;
         private TcpClient? tcpClient;
         public event EventHandler<MessageModel>? MessageReceived;
+        private bool _isRunning = true;
 
         public void Start()
         {
-            _tcpListener.Start();
-            while (true)
+            try
             {
-                tcpClient = _tcpListener.AcceptTcpClient();
-                stream = tcpClient.GetStream();
-                var socketThread = new Thread(() => { 
+                while (_isRunning)
+                {
+                    TcpClient tcpClient = _tcpListener.AcceptTcpClient();
+                    Task.Run(() => HandleClient(tcpClient), _cancellationTokenSource.Token);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"SocketException: {ex}");
+            }
+        }
+
+        private void HandleClient(TcpClient tcpClient)
+        {
+            try
+            {
+                using (NetworkStream stream = tcpClient.GetStream())
+                {
                     byte[] buffer = new byte[1024];
-                    int bytesRead = stream.Read(buffer, 0, buffer.Length);
-                    OnMessageReceived(buffer, bytesRead);
-                    stream.Close();
-                    tcpClient.Close();
-                });
-                socketThread.Start();
+                    int bytesRead;
+
+                    while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) > 0)
+                    {
+                        OnMessageReceived(buffer, bytesRead);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception in HandleClient: {ex}");
             }
         }
 
@@ -40,6 +62,14 @@ namespace RayihaRestaurant.Core.Socket
             MessageModel? message = JsonHelper.DeserializeObject<MessageModel>(jsonString);
             if (message == null) return;
             MessageReceived?.Invoke(this, message);
+        }
+
+        public void Dispose()
+        {
+            _isRunning = false;
+            stream?.Dispose();
+            _tcpListener?.Dispose();
+            _cancellationTokenSource.Cancel();
         }
     }
 }

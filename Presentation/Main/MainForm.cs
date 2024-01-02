@@ -2,6 +2,7 @@ using Rayiha.Presentation.Cashier;
 using Rayiha.Presentation.Kitchen;
 using Rayiha.Presentation.Waiter;
 using RayihaRestaurant.Core.Socket;
+using RayihaRestaurant.Presentation.Module.Views;
 
 namespace RayihaRestaurant
 {
@@ -21,8 +22,13 @@ namespace RayihaRestaurant
         {
         }
 
-        private void btnWaiter_Click(object sender, EventArgs e) => new WaiterForm().Show();
+        private void btnWaiter_Click(object sender, EventArgs e) => new TablesForm(ClientType.Waiter).Show();
         private void btnKitchen_Click(object sender, EventArgs e) => new KitchenForm().Show();
-        private void btnCashier_Click(object sender, EventArgs e) => new CashierForm().Show();
+        private void btnCashier_Click(object sender, EventArgs e) => new TablesForm(ClientType.Cashier).Show();
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _socketServer.Dispose();
+        }
     }
 }

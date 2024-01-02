@@ -16,6 +16,7 @@ namespace RayihaRestaurant.Core.Models
         public bool? IsPaid { get; init; }
         public List<OrderDetail> OrderDetails { get; init;} = new List<OrderDetail>();
     }
+
     enum OrderStatus
     {
         InProgress, //0
