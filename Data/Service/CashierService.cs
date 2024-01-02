@@ -1,4 +1,5 @@
-﻿using RayihaRestaurant.Core.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using RayihaRestaurant.Core.Models;
 
 namespace RayihaRestaurant.Data.Service
 {
@@ -11,6 +12,12 @@ namespace RayihaRestaurant.Data.Service
             _context = context;
         }
 
+
+        public void Checkout(List<Order> orders) 
+        {
+            
+        }
+
         public List<Order> GetOrders(int tableId)
         {
             var orders = _context.Orders
@@ -19,7 +26,6 @@ namespace RayihaRestaurant.Data.Service
                     .ThenInclude(b => b.Product)
                         .ThenInclude(a => a.Category)
                 .Include(p => p.Table)
-                .Include(p => p.User)
                 .ToList();
 
             return orders;

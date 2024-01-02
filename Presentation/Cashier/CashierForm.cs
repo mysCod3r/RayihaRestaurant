@@ -36,17 +36,24 @@ namespace Rayiha.Presentation.Cashier
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        private void btnClose_Click(object sender, EventArgs e) => Close();
+        private void btnClose_Click(object sender, EventArgs e) => _close();
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
-            
+            _service.Checkout(_orders);
+            MessageBox.Show("Ödeme Alındı.");
+            Close();
         }
 
         public void Open()
         {
             _orders = _service.GetOrders(tableId);
             Visible = true;
+        }
+
+        private void _close()
+        {
+            Close();
         }
     }
 }
