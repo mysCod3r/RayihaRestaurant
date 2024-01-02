@@ -8,7 +8,7 @@ namespace RayihaRestaurant.Core.Models
         public int ID { get; init; }
         public int? OrderID { get; init; }
         public int? ProductID { get; init; }
-        public Product? Product { get; init; }
-        public int? Quantity { get; init; }
+        public Product? Product { get; set; }
+        public int? Quantity { get; set; }
     }
 }

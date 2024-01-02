@@ -17,10 +17,11 @@ namespace RayihaRestaurant.Core.Models
         public bool? IsPaid { get; init; }
         public List<OrderDetail> OrderDetails { get; init;} = new List<OrderDetail>();
     }
-}
 
-enum OrderStatus
-{
-    Available, //0
-    Unavailable //1
+    enum OrderStatus
+    {
+        InProgress, //0
+        Completed, //1
+        Pending, //2
+    }
 }
