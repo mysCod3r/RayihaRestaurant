@@ -18,17 +18,15 @@ namespace RayihaRestaurant.Data.Service
         }
 
 
-        public void AddNewOrder(Double totalPrice, int userId, int tableId, 
-            string orderStatus, bool isPaid)
+        public void AddNewOrder(int tableId, List<OrderDetail> orderDetails)
         {
             var order = new Order
             {
-                TotalPrice = totalPrice,
-                UserID = userId,
+                UserID = 1,
                 TableID = tableId,
-                OrderStatus = orderStatus,
-                IsPaid = isPaid
-                // TO DO gurkanmutllu orderDetail
+                OrderStatus = OrderStatus.Pending.ToString(),
+                IsPaid = false,
+                OrderDetails = orderDetails
             };
 
             _context.Orders.Add(order);
