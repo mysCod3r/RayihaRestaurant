@@ -2,7 +2,6 @@
 
 namespace RayihaRestaurant.Core.Models
 {
-
     [Table("Orders")]
     public class Order
     {
@@ -25,3 +24,4 @@ namespace RayihaRestaurant.Core.Models
         Pending, //2
     }
 }
+
