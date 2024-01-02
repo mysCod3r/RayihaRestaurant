@@ -100,8 +100,8 @@ namespace Rayiha.Presentation.Waiter
                 if (user.type == "waiter")
                 {
                     this.Hide();
-                    TablesForm tf = new TablesForm();
-                    tf.Show();
+                    //TablesForm tf = new TablesForm();
+                    //tf.Show();
                 }
                 else if (user.type == "cashier")
                 {

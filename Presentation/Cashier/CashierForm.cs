@@ -1,4 +1,5 @@
-﻿using RayihaRestaurant.Core.Socket;
+﻿using RayihaRestaurant.Core.Models;
+using RayihaRestaurant.Core.Socket;
 using RayihaRestaurant.Data;
 using RayihaRestaurant.Data.Service;
 using System.Runtime.InteropServices;
@@ -8,6 +9,8 @@ namespace Rayiha.Presentation.Cashier
 {
     public partial class CashierForm : Form
     {
+        public int tableId { get; set; }
+        private List<Order>? _orders;
         private readonly SocketClient _socketClient;
         private readonly ClientType _clientType;
         private readonly CashierService _service;
@@ -33,27 +36,17 @@ namespace Rayiha.Presentation.Cashier
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        private void CashierForm_Load(object sender, EventArgs e)
-        {
-            MessageModel messageModel = new MessageModel { sender = _clientType, message = "form açıldı" };
-            _socketClient.SendMessage(messageModel);
-            _service.GetOrders(1);
-        }
-
-        private void CashierForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            MessageModel messageModel = new MessageModel { sender = _clientType, message = "form kapandı" };
-            _socketClient.SendMessage(messageModel);
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        private void btnClose_Click(object sender, EventArgs e) => Close();
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        public void Open()
+        {
+            _orders = _service.GetOrders(tableId);
+            Visible = true;
         }
     }
 }

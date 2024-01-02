@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-using System.Drawing;
-using System.Drawing.Drawing2D;
+﻿using System.Drawing.Drawing2D;
 using System.ComponentModel;
 
 namespace RayihaRestaurant.Presentation.Waiter.Components

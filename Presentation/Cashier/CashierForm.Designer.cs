@@ -141,8 +141,6 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "CashierForm";
             Text = "CashierForm";
-            FormClosed += CashierForm_FormClosed;
-            Load += CashierForm_Load;
             customPanel1.ResumeLayout(false);
             cpOrderItem.ResumeLayout(false);
             cpOrderItem.PerformLayout();

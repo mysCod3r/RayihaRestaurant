@@ -14,6 +14,7 @@ namespace RayihaRestaurant.Presentation.Waiter
     public partial class Form1 : Form
 
     {
+        public int tableId { get; set; }
         private readonly WaiterService _service;
         private List<Category> _categories;
         private List<Product> _products;
@@ -82,10 +83,6 @@ namespace RayihaRestaurant.Presentation.Waiter
             customButtonMenu2.ImageAlign = ContentAlignment.MiddleLeft;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HTCAPTION = 0x2;
@@ -106,7 +103,7 @@ namespace RayihaRestaurant.Presentation.Waiter
         private void GetCategoryPanel(Category category)
         {
             CategoryPanelMenu menu = new CategoryPanelMenu(category, customPanel_Click);
-            flowLayoutPanel1.Controls.Add(menu);
+            flowLayoutCategoryPanel.Controls.Add(menu);
         }
 
 
@@ -114,12 +111,12 @@ namespace RayihaRestaurant.Presentation.Waiter
         {
 
             ProductPanelMenu productPanelMenu = new ProductPanelMenu(product, flowLayoutPanelCart);
-            flowLayoutPanel2.Controls.Add(productPanelMenu);
+            flowLayoutProductPanel.Controls.Add(productPanelMenu);
         }
 
         private void customPanel_Click(object sender, EventArgs e)
         {
-            flowLayoutPanel2.Controls.Clear();
+            flowLayoutProductPanel.Controls.Clear();
 
             if (sender is CategoryPanelMenu clickedPanel)
             {
@@ -130,17 +127,8 @@ namespace RayihaRestaurant.Presentation.Waiter
                 {
                     CopyProductPanel(item);
                 }
-                
             }
         }
-
-        private void customButtonMenu1_Click(object sender, EventArgs e)
-        {
-            TablesForm tablesForm = new TablesForm();
-            this.Hide();
-
-            tablesForm.Show();
-        }  
 
         private void customButtonMenu3_Click(object sender, EventArgs e)
         {
@@ -153,6 +141,21 @@ namespace RayihaRestaurant.Presentation.Waiter
             MessageModel msg = new MessageModel{sender = _clientType, message = "Sipariş mutfağa iletildi"};
             _socketClient.SendMessage(msg);
             MessageBox.Show(msg.message);
+        }
+        private void _closeButton(object sender, EventArgs e) => _close();
+
+        private void _tablesButton(object sender, EventArgs e) => _close();
+
+        private void _close()
+        {
+            flowLayoutProductPanel.Controls.Clear();
+            flowLayoutPanelCart.Controls.Clear();
+            Hide();
+        }
+        public void Open()
+        {
+            lblTableNo.Text = "Table No: " + tableId.ToString();
+            Visible = true;
         }
     }
 }
