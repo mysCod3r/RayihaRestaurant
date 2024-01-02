@@ -153,9 +153,5 @@ namespace RayihaRestaurant.Presentation.Waiter
             tablesForm.Show();
         }  
 
-        private void customButtonMenu3_Click(object sender, EventArgs e)
-        {
-            panel5.Controls.Add(flowLayoutPanelCart);
-        }
     }
 }
