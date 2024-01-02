@@ -18,17 +18,32 @@ namespace RayihaRestaurant.Data.Service
         }
 
 
-        public void AddNewOrder(Double totalPrice, int userId, int tableId, 
-            string orderStatus, bool isPaid)
+        public void AddNewOrder(int tableId, List<OrderItem> item)
         {
-            var order = new Order
+            List<OrderDetail> orderDetails = new List<OrderDetail>();
+            item.ForEach((e) =>
             {
-                TotalPrice = totalPrice,
-                UserID = userId,
+                OrderDetail orderDetail = new OrderDetail();
+                orderDetail.Product = e.Product;
+                orderDetail.Quantity = e.Quantity;
+                orderDetails.Add(orderDetail);
+            });
+
+            double totalPrice = 0;
+            foreach (OrderDetail orderDetail in orderDetails)
+            {
+                totalPrice += (orderDetail.Quantity ?? 0) * (orderDetail.Product?.Price ?? 0);
+            }
+
+            Order order = new Order
+            {
+                UserID = 1,
                 TableID = tableId,
-                OrderStatus = orderStatus,
-                IsPaid = isPaid
-                // TO DO gurkanmutllu orderDetail
+                OrderStatus = OrderStatus.Pending.ToString(),
+                IsPaid = false,
+                OrderDetails = orderDetails,
+                TotalPrice = totalPrice,
+                
             };
 
             _context.Orders.Add(order);

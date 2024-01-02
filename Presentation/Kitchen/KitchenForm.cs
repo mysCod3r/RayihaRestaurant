@@ -24,8 +24,6 @@ namespace Rayiha.Presentation.Kitchen
         {
             MessageModel messageModel = new MessageModel { sender = _clientType, message = "form açıldı" };
             _socketClient.SendMessage(messageModel);
-            _service.qwerty();
-
         }
 
         private void KitchenForm_FormClosing(object sender, FormClosingEventArgs e)

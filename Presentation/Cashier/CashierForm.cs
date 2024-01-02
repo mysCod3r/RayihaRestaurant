@@ -23,7 +23,7 @@ namespace Rayiha.Presentation.Cashier
         {
             MessageModel messageModel = new MessageModel { sender = _clientType, message = "form açıldı" };
             _socketClient.SendMessage(messageModel);
-            _service.GetOrder(1);
+            _service.GetOrders(1);
         }
 
         private void CashierForm_FormClosed(object sender, FormClosedEventArgs e)

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RayihaRestaurant.Core.Models
 {
@@ -13,7 +8,7 @@ namespace RayihaRestaurant.Core.Models
         public int ID { get; init; }
         public int? OrderID { get; init; }
         public int? ProductID { get; init; }
-        public Product? Product { get; init; }
-        public int? Quantity { get; init; }
+        public Product? Product { get; set; }
+        public int? Quantity { get; set; }
     }
 }

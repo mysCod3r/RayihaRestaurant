@@ -1,6 +1,8 @@
-﻿namespace Rayiha.Presentation.Waiter
+﻿using RayihaRestaurant.Presentation.Components;
+
+namespace RayihaRestaurant.Presentation.Waiter
 {
-    partial class WaiterForm
+    partial class Waiter
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +30,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            customListBox2 = new CustomListBox();
             SuspendLayout();
             // 
-            // button1
+            // customListBox2
             // 
-            button1.Location = new Point(248, 180);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            customListBox2.FormattingEnabled = true;
+            customListBox2.ItemHeight = 15;
+            customListBox2.Location = new Point(298, 155);
+            customListBox2.Name = "customListBox2";
+            customListBox2.Size = new Size(281, 244);
+            customListBox2.TabIndex = 2;
             // 
-            // WaiterForm
+            // Waiter
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button1);
-            Name = "WaiterForm";
-            Text = "WaiterForm";
-            FormClosed += WaiterForm_FormClosed;
-            Load += WaiterForm_Load;
+            ClientSize = new Size(1419, 638);
+            Controls.Add(customListBox2);
+            Name = "Waiter";
+            Text = "Waiter";
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Button button1;
+        private CustomListBox customListBox2;
     }
 }
