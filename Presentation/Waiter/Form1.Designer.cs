@@ -43,7 +43,6 @@ namespace RayihaRestaurant.Presentation.Waiter
             label6 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             flowLayoutPanel2 = new FlowLayoutPanel();
-            panel5 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -58,9 +57,8 @@ namespace RayihaRestaurant.Presentation.Waiter
             panel1.Controls.Add(customButtonMenu1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(222, 640);
+            panel1.Size = new Size(254, 853);
             panel1.TabIndex = 0;
             panel1.MouseDown += OnMouseDown;
             // 
@@ -68,10 +66,9 @@ namespace RayihaRestaurant.Presentation.Waiter
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(30, 30);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(34, 40);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(145, 111);
+            pictureBox1.Size = new Size(166, 148);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
@@ -90,11 +87,10 @@ namespace RayihaRestaurant.Presentation.Waiter
             customButtonMenu2.ForeColor = Color.Black;
             customButtonMenu2.Image = (Image)resources.GetObject("customButtonMenu2.Image");
             customButtonMenu2.ImageAlign = ContentAlignment.MiddleLeft;
-            customButtonMenu2.Location = new Point(22, 579);
-            customButtonMenu2.Margin = new Padding(3, 2, 3, 2);
+            customButtonMenu2.Location = new Point(25, 772);
             customButtonMenu2.Name = "customButtonMenu2";
-            customButtonMenu2.Padding = new Padding(9, 2, 2, 2);
-            customButtonMenu2.Size = new Size(141, 38);
+            customButtonMenu2.Padding = new Padding(10, 3, 2, 3);
+            customButtonMenu2.Size = new Size(161, 51);
             customButtonMenu2.TabIndex = 6;
             customButtonMenu2.Text = "Logout";
             customButtonMenu2.TextColor = Color.Black;
@@ -116,10 +112,9 @@ namespace RayihaRestaurant.Presentation.Waiter
             customButtonMenu1.ForeColor = Color.Black;
             customButtonMenu1.Image = (Image)resources.GetObject("customButtonMenu1.Image");
             customButtonMenu1.ImageAlign = ContentAlignment.MiddleLeft;
-            customButtonMenu1.Location = new Point(22, 175);
-            customButtonMenu1.Margin = new Padding(3, 2, 3, 2);
+            customButtonMenu1.Location = new Point(25, 233);
             customButtonMenu1.Name = "customButtonMenu1";
-            customButtonMenu1.Size = new Size(141, 34);
+            customButtonMenu1.Size = new Size(161, 45);
             customButtonMenu1.TabIndex = 4;
             customButtonMenu1.Text = "Tables";
             customButtonMenu1.TextColor = Color.Black;
@@ -134,10 +129,9 @@ namespace RayihaRestaurant.Presentation.Waiter
             panel2.BackColor = Color.White;
             panel2.Controls.Add(customButtonMenu3);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(222, 579);
-            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Location = new Point(254, 772);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1337, 61);
+            panel2.Size = new Size(1528, 81);
             panel2.TabIndex = 0;
             // 
             // customButtonMenu3
@@ -150,15 +144,13 @@ namespace RayihaRestaurant.Presentation.Waiter
             customButtonMenu3.FlatAppearance.BorderSize = 0;
             customButtonMenu3.FlatStyle = FlatStyle.Flat;
             customButtonMenu3.ForeColor = Color.White;
-            customButtonMenu3.Location = new Point(980, 14);
-            customButtonMenu3.Margin = new Padding(3, 2, 3, 2);
+            customButtonMenu3.Location = new Point(1120, 19);
             customButtonMenu3.Name = "customButtonMenu3";
-            customButtonMenu3.Size = new Size(164, 38);
+            customButtonMenu3.Size = new Size(187, 51);
             customButtonMenu3.TabIndex = 0;
             customButtonMenu3.Text = "customButtonMenu3";
             customButtonMenu3.TextColor = Color.White;
             customButtonMenu3.UseVisualStyleBackColor = false;
-            customButtonMenu3.Click += customButtonMenu3_Click;
             // 
             // panel3
             // 
@@ -168,10 +160,9 @@ namespace RayihaRestaurant.Presentation.Waiter
             panel3.Controls.Add(button1);
             panel3.Controls.Add(label6);
             panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(1108, 0);
-            panel3.Margin = new Padding(3, 2, 3, 2);
+            panel3.Location = new Point(1267, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(451, 579);
+            panel3.Size = new Size(515, 772);
             panel3.TabIndex = 1;
             panel3.MouseDown += OnMouseDown;
             // 
@@ -180,18 +171,17 @@ namespace RayihaRestaurant.Presentation.Waiter
             panel4.Location = new Point(0, 457);
             panel4.Margin = new Padding(3, 2, 3, 2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(451, 122);
+            panel4.Size = new Size(515, 163);
             panel4.TabIndex = 8;
             // 
             // flowLayoutPanelCart
             // 
             flowLayoutPanelCart.AutoScroll = true;
             flowLayoutPanelCart.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanelCart.Location = new Point(0, 89);
-            flowLayoutPanelCart.Margin = new Padding(3, 2, 3, 2);
+            flowLayoutPanelCart.Location = new Point(0, 119);
             flowLayoutPanelCart.Name = "flowLayoutPanelCart";
-            flowLayoutPanelCart.Padding = new Padding(9, 0, 0, 0);
-            flowLayoutPanelCart.Size = new Size(451, 370);
+            flowLayoutPanelCart.Padding = new Padding(10, 0, 0, 0);
+            flowLayoutPanelCart.Size = new Size(515, 493);
             flowLayoutPanelCart.TabIndex = 7;
             // 
             // button1
@@ -201,10 +191,9 @@ namespace RayihaRestaurant.Presentation.Waiter
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(383, 9);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(438, 12);
             button1.Name = "button1";
-            button1.Size = new Size(47, 35);
+            button1.Size = new Size(54, 47);
             button1.TabIndex = 6;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -213,55 +202,45 @@ namespace RayihaRestaurant.Presentation.Waiter
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(32, 50);
+            label6.Location = new Point(37, 67);
             label6.Name = "label6";
-            label6.Size = new Size(90, 25);
+            label6.Size = new Size(108, 31);
             label6.TabIndex = 0;
             label6.Text = "Table No";
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel1.Dock = DockStyle.Top;
-            flowLayoutPanel1.Location = new Point(222, 0);
-            flowLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
+            flowLayoutPanel1.Location = new Point(254, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Padding = new Padding(35, 15, 35, 15);
-            flowLayoutPanel1.Size = new Size(886, 117);
+            flowLayoutPanel1.Padding = new Padding(40, 20, 40, 20);
+            flowLayoutPanel1.Size = new Size(1013, 156);
             flowLayoutPanel1.TabIndex = 6;
             // 
             // flowLayoutPanel2
             // 
-            flowLayoutPanel2.Location = new Point(222, 117);
-            flowLayoutPanel2.Margin = new Padding(3, 2, 3, 2);
+            flowLayoutPanel2.AutoScroll = true;
+            flowLayoutPanel2.Location = new Point(254, 156);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(886, 313);
+            flowLayoutPanel2.Size = new Size(1013, 616);
             flowLayoutPanel2.TabIndex = 7;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.White;
-            panel5.Location = new Point(222, 428);
-            panel5.Margin = new Padding(3, 2, 3, 2);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(886, 152);
-            panel5.TabIndex = 8;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1559, 640);
+            ClientSize = new Size(1782, 853);
             ControlBox = false;
-            Controls.Add(panel5);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             DoubleBuffered = true;
-            Margin = new Padding(3, 2, 3, 2);
             MinimizeBox = false;
             Name = "Form1";
             Text = "Form1";
@@ -299,6 +278,5 @@ namespace RayihaRestaurant.Presentation.Waiter
         private FlowLayoutPanel flowLayoutPanelCart;
         private Panel panel4;
         private Components.CustomButton customButtonMenu3;
-        private Panel panel5;
     }
 }
