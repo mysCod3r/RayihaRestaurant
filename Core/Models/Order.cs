@@ -12,8 +12,8 @@ namespace RayihaRestaurant.Core.Models
         public int? TableID { get; init; }
         public Table? Table { get; init; }
         [Column("OrderStatus")]
-        public string? OrderStatus { get; init; }
-        public bool? IsPaid { get; init; }
+        public string? OrderStatus { get; set; }
+        public bool? IsPaid { get; set; }
         public List<OrderDetail> OrderDetails { get; init;} = new List<OrderDetail>();
     }
 
