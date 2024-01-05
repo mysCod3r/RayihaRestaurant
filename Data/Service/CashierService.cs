@@ -15,7 +15,13 @@ namespace RayihaRestaurant.Data.Service
 
         public void Checkout(List<Order> orders) 
         {
-            
+
+            foreach (var order in orders)
+            {
+                order.IsPaid = true;
+                _context.Update(order);
+                _context.SaveChanges();
+            }
         }
 
         public List<Order> GetOrders(int tableId)
