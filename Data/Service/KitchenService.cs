@@ -12,10 +12,12 @@ namespace RayihaRestaurant.Data.Service
             _context = context;
         }
 
-        public List<Order> GetOrders(int tableId)
+        // update status
+
+        public List<Order> GetOrders()
         {
             var orders = _context.Orders
-                .Where((e) => e.TableID == tableId && e.IsPaid == false)
+                .Where((e) => e.IsPaid == false)
                 .Include(p => p.OrderDetails)
                     .ThenInclude(b => b.Product)
                         .ThenInclude(a => a.Category)
@@ -24,10 +26,6 @@ namespace RayihaRestaurant.Data.Service
                 .ToList();
 
             return orders;
-        }
-
-        
-
+        }     
     }
-
 }

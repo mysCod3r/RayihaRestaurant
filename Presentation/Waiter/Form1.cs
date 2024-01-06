@@ -137,7 +137,7 @@ namespace RayihaRestaurant.Presentation.Waiter
             {
                 orderItems.Add(item.orderItem);
             }
-            _service.AddNewOrder(1, orderItems);
+            _service.AddNewOrder(tableId, orderItems);
             MessageModel msg = new MessageModel{sender = ClientType, message = "Sipariş mutfağa iletildi"};
             _socketClient.SendMessage(msg);
             //MessageBox.Show(msg.message);

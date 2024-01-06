@@ -13,15 +13,15 @@ namespace RayihaRestaurant
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
-            _kitchenForm = new KitchenForm();
             _socketServer = new SocketServer(12345);
+            _kitchenForm = new KitchenForm();
             _socketServer.AddMessageHandler(_kitchenForm);
             Thread serverThread = new Thread(() => _socketServer.Start());
             serverThread.Start();
         }
 
         private void btnWaiter_Click(object sender, EventArgs e) => new TablesForm(socketServer: _socketServer, clientType: ClientType.Waiter).Show();
-        private void btnKitchen_Click(object sender, EventArgs e) => _kitchenForm.Show();
+        private void btnKitchen_Click(object sender, EventArgs e) => _kitchenForm.Open();
         private void btnCashier_Click(object sender, EventArgs e) => new TablesForm(socketServer: _socketServer, clientType: ClientType.Cashier).Show();
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)

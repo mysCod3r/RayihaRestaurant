@@ -2,6 +2,8 @@
 using RayihaRestaurant.Core.Socket;
 using RayihaRestaurant.Data;
 using RayihaRestaurant.Data.Service;
+using RayihaRestaurant.Presentation.Main;
+using RayihaRestaurant.Presentation.Waiter.Components;
 using System.Runtime.InteropServices;
 
 
@@ -42,23 +44,51 @@ namespace Rayiha.Presentation.Cashier
         {
             _service.Checkout(_orders);
             MessageBox.Show("Ödeme Alındı.");
-            Close();
+            _close();
         }
 
         public void Open()
         {
+            flowLayoutPanel1.Controls.Clear();
             _orders = _service.GetOrders(tableId);
+            _init();
             Visible = true;
         }
-
-        private void _close()
+        private void _init()
         {
-            Close();
+            _writeCart();
+            _writeTotalAmount();
+        }
+        
+        private void _writeCart()
+        {
+            if (_orders == null) return;
+            foreach (Order order in _orders)
+            {
+                foreach (OrderDetail detail in order.OrderDetails)
+                {
+                    CashierOrderCartItem cashierOrderCartItem = new CashierOrderCartItem(detail);
+                    flowLayoutPanel1.Controls.Add(cashierOrderCartItem);
+                }
+            }
+        }
+
+        private void _writeTotalAmount()
+        {
+            if (_orders == null) return;
+            double totalAmount = 0;
+            foreach (Order order in _orders)
+            {
+                totalAmount += (order?.TotalPrice ?? 0);
+            }
+            lblTotalAmount.Text = "Total Amount: " + totalAmount.ToString();
         }
 
         public void HandleMessageFromSocket(MessageModel message)
         {
             throw new NotImplementedException();
         }
+
+        private void _close() => Hide();
     }
 }

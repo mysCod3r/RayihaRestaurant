@@ -1,6 +1,11 @@
-﻿using RayihaRestaurant.Core.Socket;
+﻿using RayihaRestaurant.Core.Models;
+using RayihaRestaurant.Core.Socket;
+using RayihaRestaurant.Data.Service;
+using RayihaRestaurant.Data;
 using RayihaRestaurant.Presentation.Waiter.Components;
 using System.Runtime.InteropServices;
+using RayihaRestaurant.Core.Enums;
+using RayihaRestaurant.Core.Extensions;
 
 
 namespace RayihaRestaurant.Presentation.Module.Views
@@ -8,9 +13,11 @@ namespace RayihaRestaurant.Presentation.Module.Views
     public partial class TablesForm : Form
     {
         bool mouseDown;
+        private List<Table> _tables;
         private ClientType _clientType;
         private SocketServer _socketServer;
 
+        private readonly CashierService _service;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
        (
@@ -26,6 +33,8 @@ namespace RayihaRestaurant.Presentation.Module.Views
         public TablesForm(ClientType clientType, SocketServer socketServer)
         {
             _socketServer = socketServer;
+            _service = new CashierService(new DatabaseContext());
+            _tables = _service.GetTables();
             _clientType = clientType;
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -34,11 +43,12 @@ namespace RayihaRestaurant.Presentation.Module.Views
         }
         private void CreateTablePanels()
         {
-            for (int i = 1; i <= 20; i++)
+            foreach (var item in _tables)
             {
-                CustomButton tableButton = new TableButton(tableId: i,socketServer: _socketServer, clientType: _clientType);
+                CustomButton tableButton = new TableButton(item.ID, clientType: _clientType, socketServer: _socketServer);
                 flowLayoutPanel1.Controls.Add(tableButton);
-            }
+
+            }        
         }
 
         private void button1_Click(object sender, EventArgs e)
