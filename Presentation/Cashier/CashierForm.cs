@@ -50,12 +50,12 @@ namespace Rayiha.Presentation.Cashier
         public void Open()
         {
             flowLayoutPanel1.Controls.Clear();
-            _orders = _service.GetOrders(tableId);
             _init();
             Visible = true;
         }
         private void _init()
         {
+            _orders = _getOrders();
             _writeCart();
             _writeTotalAmount();
         }
@@ -84,10 +84,23 @@ namespace Rayiha.Presentation.Cashier
             lblTotalAmount.Text = "Total Amount: " + totalAmount.ToString();
         }
 
+        private void _reInit()
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(_reInit));
+                return;
+            }
+
+            flowLayoutPanel1.Controls.Clear();
+            _init();
+        }
+
         public void HandleMessageFromSocket(MessageModel message)
         {
-            throw new NotImplementedException();
+            _reInit();
         }
+        private List<Order> _getOrders() => _service.GetOrders(tableId);
 
         private void _close() => Hide();
     }

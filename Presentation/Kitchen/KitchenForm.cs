@@ -48,14 +48,13 @@ namespace Rayiha.Presentation.Kitchen
         private void KitchenForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             MessageModel messageModel = new MessageModel { sender = ClientType, message = "form kapandı" };
-            _socketClient.SendMessage(messageModel);
+            //_socketClient.SendMessage(messageModel);
         }
 
         private void btnClose_Click(object sender, EventArgs e) => Hide();
 
         public void Open()
         {
-            _orders = _service.GetOrders();
             _init();
             Visible = true;
         }
@@ -70,14 +69,29 @@ namespace Rayiha.Presentation.Kitchen
         }
         private void _init()
         {
+            _orders = _getOrders();
             _writeCart();
         }
+
+        private void _reInit()
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(_reInit));
+                return;
+            }
+
+            flpOrders.Controls.Clear();
+            _init();
+        }
+
+        private List<Order> _getOrders() => _service.GetOrders();
 
         private void btnClose_Click_1(object sender, EventArgs e) => Hide();
 
         public void HandleMessageFromSocket(MessageModel message)
         {
-            throw new NotImplementedException();
+            _reInit();
         }
     }
 }

@@ -40,7 +40,7 @@ namespace RayihaRestaurant.Presentation.Waiter
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
- 
+
             foreach (Category category in _categories)
             {
                 GetCategoryPanel(category);
@@ -114,7 +114,7 @@ namespace RayihaRestaurant.Presentation.Waiter
             flowLayoutProductPanel.Controls.Add(productPanelMenu);
         }
 
-        private void customPanel_Click(object sender, EventArgs e)
+        private void customPanel_Click(object? sender, EventArgs e)
         {
             flowLayoutProductPanel.Controls.Clear();
 
@@ -138,7 +138,7 @@ namespace RayihaRestaurant.Presentation.Waiter
                 orderItems.Add(item.orderItem);
             }
             _service.AddNewOrder(tableId, orderItems);
-            MessageModel msg = new MessageModel{sender = ClientType, message = "Sipariş mutfağa iletildi"};
+            MessageModel msg = new MessageModel { sender = ClientType, message = "Sipariş mutfağa iletildi" };
             _socketClient.SendMessage(msg);
             //MessageBox.Show(msg.message);
         }
@@ -152,15 +152,13 @@ namespace RayihaRestaurant.Presentation.Waiter
             flowLayoutPanelCart.Controls.Clear();
             Hide();
         }
+
         public void Open()
         {
             lblTableNo.Text = "Table No: " + tableId.ToString();
             Visible = true;
         }
 
-        public void HandleMessageFromSocket(MessageModel message)
-        {
-            throw new NotImplementedException();
-        }
+        public void HandleMessageFromSocket(MessageModel message) { }
     }
 }
