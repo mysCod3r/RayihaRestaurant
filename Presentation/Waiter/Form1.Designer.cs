@@ -156,6 +156,7 @@ namespace RayihaRestaurant.Presentation.Waiter
             customButtonMenu3.Text = "customButtonMenu3";
             customButtonMenu3.TextColor = Color.White;
             customButtonMenu3.UseVisualStyleBackColor = false;
+            customButtonMenu3.Click += customButtonMenu3_Click;
             // 
             // panel3
             // 

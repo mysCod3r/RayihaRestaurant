@@ -9,6 +9,8 @@ namespace RayihaRestaurant.Presentation.Module.Views
     {
         bool mouseDown;
         private ClientType _clientType;
+        private SocketServer _socketServer;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
        (
@@ -21,8 +23,9 @@ namespace RayihaRestaurant.Presentation.Module.Views
        );
        
 
-        public TablesForm(ClientType clientType)
+        public TablesForm(ClientType clientType, SocketServer socketServer)
         {
+            _socketServer = socketServer;
             _clientType = clientType;
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -33,7 +36,7 @@ namespace RayihaRestaurant.Presentation.Module.Views
         {
             for (int i = 1; i <= 20; i++)
             {
-                CustomButton tableButton = new TableButton(tableId: i,clientType: _clientType);
+                CustomButton tableButton = new TableButton(tableId: i,socketServer: _socketServer, clientType: _clientType);
                 flowLayoutPanel1.Controls.Add(tableButton);
             }
         }
