@@ -9,12 +9,12 @@ using System.Runtime.InteropServices;
 
 namespace Rayiha.Presentation.Cashier
 {
-    public partial class CashierForm : Form
+    public partial class CashierForm : Form, IMessageHandler
     {
+        public ClientType ClientType => ClientType.Cashier;
         public int tableId { get; set; }
         private List<Order>? _orders;
         private readonly SocketClient _socketClient;
-        private readonly ClientType _clientType;
         private readonly CashierService _service;
 
 
@@ -31,7 +31,6 @@ namespace Rayiha.Presentation.Cashier
         public CashierForm()
         {
             _socketClient = new SocketClient();
-            _clientType = ClientType.Cashier;
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
             _service = new CashierService(new DatabaseContext());
@@ -83,6 +82,11 @@ namespace Rayiha.Presentation.Cashier
                 totalAmount += (order?.TotalPrice ?? 0);
             }
             lblTotalAmount.Text = "Total Amount: " + totalAmount.ToString();
+        }
+
+        public void HandleMessageFromSocket(MessageModel message)
+        {
+            throw new NotImplementedException();
         }
 
         private void _close() => Hide();

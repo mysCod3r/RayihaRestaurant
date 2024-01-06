@@ -15,10 +15,14 @@ namespace RayihaRestaurant.Core.Socket
         private CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
         private TcpListener _tcpListener;
         private NetworkStream? stream;
-        private TcpClient? tcpClient;
-        public event EventHandler<MessageModel>? MessageReceived;
         private bool _isRunning = true;
 
+        private List<IMessageHandler> _messageHandlers = new List<IMessageHandler>();
+
+        public void AddMessageHandler(IMessageHandler messageHandler)
+        {
+            _messageHandlers.Add(messageHandler);
+        }
         public void Start()
         {
             try
@@ -61,7 +65,10 @@ namespace RayihaRestaurant.Core.Socket
             string jsonString = Encoding.UTF8.GetString(data, 0, bytesRead);
             MessageModel? message = JsonHelper.DeserializeObject<MessageModel>(jsonString);
             if (message == null) return;
-            MessageReceived?.Invoke(this, message);
+            foreach (IMessageHandler handler in _messageHandlers)
+            {
+                handler.HandleMessageFromSocket(message);
+            }
         }
 
         public void Dispose()
