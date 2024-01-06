@@ -10,6 +10,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
         public Category category => _category;
         public CategoryPanelMenu(Category category, EventHandler onClick)
         {
+            AutoSize = true;
             _category = category;
             Click += onClick;
             Size = new Size(109, 110);

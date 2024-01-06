@@ -44,7 +44,7 @@ namespace RayihaRestaurant.Presentation.Module.Views
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(1698, 12);
+            button1.Location = new Point(808, 20);
             button1.Name = "button1";
             button1.Size = new Size(59, 47);
             button1.TabIndex = 0;
@@ -53,9 +53,9 @@ namespace RayihaRestaurant.Presentation.Module.Views
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Location = new Point(0, 83);
+            flowLayoutPanel1.Location = new Point(12, 85);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1780, 770);
+            flowLayoutPanel1.Size = new Size(851, 631);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // TablesForm
@@ -64,7 +64,7 @@ namespace RayihaRestaurant.Presentation.Module.Views
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1782, 853);
+            ClientSize = new Size(875, 728);
             ControlBox = false;
             Controls.Add(flowLayoutPanel1);
             Controls.Add(button1);

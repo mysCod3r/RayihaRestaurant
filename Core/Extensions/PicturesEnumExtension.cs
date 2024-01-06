@@ -18,6 +18,7 @@ namespace RayihaRestaurant.Core.Extensions
             { Pictures.Table_white, @"..\..\..\Pictures\Table_white.png" },
             { Pictures.User, @"..\..\..\Pictures\User.png" },
             { Pictures.wp9443719, @"..\..\..\Pictures\wp9443719.png" },
+            { Pictures.Restaurant_table, @"..\..\..\Pictures\Restaurant_table.png" },
         };
 
         public static string? PictureConverter(this int? value)

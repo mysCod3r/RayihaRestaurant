@@ -12,6 +12,7 @@
         Table,
         Table_white,
         User,
-        wp9443719
+        wp9443719,
+        Restaurant_table
     }
 }

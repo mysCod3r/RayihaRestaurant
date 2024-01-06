@@ -30,14 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashierForm));
             btnClose = new Button();
-            customPanel1 = new RayihaRestaurant.Presentation.Waiter.Components.CustomPanel();
-            cpOrderItem = new RayihaRestaurant.Presentation.Waiter.Components.CustomPanel();
+            btnCheckout = new RayihaRestaurant.Presentation.Waiter.Components.CustomButton();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            panel1 = new Panel();
             lblAmount = new Label();
             lblQuantity = new Label();
-            lblProdcutName = new Label();
-            btnCheckout = new RayihaRestaurant.Presentation.Waiter.Components.CustomButton();
+            lblProductName = new Label();
+            customPanel1 = new RayihaRestaurant.Presentation.Waiter.Components.CustomPanel();
+            panel2 = new Panel();
+            lblTotalAmount = new Label();
+            panel1.SuspendLayout();
             customPanel1.SuspendLayout();
-            cpOrderItem.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // btnClose
@@ -48,67 +52,12 @@
             btnClose.BackgroundImageLayout = ImageLayout.Stretch;
             btnClose.FlatAppearance.BorderSize = 0;
             btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.Location = new Point(1711, 12);
+            btnClose.Location = new Point(757, 12);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(59, 47);
             btnClose.TabIndex = 2;
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
-            // 
-            // customPanel1
-            // 
-            customPanel1.AutoScroll = true;
-            customPanel1.BackColor = Color.White;
-            customPanel1.BorderRadius = 50;
-            customPanel1.Controls.Add(cpOrderItem);
-            customPanel1.Location = new Point(544, 131);
-            customPanel1.Name = "customPanel1";
-            customPanel1.Size = new Size(439, 633);
-            customPanel1.TabIndex = 3;
-            // 
-            // cpOrderItem
-            // 
-            cpOrderItem.BorderRadius = 50;
-            cpOrderItem.Controls.Add(lblAmount);
-            cpOrderItem.Controls.Add(lblQuantity);
-            cpOrderItem.Controls.Add(lblProdcutName);
-            cpOrderItem.Location = new Point(34, 51);
-            cpOrderItem.Name = "cpOrderItem";
-            cpOrderItem.Size = new Size(377, 68);
-            cpOrderItem.TabIndex = 0;
-            // 
-            // lblAmount
-            // 
-            lblAmount.AutoSize = true;
-            lblAmount.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblAmount.ForeColor = Color.Black;
-            lblAmount.Location = new Point(267, 23);
-            lblAmount.Name = "lblAmount";
-            lblAmount.Size = new Size(71, 23);
-            lblAmount.TabIndex = 2;
-            lblAmount.Text = "Amount";
-            // 
-            // lblQuantity
-            // 
-            lblQuantity.AutoSize = true;
-            lblQuantity.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblQuantity.ForeColor = Color.Gray;
-            lblQuantity.Location = new Point(150, 23);
-            lblQuantity.Name = "lblQuantity";
-            lblQuantity.Size = new Size(79, 23);
-            lblQuantity.TabIndex = 1;
-            lblQuantity.Text = "Quantity";
-            // 
-            // lblProdcutName
-            // 
-            lblProdcutName.AutoSize = true;
-            lblProdcutName.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblProdcutName.ForeColor = Color.FromArgb(0, 147, 44);
-            lblProdcutName.Location = new Point(19, 23);
-            lblProdcutName.Name = "lblProdcutName";
-            lblProdcutName.Size = new Size(125, 23);
-            lblProdcutName.TabIndex = 0;
-            lblProdcutName.Text = "Prodcut Name";
             // 
             // btnCheckout
             // 
@@ -119,31 +68,118 @@
             btnCheckout.BorderSize = 0;
             btnCheckout.FlatAppearance.BorderSize = 0;
             btnCheckout.FlatStyle = FlatStyle.Flat;
-            btnCheckout.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCheckout.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCheckout.ForeColor = Color.White;
-            btnCheckout.Location = new Point(1033, 685);
+            btnCheckout.Location = new Point(574, 672);
             btnCheckout.Name = "btnCheckout";
-            btnCheckout.Size = new Size(267, 79);
+            btnCheckout.Size = new Size(199, 54);
             btnCheckout.TabIndex = 4;
             btnCheckout.Text = "Hesabı Al";
             btnCheckout.TextColor = Color.White;
             btnCheckout.UseVisualStyleBackColor = false;
             btnCheckout.Click += btnCheckout_Click;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.BackColor = Color.White;
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel1.Location = new Point(0, 85);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Padding = new Padding(0, 0, 10, 0);
+            flowLayoutPanel1.Size = new Size(398, 512);
+            flowLayoutPanel1.TabIndex = 5;
+            flowLayoutPanel1.WrapContents = false;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(lblAmount);
+            panel1.Controls.Add(lblQuantity);
+            panel1.Controls.Add(lblProductName);
+            panel1.Location = new Point(3, 14);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(507, 74);
+            panel1.TabIndex = 0;
+            // 
+            // lblAmount
+            // 
+            lblAmount.AutoSize = true;
+            lblAmount.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAmount.Location = new Point(310, 23);
+            lblAmount.Name = "lblAmount";
+            lblAmount.Size = new Size(75, 23);
+            lblAmount.TabIndex = 2;
+            lblAmount.Text = "Amount";
+            // 
+            // lblQuantity
+            // 
+            lblQuantity.AutoSize = true;
+            lblQuantity.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblQuantity.ForeColor = Color.Gray;
+            lblQuantity.Location = new Point(210, 23);
+            lblQuantity.Name = "lblQuantity";
+            lblQuantity.Size = new Size(80, 23);
+            lblQuantity.TabIndex = 1;
+            lblQuantity.Text = "Quantity";
+            // 
+            // lblProductName
+            // 
+            lblProductName.AutoSize = true;
+            lblProductName.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblProductName.ForeColor = Color.FromArgb(0, 147, 44);
+            lblProductName.Location = new Point(19, 23);
+            lblProductName.Name = "lblProductName";
+            lblProductName.Size = new Size(125, 23);
+            lblProductName.TabIndex = 0;
+            lblProductName.Text = "Product Name";
+            // 
+            // customPanel1
+            // 
+            customPanel1.BackColor = Color.White;
+            customPanel1.BorderRadius = 50;
+            customPanel1.Controls.Add(panel2);
+            customPanel1.Controls.Add(flowLayoutPanel1);
+            customPanel1.Controls.Add(panel1);
+            customPanel1.Location = new Point(155, 62);
+            customPanel1.Name = "customPanel1";
+            customPanel1.Size = new Size(401, 664);
+            customPanel1.TabIndex = 6;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(lblTotalAmount);
+            panel2.Location = new Point(3, 594);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(504, 67);
+            panel2.TabIndex = 6;
+            // 
+            // lblTotalAmount
+            // 
+            lblTotalAmount.AutoSize = true;
+            lblTotalAmount.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblTotalAmount.Location = new Point(171, 25);
+            lblTotalAmount.Name = "lblTotalAmount";
+            lblTotalAmount.Size = new Size(119, 23);
+            lblTotalAmount.TabIndex = 0;
+            lblTotalAmount.Text = "Total Amount";
+            // 
             // CashierForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1782, 853);
-            Controls.Add(btnCheckout);
+            ClientSize = new Size(828, 767);
             Controls.Add(customPanel1);
+            Controls.Add(btnCheckout);
             Controls.Add(btnClose);
             Margin = new Padding(3, 4, 3, 4);
             Name = "CashierForm";
             Text = "CashierForm";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             customPanel1.ResumeLayout(false);
-            cpOrderItem.ResumeLayout(false);
-            cpOrderItem.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -151,11 +187,14 @@
         #endregion
 
         private Button btnClose;
-        private RayihaRestaurant.Presentation.Waiter.Components.CustomPanel customPanel1;
         private RayihaRestaurant.Presentation.Waiter.Components.CustomButton btnCheckout;
-        private RayihaRestaurant.Presentation.Waiter.Components.CustomPanel cpOrderItem;
-        private Label lblProdcutName;
-        private Label lblQuantity;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Panel panel1;
+        private Label lblProductName;
         private Label lblAmount;
+        private Label lblQuantity;
+        private RayihaRestaurant.Presentation.Waiter.Components.CustomPanel customPanel1;
+        private Panel panel2;
+        private Label lblTotalAmount;
     }
 }

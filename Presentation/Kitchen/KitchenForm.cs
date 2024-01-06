@@ -1,7 +1,12 @@
-﻿using RayihaRestaurant.Core.Socket;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using RayihaRestaurant.Core.Models;
+using RayihaRestaurant.Core.Socket;
 using RayihaRestaurant.Data;
 using RayihaRestaurant.Data.Service;
+using RayihaRestaurant.Presentation.Waiter.Components;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 
 namespace Rayiha.Presentation.Kitchen
@@ -9,7 +14,8 @@ namespace Rayiha.Presentation.Kitchen
 
     public partial class KitchenForm : Form
     {
-        private bool isSecondClick;
+        public int tableId { get; set; }
+        private List<Order>? _orders;
         private readonly KitchenService _service;
         private readonly SocketClient _socketClient;
         private readonly ClientType _clientType;
@@ -29,10 +35,12 @@ namespace Rayiha.Presentation.Kitchen
             _socketClient = new SocketClient();
             _clientType = ClientType.Kitchen;
             _service = new KitchenService(new DatabaseContext());
+            _orders = _service.GetOrders();
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             CheckForIllegalCrossThreadCalls = false;
+            Open();
         }
 
         private void KitchenForm_Load(object sender, EventArgs e)
@@ -51,23 +59,30 @@ namespace Rayiha.Presentation.Kitchen
         {
             Close();
         }
-
-        private void btnStatus_Click(object sender, EventArgs e)
+        
+        public void Open()
         {
-            if (isSecondClick)
+            _orders = _service.GetOrders();
+            _init();
+            Visible = true;
+        }
+        private void _writeCart()
+        {
+            if (_orders == null) return;
+            foreach (Order order in _orders)
             {
-                btnStatus.BackColor = Color.Green;
-                btnStatus.Text = "Hazır";
-                btnStatus.ForeColor = Color.White;
-                btnStatus.Click -= btnStatus_Click;
+                KitchenOrderCard kitchenOrderCard = new KitchenOrderCard(order);
+                flpOrders.Controls.Add(kitchenOrderCard);    
             }
-            else
-            {
-                btnStatus.BackColor = Color.Yellow;
-                btnStatus.Text = "Hazırlanıyor";
-                btnStatus.ForeColor = Color.Black;
-            }
-            isSecondClick = !isSecondClick;
+        }
+        private void _init()
+        {
+            _writeCart();
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
