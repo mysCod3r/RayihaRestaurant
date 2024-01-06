@@ -4,22 +4,23 @@ using RayihaRestaurant.Core.Models;
 using RayihaRestaurant.Core.Socket;
 using RayihaRestaurant.Data;
 using RayihaRestaurant.Data.Service;
-using RayihaRestaurant.Presentation.Module.Views;
 using RayihaRestaurant.Presentation.Waiter.Components;
 using System.Data;
 using System.Runtime.InteropServices;
 
 namespace RayihaRestaurant.Presentation.Waiter
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form, IMessageHandler
 
     {
         public int tableId { get; set; }
+
+        public ClientType ClientType => ClientType.Waiter;
+
         private readonly WaiterService _service;
         private List<Category> _categories;
         private List<Product> _products;
         private readonly SocketClient _socketClient;
-        private readonly ClientType _clientType;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -33,7 +34,6 @@ namespace RayihaRestaurant.Presentation.Waiter
         public Form1()
         {
             _socketClient = new SocketClient();
-            _clientType = ClientType.Waiter;
             _service = new WaiterService(new DatabaseContext());
             _categories = _service.GetCategories();
             _products = _service.GetProducts();
@@ -138,9 +138,9 @@ namespace RayihaRestaurant.Presentation.Waiter
                 orderItems.Add(item.orderItem);
             }
             _service.AddNewOrder(1, orderItems);
-            MessageModel msg = new MessageModel{sender = _clientType, message = "Sipariş mutfağa iletildi"};
+            MessageModel msg = new MessageModel{sender = ClientType, message = "Sipariş mutfağa iletildi"};
             _socketClient.SendMessage(msg);
-            MessageBox.Show(msg.message);
+            //MessageBox.Show(msg.message);
         }
         private void _closeButton(object sender, EventArgs e) => _close();
 
@@ -156,6 +156,11 @@ namespace RayihaRestaurant.Presentation.Waiter
         {
             lblTableNo.Text = "Table No: " + tableId.ToString();
             Visible = true;
+        }
+
+        public void HandleMessageFromSocket(MessageModel message)
+        {
+            throw new NotImplementedException();
         }
     }
 }

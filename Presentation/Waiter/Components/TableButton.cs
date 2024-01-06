@@ -5,18 +5,29 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
 {
     internal class TableButton : CustomButton
     {
+        private SocketServer _socketServer;
         private Form1 _waiterForm = new Form1();
         private CashierForm _cashierForm = new CashierForm();
         private int _tableId;
         private ClientType _clientType;
 
-        public TableButton(int tableId, ClientType clientType)
+        public TableButton(int tableId, ClientType clientType, SocketServer socketServer)
         {
+
+            _socketServer = socketServer;
+            _registerServer();
             _tableId = tableId;
             _clientType = clientType;
             Text = _tableId.ToString();
-            Click += (_,__) =>  _openForm();
+            Click += (_, __) => _openForm();
         }
+
+        private void _registerServer()
+        {
+            _socketServer.AddMessageHandler(_waiterForm);
+            _socketServer.AddMessageHandler(_cashierForm);
+        }
+
         private void _openForm()
         {
             switch (_clientType)

@@ -7,12 +7,13 @@ using System.Runtime.InteropServices;
 namespace Rayiha.Presentation.Kitchen
 {
 
-    public partial class KitchenForm : Form
+    public partial class KitchenForm : Form, IMessageHandler
     {
+        public ClientType ClientType => ClientType.Kitchen;
         private bool isSecondClick;
         private readonly KitchenService _service;
         private readonly SocketClient _socketClient;
-        private readonly ClientType _clientType;
+
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -27,7 +28,6 @@ namespace Rayiha.Presentation.Kitchen
         public KitchenForm()
         {
             _socketClient = new SocketClient();
-            _clientType = ClientType.Kitchen;
             _service = new KitchenService(new DatabaseContext());
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -37,13 +37,13 @@ namespace Rayiha.Presentation.Kitchen
 
         private void KitchenForm_Load(object sender, EventArgs e)
         {
-            MessageModel messageModel = new MessageModel { sender = _clientType, message = "form açıldı" };
+            MessageModel messageModel = new MessageModel { sender = ClientType, message = "form açıldı" };
             _socketClient.SendMessage(messageModel);
         }
 
         private void KitchenForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MessageModel messageModel = new MessageModel { sender = _clientType, message = "form kapandı" };
+            MessageModel messageModel = new MessageModel { sender = ClientType, message = "form kapandı" };
             _socketClient.SendMessage(messageModel);
         }
 
@@ -68,6 +68,11 @@ namespace Rayiha.Presentation.Kitchen
                 btnStatus.ForeColor = Color.Black;
             }
             isSecondClick = !isSecondClick;
+        }
+
+        public void HandleMessageFromSocket(MessageModel message)
+        {
+            throw new NotImplementedException();
         }
     }
 }
