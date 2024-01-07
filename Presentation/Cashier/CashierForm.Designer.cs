@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashierForm));
-            btnClose = new Button();
             btnCheckout = new RayihaRestaurant.Presentation.Waiter.Components.CustomButton();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
@@ -43,21 +41,6 @@
             customPanel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // btnClose
-            // 
-            btnClose.AutoSize = true;
-            btnClose.BackColor = Color.Transparent;
-            btnClose.BackgroundImage = (Image)resources.GetObject("btnClose.BackgroundImage");
-            btnClose.BackgroundImageLayout = ImageLayout.Stretch;
-            btnClose.FlatAppearance.BorderSize = 0;
-            btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.Location = new Point(757, 12);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(59, 47);
-            btnClose.TabIndex = 2;
-            btnClose.UseVisualStyleBackColor = false;
-            btnClose.Click += btnClose_Click;
             // 
             // btnCheckout
             // 
@@ -168,25 +151,24 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(828, 767);
+            //ClientSize = new Size(828, 853);
             Controls.Add(customPanel1);
             Controls.Add(btnCheckout);
-            Controls.Add(btnClose);
             Margin = new Padding(3, 4, 3, 4);
             Name = "CashierForm";
             Text = "CashierForm";
+            MouseDown += OnMouseDown;
+            Controls.SetChildIndex(btnCheckout, 0);
+            Controls.SetChildIndex(customPanel1, 0);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             customPanel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Button btnClose;
         private RayihaRestaurant.Presentation.Waiter.Components.CustomButton btnCheckout;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel1;

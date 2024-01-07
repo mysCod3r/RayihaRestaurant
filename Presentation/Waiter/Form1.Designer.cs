@@ -224,7 +224,7 @@ namespace RayihaRestaurant.Presentation.Waiter
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1782, 853);
+            //ClientSize = new Size(1782, 853);
             ControlBox = false;
             Controls.Add(flowLayoutProductPanel);
             Controls.Add(flowLayoutCategoryPanel);

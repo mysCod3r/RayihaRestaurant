@@ -4,13 +4,14 @@ using RayihaRestaurant.Core.Models;
 using RayihaRestaurant.Core.Socket;
 using RayihaRestaurant.Data;
 using RayihaRestaurant.Data.Service;
+using RayihaRestaurant.Presentation.Module;
 using RayihaRestaurant.Presentation.Waiter.Components;
 using System.Data;
 using System.Runtime.InteropServices;
 
 namespace RayihaRestaurant.Presentation.Waiter
 {
-    public partial class Form1 : Form, IMessageHandler
+    public partial class Form1 : BaseForm, IMessageHandler
 
     {
         public int tableId { get; set; }
@@ -37,6 +38,7 @@ namespace RayihaRestaurant.Presentation.Waiter
             _service = new WaiterService(new DatabaseContext());
             _categories = _service.GetCategories();
             _products = _service.GetProducts();
+            this.Size = new Size(1920,1080 );
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));

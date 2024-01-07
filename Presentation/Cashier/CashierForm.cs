@@ -3,13 +3,14 @@ using RayihaRestaurant.Core.Socket;
 using RayihaRestaurant.Data;
 using RayihaRestaurant.Data.Service;
 using RayihaRestaurant.Presentation.Main;
+using RayihaRestaurant.Presentation.Module;
 using RayihaRestaurant.Presentation.Waiter.Components;
 using System.Runtime.InteropServices;
 
 
 namespace Rayiha.Presentation.Cashier
 {
-    public partial class CashierForm : Form, IMessageHandler
+    public partial class CashierForm : BaseForm, IMessageHandler
     {
         public ClientType ClientType => ClientType.Cashier;
         public int tableId { get; set; }
@@ -37,6 +38,21 @@ namespace Rayiha.Presentation.Cashier
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HTCAPTION = 0x2;
+        [DllImport("User32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("User32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        private void OnMouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
+        }
 
         private void btnClose_Click(object sender, EventArgs e) => _close();
 
@@ -59,7 +75,7 @@ namespace Rayiha.Presentation.Cashier
             _writeCart();
             _writeTotalAmount();
         }
-        
+
         private void _writeCart()
         {
             if (_orders == null) return;
@@ -103,5 +119,6 @@ namespace Rayiha.Presentation.Cashier
         private List<Order> _getOrders() => _service.GetOrders(tableId);
 
         private void _close() => Hide();
+
     }
 }
