@@ -1,7 +1,7 @@
 ﻿
 namespace RayihaRestaurant.Presentation.Waiter
 {
-    partial class Form1
+    partial class WaiterForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace RayihaRestaurant.Presentation.Waiter
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WaiterForm));
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             customButtonMenu2 = new Components.CustomButton();

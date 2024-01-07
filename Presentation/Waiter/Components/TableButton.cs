@@ -9,7 +9,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
     internal class TableButton : CustomButton
     {
         private SocketServer _socketServer;
-        private Form1 _waiterForm = new Form1();
+        private WaiterForm _waiterForm = new WaiterForm();
         private CashierForm _cashierForm = new CashierForm();
         private int _tableId;
         private ClientType _clientType;

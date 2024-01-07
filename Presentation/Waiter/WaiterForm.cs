@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace RayihaRestaurant.Presentation.Waiter
 {
-    public partial class Form1 : Form, IMessageHandler
+    public partial class WaiterForm : Form, IMessageHandler
 
     {
         public int tableId { get; set; }
@@ -31,7 +31,7 @@ namespace RayihaRestaurant.Presentation.Waiter
             int nWidthEllipse, // width of ellipse
             int nHeightEllipse // height of ellipse
         );
-        public Form1()
+        public WaiterForm()
         {
             _socketClient = new SocketClient();
             _service = new WaiterService(new DatabaseContext());
