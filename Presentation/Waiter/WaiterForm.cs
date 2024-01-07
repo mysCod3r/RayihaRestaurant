@@ -1,4 +1,5 @@
-﻿using RayihaRestaurant.Core.Enums;
+﻿using RayihaRestaurant.Core.Base;
+using RayihaRestaurant.Core.Enums;
 using RayihaRestaurant.Core.Extensions;
 using RayihaRestaurant.Core.Models;
 using RayihaRestaurant.Core.Socket;
@@ -6,31 +7,20 @@ using RayihaRestaurant.Data;
 using RayihaRestaurant.Data.Service;
 using RayihaRestaurant.Presentation.Waiter.Components;
 using System.Data;
-using System.Runtime.InteropServices;
 
 namespace RayihaRestaurant.Presentation.Waiter
 {
-    public partial class WaiterForm : Form, IMessageHandler
-
+    public partial class WaiterForm : BaseForm, IMessageHandler
     {
-        public int tableId { get; set; }
-
         public ClientType ClientType => ClientType.Waiter;
-
+        public override Size WindowSize => new Size(1024, 768);
+        public override string WindowPanelName => "Waiter";
+        public int tableId { get; set; }
         private readonly WaiterService _service;
         private List<Category> _categories;
         private List<Product> _products;
         private readonly SocketClient _socketClient;
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,     // x-coordinate of upper-left corner
-            int nTopRect,      // y-coordinate of upper-left corner
-            int nRightRect,    // x-coordinate of lower-right corner
-            int nBottomRect,   // y-coordinate of lower-right corner
-            int nWidthEllipse, // width of ellipse
-            int nHeightEllipse // height of ellipse
-        );
+       
         public WaiterForm()
         {
             _socketClient = new SocketClient();
@@ -38,8 +28,6 @@ namespace RayihaRestaurant.Presentation.Waiter
             _categories = _service.GetCategories();
             _products = _service.GetProducts();
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
             foreach (Category category in _categories)
             {
@@ -81,23 +69,6 @@ namespace RayihaRestaurant.Presentation.Waiter
             string? img = PicturesEnumExtension.PictureConverter((int)Pictures.Logout);
             customButtonMenu2.Image = Image.FromFile(img ?? "");
             customButtonMenu2.ImageAlign = ContentAlignment.MiddleLeft;
-        }
-
-
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HTCAPTION = 0x2;
-        [DllImport("User32.dll")]
-        public static extern bool ReleaseCapture();
-        [DllImport("User32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-
-        private void OnMouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
-            }
         }
 
         private void GetCategoryPanel(Category category)
@@ -142,19 +113,13 @@ namespace RayihaRestaurant.Presentation.Waiter
             _socketClient.SendMessage(msg);
             //MessageBox.Show(msg.message);
         }
-        private void _closeButton(object sender, EventArgs e) => _close();
-
-        private void _tablesButton(object sender, EventArgs e) => _close();
-
-        private void _close()
-        {
-            flowLayoutProductPanel.Controls.Clear();
-            flowLayoutPanelCart.Controls.Clear();
-            Hide();
-        }
+        
+        private void _tablesButton(object sender, EventArgs e) => Hide();
 
         public void Open()
         {
+            flowLayoutProductPanel.Controls.Clear();
+            flowLayoutPanelCart.Controls.Clear();
             lblTableNo.Text = "Table No: " + tableId.ToString();
             Visible = true;
         }
