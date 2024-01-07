@@ -1,8 +1,9 @@
 ﻿using RayihaRestaurant.Core.Models;
+using RayihaRestaurant.Presentation.Components;
 
-namespace RayihaRestaurant.Presentation.Waiter.Components
+namespace RayihaRestaurant.Presentation.Kitchen.Components
 {
-    internal class KitchenOrderCard: CustomPanel
+    internal class KitchenOrderCard : CustomPanel
     {
         public int tableId { get; set; }
         private bool _isSecondClick;
@@ -46,11 +47,11 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             _tableNo.Location = new Point(26, 10);
             _tableNo.Size = new Size(92, 13);
             _tableNo.TabIndex = 0;
-            _tableNo.Text ="Masa no: " + order.TableID;
+            _tableNo.Text = "Masa no: " + order.TableID;
             Controls.Add(_tableNo);
         }
 
-        
+
         private void _writeStatusButton()
         {
             _statusButton.BackColor = Color.Red;
@@ -112,7 +113,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
         private void _createAndAddProduct()
         {
             foreach (OrderDetail detail in order.OrderDetails)
-            { 
+            {
                 KitchenOrderCardItem kitchenOrderCardItem = new KitchenOrderCardItem(detail);
                 _flpProducts.Controls.Add(kitchenOrderCardItem);
             }

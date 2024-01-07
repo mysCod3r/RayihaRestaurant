@@ -1,5 +1,5 @@
 ﻿using RayihaRestaurant.Core.Models;
-using System.Drawing.Drawing2D;
+using RayihaRestaurant.Presentation.Components;
 
 namespace RayihaRestaurant.Presentation.Waiter.Components
 {

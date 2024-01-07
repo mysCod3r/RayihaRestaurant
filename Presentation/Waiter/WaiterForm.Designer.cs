@@ -1,4 +1,6 @@
 ﻿
+using RayihaRestaurant.Presentation.Components;
+
 namespace RayihaRestaurant.Presentation.Waiter
 {
     partial class WaiterForm
@@ -32,10 +34,10 @@ namespace RayihaRestaurant.Presentation.Waiter
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WaiterForm));
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            customButtonMenu2 = new Components.CustomButton();
-            customButtonMenu1 = new Components.CustomButton();
+            customButtonMenu2 = new RayihaRestaurant.Presentation.Components.CustomButton();
+            customButtonMenu1 = new RayihaRestaurant.Presentation.Components.CustomButton();
             panel2 = new Panel();
-            cbAddOrder = new Components.CustomButton();
+            cbAddOrder = new RayihaRestaurant.Presentation.Components.CustomButton();
             panel3 = new Panel();
             flowLayoutPanelCart = new FlowLayoutPanel();
             button1 = new Button();
@@ -249,13 +251,13 @@ namespace RayihaRestaurant.Presentation.Waiter
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
-        private Components.CustomButton customButtonMenu1;
-        private Components.CustomButton customButtonMenu2;
+        private CustomButton customButtonMenu1;
+        private CustomButton customButtonMenu2;
         private PictureBox pictureBox1;
         private Label lblCount;
-        private Components.CustomButton cbmPlus;
+        private CustomButton cbmPlus;
         private Label label5;
-        private Components.CustomButton cbmMinus;
+        private CustomButton cbmMinus;
         private Label label4;
         private Label label3;
         private Label lblTableNo;
@@ -267,6 +269,6 @@ namespace RayihaRestaurant.Presentation.Waiter
         private FlowLayoutPanel flowLayoutCategoryPanel;
         private FlowLayoutPanel flowLayoutProductPanel;
         private FlowLayoutPanel flowLayoutPanelCart;
-        private Components.CustomButton cbAddOrder;
+        private CustomButton cbAddOrder;
     }
 }

@@ -2,9 +2,10 @@
 using RayihaRestaurant.Core.Enums;
 using RayihaRestaurant.Core.Extensions;
 using RayihaRestaurant.Core.Socket;
+using RayihaRestaurant.Presentation.Waiter;
 using RayihaRestaurant.Properties;
 
-namespace RayihaRestaurant.Presentation.Waiter.Components
+namespace RayihaRestaurant.Presentation.Components
 {
     internal class TableButton : CustomButton
     {
@@ -22,7 +23,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             _tableId = tableId;
             _clientType = clientType;
             Text = _tableId.ToString();
-            Click += (_,__) =>  _openForm();
+            Click += (_, __) => _openForm();
             string? img = PicturesEnumExtension.PictureConverter((int)Pictures.Restaurant_table);
             BackgroundImage = Image.FromFile(img ?? "");
             AutoSize = true;

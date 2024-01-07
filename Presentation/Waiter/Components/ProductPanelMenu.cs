@@ -1,4 +1,5 @@
 ﻿using RayihaRestaurant.Core.Models;
+using RayihaRestaurant.Presentation.Components;
 
 namespace RayihaRestaurant.Presentation.Waiter.Components
 {

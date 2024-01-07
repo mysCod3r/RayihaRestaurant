@@ -1,8 +1,9 @@
 ﻿using RayihaRestaurant.Core.Models;
+using RayihaRestaurant.Presentation.Components;
 
-namespace RayihaRestaurant.Presentation.Waiter.Components
+namespace RayihaRestaurant.Presentation.Kitchen.Components
 {
-    internal class KitchenOrderCardItem: CustomPanel
+    internal class KitchenOrderCardItem : CustomPanel
     {
         private Label _productName;
         private Label _quantity;
