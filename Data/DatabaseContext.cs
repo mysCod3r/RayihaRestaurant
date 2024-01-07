@@ -23,12 +23,20 @@ namespace RayihaRestaurant.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            modelBuilder.Entity<User>()
+                .Property(e => e.Type)
+                .HasConversion(
+                       v => v.ToString(),
+                       v => (UserType)Enum.Parse(typeof(UserType), v ?? "Waiter")
+                 );
+
             modelBuilder.Entity<Product>()
                 .HasOne(e => e.Category)
                 .WithMany()
                 .HasForeignKey(e => e.CategoryID)
                 .IsRequired();
-            
+
             modelBuilder.Entity<Order>()
                 .HasOne(e => e.User)
                 .WithMany()
@@ -47,12 +55,6 @@ namespace RayihaRestaurant.Data
                 .HasForeignKey(e => e.TableID)
                 .IsRequired();
 
-            //modelBuilder.Entity<OrderDetail>()
-            //    .HasOne(e => e.Order)
-            //    .WithMany()
-            //    .HasForeignKey(e => e.OrderID)
-            //    .IsRequired();
-
             modelBuilder.Entity<OrderDetail>()
                 .HasOne(e => e.Product)
                 .WithMany()
@@ -62,4 +64,4 @@ namespace RayihaRestaurant.Data
 
     }
 
-}   
+}

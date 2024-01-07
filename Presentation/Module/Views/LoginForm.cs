@@ -1,21 +1,25 @@
 ﻿
-using Rayiha.Presentation.Cashier;
+using RayihaRestaurant.Core.Models;
 using RayihaRestaurant.Core.Socket;
-using RayihaRestaurant.Presentation.Main;
-using RayihaRestaurant.Presentation.Module.Views;
-using RayihaRestaurant.Presentation.Waiter;
-using System.Runtime.InteropServices;
+using RayihaRestaurant.Data;
+using RayihaRestaurant.Data.Service;
+using RayihaRestaurant.Presentation.Module;
 
 namespace Rayiha.Presentation.Waiter
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : BaseForm
     {
+        
         bool mouseDown;
         private readonly SocketClient _socketClient;
         private readonly ClientType _clientType;
+        private readonly AuthService _service;
+        private User _user;
         public LoginForm()
         {
+            _service = new AuthService(new DatabaseContext());
             InitializeComponent();
+            MySize = new Size(245,378);
             this.AcceptButton = btnLogin;
             CheckForIllegalCrossThreadCalls = false;
             _socketClient = new SocketClient();
@@ -89,28 +93,26 @@ namespace Rayiha.Presentation.Waiter
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
+            _user = _service.AuthenticateUser(username, password);
 
-            // Kullanıcıyı bul
-            User user = DummyData.users.FirstOrDefault(u => u.name == username && u.password == password);
-
-            if (user != null)
+            if (_user != null)
             {
                 MessageBox.Show("Giriş Yapıldı");
-
-                if (user.type == "waiter")
+                switch (_user.Type)
                 {
-                    this.Hide();
-                    //TablesForm tf = new TablesForm();
-                    //tf.Show();
+                    case UserType.Waiter:
+                        MessageBox.Show(UserType.Waiter.ToString());
+                        break;
+                    case UserType.Cashier:
+                        MessageBox.Show("Cashier");
+                        break;
+                    case UserType.Chef:
+                        MessageBox.Show("Kitchen");
+                        break;
+                    default:
+                        MessageBox.Show("Bilinmeyen Kullanıcı Türü");
+                        break;
                 }
-                else if (user.type == "cashier")
-                {
-                    this.Hide();
-                    CashierForm cashierForm = new CashierForm();
-                    cashierForm.Show();
-                }
-                // Diğer kullanıcı tiplerine göre gerekli form açılımlarını buraya ekle
-
             }
             else
             {

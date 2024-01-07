@@ -8,6 +8,13 @@ namespace RayihaRestaurant.Core.Models
         public int ID { get; init; }
         public string? Name { get; init; }
         public string? Password { get; init; }
-        public string? Type { get; init; }  
+        public UserType? Type { get; init; }  
+    }
+
+    public enum UserType
+    {
+        Waiter,
+        Cashier,
+        Chef,
     }
 }

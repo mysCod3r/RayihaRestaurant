@@ -10,6 +10,11 @@ namespace RayihaRestaurant.Data.Service
         {
             _context = context;
         }
+        public User AuthenticateUser(string username, string password)
+        {
+            User user = _context.Users.FirstOrDefault(u => u.Name == username && u.Password == password);
+            return user;
+        }
     }
 
 }
