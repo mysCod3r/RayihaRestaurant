@@ -109,9 +109,10 @@ namespace RayihaRestaurant.Presentation.Waiter
                 orderItems.Add(item.orderItem);
             }
             _service.AddNewOrder(tableId, orderItems);
+            _service.UpdateTableStatusToUnavailable(tableId);
             MessageModel msg = new MessageModel { sender = ClientType, message = "Sipariş mutfağa iletildi" };
             _socketClient.SendMessage(msg);
-            //MessageBox.Show(msg.message);
+            MessageBox.Show(msg.message);
         }
         
         private void _tablesButton(object sender, EventArgs e) => Hide();

@@ -39,7 +39,7 @@ namespace RayihaRestaurant.Data.Service
             {
                 UserID = 1,
                 TableID = tableId,
-                OrderStatus = OrderStatus.Pending.ToString(),
+                OrderStatus = OrderStatus.Pending,
                 IsPaid = false,
                 OrderDetails = orderDetails,
                 TotalPrice = totalPrice,
@@ -72,7 +72,15 @@ namespace RayihaRestaurant.Data.Service
 
             return categories;
         }
-        
+
+        public void UpdateTableStatusToUnavailable(int tableId)
+        {
+            var table = _context.Tables.Where(p => p.ID == tableId).FirstOrDefault();
+            table.TableStatus = false;
+
+            _context.Update(table);
+            _context.SaveChanges();
+        }
     }
 
 

@@ -12,16 +12,16 @@ namespace RayihaRestaurant.Core.Models
         public int? TableID { get; init; }
         public Table? Table { get; init; }
         [Column("OrderStatus")]
-        public string? OrderStatus { get; set; }
+        public OrderStatus? OrderStatus { get; set; }
         public bool? IsPaid { get; set; }
         public List<OrderDetail> OrderDetails { get; init;} = new List<OrderDetail>();
     }
 
-    enum OrderStatus
+    public enum OrderStatus
     {
-        InProgress, //0
-        Completed, //1
-        Pending, //2
+        Pending,
+        InProgress,
+        Completed,
     }
 }
 
