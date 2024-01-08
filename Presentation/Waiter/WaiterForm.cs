@@ -39,8 +39,8 @@ namespace RayihaRestaurant.Presentation.Waiter
         {
             btnTables.BackColor = ColorTranslator.FromHtml("#00932c");
             btnTables.ForeColor = Color.White;
-            string? tableWhite = PicturesEnumExtension.PictureConverter((int)Pictures.Table_white);
-            btnTables.Image = Image.FromFile(tableWhite ?? "");
+            Bitmap? tableWhite = PicturesEnumExtension.PictureConverter((int)Pictures.Table_white);
+            btnTables.Image = tableWhite;
             btnTables.ImageAlign = ContentAlignment.MiddleLeft;
         }
 
@@ -48,8 +48,8 @@ namespace RayihaRestaurant.Presentation.Waiter
         {
             btnTables.BackColor = Color.White;
             btnTables.ForeColor = Color.Black;
-            string? table = PicturesEnumExtension.PictureConverter((int)Pictures.Table);
-            btnTables.Image = Image.FromFile(table ?? "");
+            Bitmap? table = PicturesEnumExtension.PictureConverter((int)Pictures.Table);
+            btnTables.Image = table;
             btnTables.ImageAlign = ContentAlignment.MiddleLeft;
         }
 
@@ -57,8 +57,8 @@ namespace RayihaRestaurant.Presentation.Waiter
         {
             btnLogout.BackColor = ColorTranslator.FromHtml("#00932c");
             btnLogout.ForeColor = Color.White;
-            string? img = PicturesEnumExtension.PictureConverter((int)Pictures.Logout_white);
-            btnLogout.Image = Image.FromFile(img ?? "");
+            Bitmap? img = PicturesEnumExtension.PictureConverter((int)Pictures.Logout_white);
+            btnLogout.Image = img;
             btnTables.ImageAlign = ContentAlignment.MiddleLeft;
         }
 
@@ -66,8 +66,8 @@ namespace RayihaRestaurant.Presentation.Waiter
         {
             btnLogout.BackColor = Color.White;
             btnLogout.ForeColor = Color.Black;
-            string? img = PicturesEnumExtension.PictureConverter((int)Pictures.Logout);
-            btnLogout.Image = Image.FromFile(img ?? "");
+            Bitmap? img = PicturesEnumExtension.PictureConverter((int)Pictures.Logout);
+            btnLogout.Image = img;
             btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
         }
 

@@ -24,8 +24,8 @@ namespace RayihaRestaurant.Presentation.Components
             _clientType = clientType;
             Text = _tableId.ToString();
             Click += (_, __) => _openForm();
-            string? img = PicturesEnumExtension.PictureConverter((int)Pictures.Restaurant_table);
-            BackgroundImage = Image.FromFile(img ?? "");
+            Bitmap? img = PicturesEnumExtension.PictureConverter((int)Pictures.Restaurant_table);
+            BackgroundImage = img;
             AutoSize = true;
             BackColor = Color.Transparent;
             BackgroundImageLayout = ImageLayout.Stretch;

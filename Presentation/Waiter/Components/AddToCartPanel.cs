@@ -72,8 +72,8 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
         {
             _plusButton.BackColor = Color.Transparent;
             _plusButton.BackgroundColor = Color.Transparent;
-            string? imgPlus = PicturesEnumExtension.PictureConverter((int)Pictures.Plus);
-            _plusButton.BackgroundImage = Image.FromFile(imgPlus ?? "");
+            Bitmap? imgPlus = PicturesEnumExtension.PictureConverter((int)Pictures.Plus);
+            _plusButton.BackgroundImage = imgPlus;
             _plusButton.BackgroundImageLayout = ImageLayout.Center;
             _plusButton.BorderColor = Color.PaleVioletRed;
             _plusButton.BorderRadius = 20;
@@ -95,8 +95,8 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
         {
             _minusButton.BackColor = Color.Transparent;
             _minusButton.BackgroundColor = Color.Transparent;
-            string? imgMinus = PicturesEnumExtension.PictureConverter((int)Pictures.Minus);
-            _minusButton.BackgroundImage = Image.FromFile(imgMinus ?? "");
+            Bitmap? imgMinus = PicturesEnumExtension.PictureConverter((int)Pictures.Minus);
+            _minusButton.BackgroundImage = imgMinus;
             _minusButton.BackgroundImageLayout = ImageLayout.Center;
             _minusButton.BorderColor = Color.PaleVioletRed;
             _minusButton.BorderRadius = 20;
