@@ -112,7 +112,7 @@ namespace RayihaRestaurant.Presentation.Waiter
             _service.UpdateTableStatusToUnavailable(_tableId);
             MessageModel msg = new MessageModel { sender = ClientType, message = "Sipariş mutfağa iletildi" };
             _socketClient.SendMessage(msg);
-            MessageBox.Show(msg.message);
+            // MessageBox.Show(msg.message);
         }
         
         private void _tablesButton(object sender, EventArgs e) => Hide();
