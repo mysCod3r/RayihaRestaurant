@@ -13,16 +13,15 @@ namespace RayihaRestaurant.Presentation.Module.Views
         public override Size WindowSize => new Size(650, 510);
         public override string WindowPanelName => "Masalar";
         private List<Table> _tables;
-        private ClientType _clientType;
-        private SocketServer _socketServer;
         private readonly CashierService _service;
+        private BaseForm _form;
 
-        public TablesForm(ClientType clientType, SocketServer socketServer)
+
+        public TablesForm(BaseForm form)
         {
             _service = new CashierService(new DatabaseContext());
-            _socketServer = socketServer;
-            _clientType = clientType;
             _tables = _service.GetTables();
+            _form = form;
             InitializeComponent();
             CreateTablePanels();
         }
@@ -30,10 +29,13 @@ namespace RayihaRestaurant.Presentation.Module.Views
         {
             foreach (var item in _tables)
             {
-                CustomButton tableButton = new TableButton(item.ID, clientType: _clientType, socketServer: _socketServer);
+                CustomButton tableButton = new TableButton(form: _form, tableId: item.ID);
                 flpTables.Controls.Add(tableButton);
-
             }        
         }
+
+        public override void Open() => Show();
+
+        public override void SetTable(int tableId) { }
     }
 }

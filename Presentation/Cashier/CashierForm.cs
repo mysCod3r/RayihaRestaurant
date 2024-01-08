@@ -4,7 +4,6 @@ using RayihaRestaurant.Core.Socket;
 using RayihaRestaurant.Data;
 using RayihaRestaurant.Data.Service;
 using RayihaRestaurant.Presentation.Cashier.Components;
-using System.Runtime.InteropServices;
 
 
 namespace Rayiha.Presentation.Cashier
@@ -14,7 +13,7 @@ namespace Rayiha.Presentation.Cashier
         public override Size WindowSize => new Size(700, 580);
         public override string WindowPanelName => "Cashier";
         public ClientType ClientType => ClientType.Cashier;
-        public int tableId { get; set; }
+        private int _tableId;
         private List<Order>? _orders;
         private readonly SocketClient _socketClient;
         private readonly CashierService _service;
@@ -28,17 +27,21 @@ namespace Rayiha.Presentation.Cashier
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
+            if (_orders == null) return;
             _service.Checkout(_orders);
             MessageBox.Show("Ödeme Alındı.");
             Hide();
         }
 
-        public void Open()
+        public override void Open()
         {
             flowLayoutPanel1.Controls.Clear();
             _init();
             Visible = true;
         }
+
+        public override void SetTable(int tableId) => _tableId = tableId;
+
         private void _init()
         {
             _orders = _getOrders();
@@ -86,7 +89,7 @@ namespace Rayiha.Presentation.Cashier
         {
             _reInit();
         }
-        private List<Order> _getOrders() => _service.GetOrders(tableId);
+        private List<Order> _getOrders() => _service.GetOrders(_tableId);
 
     }
 }

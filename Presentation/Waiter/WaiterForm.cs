@@ -15,7 +15,7 @@ namespace RayihaRestaurant.Presentation.Waiter
         public ClientType ClientType => ClientType.Waiter;
         public override Size WindowSize => new Size(1100, 700);
         public override string WindowPanelName => "Waiter";
-        public int tableId { get; set; }
+        private int _tableId;
         private readonly WaiterService _service;
         private List<Category> _categories;
         private List<Product> _products;
@@ -108,8 +108,8 @@ namespace RayihaRestaurant.Presentation.Waiter
             {
                 orderItems.Add(item.orderItem);
             }
-            _service.AddNewOrder(tableId, orderItems);
-            _service.UpdateTableStatusToUnavailable(tableId);
+            _service.AddNewOrder(_tableId, orderItems);
+            _service.UpdateTableStatusToUnavailable(_tableId);
             MessageModel msg = new MessageModel { sender = ClientType, message = "Sipariş mutfağa iletildi" };
             _socketClient.SendMessage(msg);
             MessageBox.Show(msg.message);
@@ -117,13 +117,15 @@ namespace RayihaRestaurant.Presentation.Waiter
         
         private void _tablesButton(object sender, EventArgs e) => Hide();
 
-        public void Open()
+        public override void Open()
         {
             flpProducts.Controls.Clear();
             flpCart.Controls.Clear();
-            lblTableNo.Text = "Table No: " + tableId.ToString();
+            lblTableNo.Text = "Table No: " + _tableId.ToString();
             Visible = true;
         }
+        
+        public override void SetTable(int tableId) => _tableId = tableId;
 
         public void HandleMessageFromSocket(MessageModel message) { }
     }

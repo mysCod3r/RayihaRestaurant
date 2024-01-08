@@ -1,27 +1,18 @@
-﻿using Rayiha.Presentation.Cashier;
+﻿using RayihaRestaurant.Core.Base;
 using RayihaRestaurant.Core.Enums;
 using RayihaRestaurant.Core.Extensions;
 using RayihaRestaurant.Core.Socket;
-using RayihaRestaurant.Presentation.Waiter;
-using RayihaRestaurant.Properties;
 
 namespace RayihaRestaurant.Presentation.Components
 {
     internal class TableButton : CustomButton
     {
-        private SocketServer _socketServer;
-        private WaiterForm _waiterForm = new WaiterForm();
-        private CashierForm _cashierForm = new CashierForm();
         private int _tableId;
-        private ClientType _clientType;
-
-        public TableButton(int tableId, ClientType clientType, SocketServer socketServer)
+        private BaseForm _form;
+        public TableButton(int tableId, BaseForm form)
         {
-
-            _socketServer = socketServer;
-            _registerServer();
+            _form = form;
             _tableId = tableId;
-            _clientType = clientType;
             Text = _tableId.ToString();
             Click += (_, __) => _openForm();
             string? img = PicturesEnumExtension.PictureConverter((int)Pictures.Restaurant_table);
@@ -37,29 +28,12 @@ namespace RayihaRestaurant.Presentation.Components
             Padding = new Padding(5);
             TabIndex = 2;
             UseVisualStyleBackColor = false;
-
-            Click += (_, __) => _openForm();
-        }
-
-        private void _registerServer()
-        {
-            _socketServer.AddMessageHandler(_waiterForm);
-            _socketServer.AddMessageHandler(_cashierForm);
         }
 
         private void _openForm()
         {
-            switch (_clientType)
-            {
-                case ClientType.Waiter:
-                    _waiterForm.tableId = _tableId;
-                    _waiterForm.Open();
-                    break;
-                case ClientType.Cashier:
-                    _cashierForm.tableId = _tableId;
-                    _cashierForm.Open(); break;
-                default: return;
-            }
+            _form.SetTable(_tableId);
+            _form.Open();
         }
     }
 }
