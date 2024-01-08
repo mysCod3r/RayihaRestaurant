@@ -118,17 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAARNJREFUSEvt
-        leERgyAMhR2hI3SEjtSN6gZ1A92k3aTdgL4HqRciIuD5z+8u50HyEGKC3ckunHM97CbDKqiDPWSYRl7w
-        5y7TRTA+yDy9TC+BkzvR5HclIE5vjuQzgQC9IzLCLuKO4Lz4NWUZQKDd2Qt2FbeHY5nXrKcpBQRT0M18
-        YD4NfMpYM3lhDRAxFW8vj3nKU8O4ZEo3gZAp+XKVDPRHqawGC9iKszT11AIsNIT1FgwSsg8sdOxJsAC/
-        ia0iC/1t3wRCVpftA5JKHePqqwsi2yesIt0ntupGLywFAtvx7INUx9s+Kut4BNq7iyfK3V32xPm7CwG2
-        kop2xrgQPrNecXAe/z8hDIA11T51my84ydN1P8O7w/HLtxldAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="picPassword.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAQZJREFUSEvd
         lY0NgjAUhBnBERjBDXQER2AD2UBGcAPdQDeQDRxBNsAN6l17TVSQPKiJxC+5NO/eHwaEbHY459bQClrK
@@ -138,7 +128,7 @@
         amQ/KIif16kqNOrvyLIHz32BIYryuT8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="picUsername.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAASVJREFUSEvt
         lLFNw0AYhT1CRsgI2YAMQJGOAVggJVRkA6ipUtESeiToKEH0IDZIwQA/3/O9k044sdDZaVA+6dPFued3
