@@ -2,8 +2,8 @@
 using RayihaRestaurant.Core.Socket;
 using RayihaRestaurant.Data;
 using RayihaRestaurant.Data.Service;
+using RayihaRestaurant.Presentation.Cashier.Components;
 using RayihaRestaurant.Presentation.Main;
-using RayihaRestaurant.Presentation.Waiter.Components;
 using System.Runtime.InteropServices;
 
 

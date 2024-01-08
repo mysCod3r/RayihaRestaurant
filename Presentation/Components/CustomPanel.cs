@@ -1,6 +1,6 @@
 ﻿using System.Drawing.Drawing2D;
 
-namespace RayihaRestaurant.Presentation.Waiter.Components
+namespace RayihaRestaurant.Presentation.Components
 {
     internal class CustomPanel : Panel
     {
@@ -27,7 +27,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             }
             else Region = new Region(rectangleF);
         }
-        
+
         private GraphicsPath GetGraphicsPath(RectangleF rectangleF, float radius)
         {
             GraphicsPath path = new GraphicsPath();

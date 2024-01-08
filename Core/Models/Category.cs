@@ -8,7 +8,7 @@ namespace RayihaRestaurant.Core.Models
         public int ID { get; init; }
         public string? Name { get; init; }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj == null || GetType() != obj.GetType())
             {

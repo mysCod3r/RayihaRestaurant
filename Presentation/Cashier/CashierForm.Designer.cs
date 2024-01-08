@@ -1,4 +1,6 @@
-﻿namespace Rayiha.Presentation.Cashier
+﻿using RayihaRestaurant.Presentation.Components;
+
+namespace Rayiha.Presentation.Cashier
 {
     partial class CashierForm
     {
@@ -30,13 +32,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashierForm));
             btnClose = new Button();
-            btnCheckout = new RayihaRestaurant.Presentation.Waiter.Components.CustomButton();
+            btnCheckout = new RayihaRestaurant.Presentation.Components.CustomButton();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
             lblAmount = new Label();
             lblQuantity = new Label();
             lblProductName = new Label();
-            customPanel1 = new RayihaRestaurant.Presentation.Waiter.Components.CustomPanel();
+            customPanel1 = new RayihaRestaurant.Presentation.Components.CustomPanel();
             panel2 = new Panel();
             lblTotalAmount = new Label();
             panel1.SuspendLayout();
@@ -187,13 +189,13 @@
         #endregion
 
         private Button btnClose;
-        private RayihaRestaurant.Presentation.Waiter.Components.CustomButton btnCheckout;
+        private CustomButton btnCheckout;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel1;
         private Label lblProductName;
         private Label lblAmount;
         private Label lblQuantity;
-        private RayihaRestaurant.Presentation.Waiter.Components.CustomPanel customPanel1;
+        private CustomPanel customPanel1;
         private Panel panel2;
         private Label lblTotalAmount;
     }

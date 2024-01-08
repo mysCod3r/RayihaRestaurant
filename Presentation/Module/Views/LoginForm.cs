@@ -3,13 +3,11 @@ using RayihaRestaurant.Core.Models;
 using RayihaRestaurant.Core.Socket;
 using RayihaRestaurant.Data;
 using RayihaRestaurant.Data.Service;
-using RayihaRestaurant.Presentation.Module;
 
 namespace Rayiha.Presentation.Waiter
 {
-    public partial class LoginForm : BaseForm
+    public partial class LoginForm : Form
     {
-        
         bool mouseDown;
         private readonly SocketClient _socketClient;
         private readonly ClientType _clientType;
@@ -19,9 +17,6 @@ namespace Rayiha.Presentation.Waiter
         {
             _service = new AuthService(new DatabaseContext());
             InitializeComponent();
-            MySize = new Size(245,378);
-            this.AcceptButton = btnLogin;
-            CheckForIllegalCrossThreadCalls = false;
             _socketClient = new SocketClient();
             _clientType = ClientType.Waiter;
         }

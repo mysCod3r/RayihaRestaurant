@@ -1,4 +1,5 @@
 ﻿using RayihaRestaurant.Core.Models;
+using RayihaRestaurant.Presentation.Components;
 
 namespace RayihaRestaurant.Presentation.Waiter.Components
 {
@@ -24,7 +25,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             Controls.Add(_lblProductName);
             ForeColor = Color.White;
             Location = new Point(3, 3);
-            Size = new Size(467, 86);
+            Size = new Size(300, 64);
             TabIndex = 1;
             BorderStyle = BorderStyle.FixedSingle;
             Padding = new Padding(10, 0, 0, 0);
@@ -45,9 +46,9 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             _lblProductName.AutoSize = true;
             _lblProductName.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             _lblProductName.ForeColor = Color.Black;
-            _lblProductName.Location = new Point(127, 20);
+            _lblProductName.Location = new Point(8, 20);
             _lblProductName.Name = orderItem.Product?.Name;
-            _lblProductName.Size = new Size(109, 25);
+            _lblProductName.Size = new Size(64, 25);
             _lblProductName.TabIndex = 0;
             _lblProductName.Text = orderItem.Product?.Name;
         }
@@ -58,21 +59,21 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             _lblPrice.BackColor = Color.Transparent;
             _lblPrice.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             _lblPrice.ForeColor = Color.FromArgb(0, 147, 44);
-            _lblPrice.Location = new Point(130, 45);
-            _lblPrice.Size = new Size(43, 19);
+            _lblPrice.Location = new Point(8, 45);
+            _lblPrice.Size = new Size(8, 19);
             _lblPrice.TabIndex = 6;
-            _lblPrice.Text = orderItem.Product?.Price.ToString();
+            _lblPrice.Text = orderItem.Product?.Price?.ToString("0.00");
         }
 
         void _writeQuantity()
         {
             _lblQuantity.AutoSize = true;
-            _lblQuantity.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _lblQuantity.Font = new Font("Segoe UI", 8.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             _lblQuantity.ForeColor = Color.Gray;
-            _lblQuantity.Location = new Point(175, 42);
-            _lblQuantity.Size = new Size(20, 23);
+            _lblQuantity.Location = new Point(_lblPrice.Location.X + 32, 45);
+            _lblQuantity.Size = new Size(16, 23);
             _lblQuantity.TabIndex = 5;
-            _lblQuantity.Text = orderItem.Quantity.ToString();
+            _lblQuantity.Text = " x " + orderItem.Quantity.ToString();
         }
 
         void _writeTotal()
@@ -81,8 +82,8 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             _lblTotal.BackColor = Color.Transparent;
             _lblTotal.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             _lblTotal.ForeColor = Color.FromArgb(0, 147, 44);
-            _lblTotal.Location = new Point(385, 49);
-            _lblTotal.Size = new Size(42, 19);
+            _lblTotal.Location = new Point(Width - 64, 49);
+            _lblTotal.Size = new Size(32, 19);
             _lblTotal.TabIndex = 2;
             double? total = orderItem.Product?.Price * orderItem.Quantity;
             _lblTotal.Text = total.ToString();
@@ -90,9 +91,9 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
 
         public void refreshTexts()
         {
-            _lblQuantity.Text = orderItem.Quantity.ToString();
+            _lblQuantity.Text = " x " + orderItem.Quantity.ToString("0.00");
             double? total = orderItem.Product?.Price * orderItem.Quantity;
-            _lblTotal.Text = total.ToString();
+            _lblTotal.Text = total?.ToString("0.00");
         }
 
         public override bool Equals(object? obj)

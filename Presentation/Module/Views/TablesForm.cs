@@ -2,10 +2,10 @@
 using RayihaRestaurant.Core.Socket;
 using RayihaRestaurant.Data.Service;
 using RayihaRestaurant.Data;
-using RayihaRestaurant.Presentation.Waiter.Components;
 using System.Runtime.InteropServices;
 using RayihaRestaurant.Core.Enums;
 using RayihaRestaurant.Core.Extensions;
+using RayihaRestaurant.Presentation.Components;
 
 
 namespace RayihaRestaurant.Presentation.Module.Views

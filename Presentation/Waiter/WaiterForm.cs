@@ -1,0 +1,129 @@
+﻿using RayihaRestaurant.Core.Base;
+using RayihaRestaurant.Core.Enums;
+using RayihaRestaurant.Core.Extensions;
+using RayihaRestaurant.Core.Models;
+using RayihaRestaurant.Core.Socket;
+using RayihaRestaurant.Data;
+using RayihaRestaurant.Data.Service;
+using RayihaRestaurant.Presentation.Waiter.Components;
+using System.Data;
+
+namespace RayihaRestaurant.Presentation.Waiter
+{
+    public partial class WaiterForm : BaseForm, IMessageHandler
+    {
+        public ClientType ClientType => ClientType.Waiter;
+        public override Size WindowSize => new Size(1100, 600);
+        public override string WindowPanelName => "Waiter";
+        public int tableId { get; set; }
+        private readonly WaiterService _service;
+        private List<Category> _categories;
+        private List<Product> _products;
+        private readonly SocketClient _socketClient;
+       
+        public WaiterForm()
+        {
+            _socketClient = new SocketClient();
+            _service = new WaiterService(new DatabaseContext());
+            _categories = _service.GetCategories();
+            _products = _service.GetProducts();
+            InitializeComponent();
+
+            foreach (Category category in _categories)
+            {
+                GetCategoryPanel(category);
+            }
+        }
+
+        private void customButtonMenu1_MouseEnter(object sender, EventArgs e)
+        {
+            btnTables.BackColor = ColorTranslator.FromHtml("#00932c");
+            btnTables.ForeColor = Color.White;
+            string? tableWhite = PicturesEnumExtension.PictureConverter((int)Pictures.Table_white);
+            btnTables.Image = Image.FromFile(tableWhite ?? "");
+            btnTables.ImageAlign = ContentAlignment.MiddleLeft;
+        }
+
+        private void customButtonMenu1_MouseLeave(object sender, EventArgs e)
+        {
+            btnTables.BackColor = Color.White;
+            btnTables.ForeColor = Color.Black;
+            string? table = PicturesEnumExtension.PictureConverter((int)Pictures.Table);
+            btnTables.Image = Image.FromFile(table ?? "");
+            btnTables.ImageAlign = ContentAlignment.MiddleLeft;
+        }
+
+        private void _btnLogoutMouseEnter(object sender, EventArgs e)
+        {
+            btnLogout.BackColor = ColorTranslator.FromHtml("#00932c");
+            btnLogout.ForeColor = Color.White;
+            string? img = PicturesEnumExtension.PictureConverter((int)Pictures.Logout_white);
+            btnLogout.Image = Image.FromFile(img ?? "");
+            btnTables.ImageAlign = ContentAlignment.MiddleLeft;
+        }
+
+        private void _btnLogoutMouseLeave(object sender, EventArgs e)
+        {
+            btnLogout.BackColor = Color.White;
+            btnLogout.ForeColor = Color.Black;
+            string? img = PicturesEnumExtension.PictureConverter((int)Pictures.Logout);
+            btnLogout.Image = Image.FromFile(img ?? "");
+            btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
+        }
+
+        private void GetCategoryPanel(Category category)
+        {
+            CategoryPanelMenu menu = new CategoryPanelMenu(category, customPanel_Click);
+            flpCategories.Controls.Add(menu);
+        }
+
+
+        private void CopyProductPanel(Product product)
+        {
+
+            ProductPanelMenu productPanelMenu = new ProductPanelMenu(product, flpCart);
+            flpProducts.Controls.Add(productPanelMenu);
+        }
+
+        private void customPanel_Click(object? sender, EventArgs e)
+        {
+            flpProducts.Controls.Clear();
+
+            if (sender is CategoryPanelMenu clickedPanel)
+            {
+                Category category = clickedPanel.category;
+
+                IEnumerable<Product> productsInCategory = _products.Where(product => product.Category == category);
+                foreach (Product item in productsInCategory)
+                {
+                    CopyProductPanel(item);
+                }
+            }
+        }
+
+        private void customButtonMenu3_Click(object sender, EventArgs e)
+        {
+            List<OrderItem> orderItems = new List<OrderItem>();
+            foreach (CartItem item in flpCart.Controls)
+            {
+                orderItems.Add(item.orderItem);
+            }
+            _service.AddNewOrder(tableId, orderItems);
+            MessageModel msg = new MessageModel { sender = ClientType, message = "Sipariş mutfağa iletildi" };
+            _socketClient.SendMessage(msg);
+            //MessageBox.Show(msg.message);
+        }
+        
+        private void _tablesButton(object sender, EventArgs e) => Hide();
+
+        public void Open()
+        {
+            flpProducts.Controls.Clear();
+            flpCart.Controls.Clear();
+            lblTableNo.Text = "Table No: " + tableId.ToString();
+            Visible = true;
+        }
+
+        public void HandleMessageFromSocket(MessageModel message) { }
+    }
+}

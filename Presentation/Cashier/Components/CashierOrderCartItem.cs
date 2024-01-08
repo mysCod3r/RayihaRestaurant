@@ -1,6 +1,7 @@
 ﻿using RayihaRestaurant.Core.Models;
+using RayihaRestaurant.Presentation.Components;
 
-namespace RayihaRestaurant.Presentation.Waiter.Components
+namespace RayihaRestaurant.Presentation.Cashier.Components
 {
     internal class CashierOrderCartItem : CustomPanel
     {
@@ -12,7 +13,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
         {
             this.orderDetail = orderDetail;
             BorderRadius = 50;
-            Padding = new Padding(0,0,50,0);
+            Padding = new Padding(0, 0, 50, 0);
             Location = new Point(34, 51);
             Size = new Size(370, 50);
             TabIndex = 0;
@@ -20,7 +21,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             _lblAmount = new Label();
             _lblQuantity = new Label();
             _init();
-            
+
         }
 
         private void _init()
@@ -36,7 +37,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             _lblProdcutName.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             _lblProdcutName.ForeColor = Color.Black;
             _lblProdcutName.Location = new Point(19, 23);
-            _lblProdcutName.Size = new Size(130,10);
+            _lblProdcutName.Size = new Size(130, 10);
             _lblProdcutName.TabIndex = 0;
             _lblProdcutName.Margin = new Padding(0, 0, 0, 10);
             _lblProdcutName.Text = orderDetail.Product?.Name;

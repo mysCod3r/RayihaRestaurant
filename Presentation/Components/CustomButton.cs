@@ -1,7 +1,7 @@
 ﻿using System.Drawing.Drawing2D;
 using System.ComponentModel;
 
-namespace RayihaRestaurant.Presentation.Waiter.Components
+namespace RayihaRestaurant.Presentation.Components
 {
     public class CustomButton : Button
     {
