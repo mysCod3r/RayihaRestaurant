@@ -2,7 +2,7 @@
 {
     public enum Pictures
     {
-        Close = -11,
+        Close = -12,
         Dinner,
         Logout,
         Logout_white,
@@ -13,7 +13,8 @@
         Table_white,
         User,
         Backgorund,
-        Restaurant_table,
+        Restaurant_table_on,
+        Restaurant_table_off,
         //
         EzogelinCorbasi,
         MercimekCorbasi,
