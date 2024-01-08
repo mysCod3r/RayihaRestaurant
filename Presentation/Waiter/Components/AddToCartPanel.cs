@@ -27,7 +27,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             BackColor = Color.FromArgb(204, 233, 213);
             BorderRadius = 18;
             ForeColor = Color.White;
-            Location = new Point(19, 209);
+            Location = new Point(12, 200);
             Size = new Size(258, 33);
             TabIndex = 2;
             Click += (_, __) => _increase();
@@ -47,10 +47,10 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             _lblAddToDish.AutoSize = true;
             _lblAddToDish.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             _lblAddToDish.ForeColor = Color.Black;
-            _lblAddToDish.Location = new Point(73, 8);
+            _lblAddToDish.Location = new Point(90, 8);
             _lblAddToDish.Size = new Size(87, 19);
             _lblAddToDish.TabIndex = 0;
-            _lblAddToDish.Text = "Add to Dish";
+            _lblAddToDish.Text = "Sepete Ekle";
             _lblAddToDish.TextAlign = ContentAlignment.MiddleRight;
             _lblAddToDish.Click += (_, __) => _increase();
             Controls.Add(_lblAddToDish);
@@ -58,7 +58,6 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
 
         void _labelCount()
         {
-            _lblCount.AutoSize = true;
             _lblCount.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             _lblCount.ForeColor = Color.Black;
             _lblCount.Location = new Point(112, 5);
@@ -82,8 +81,8 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             _plusButton.FlatAppearance.BorderSize = 0;
             _plusButton.FlatStyle = FlatStyle.Flat;
             _plusButton.ForeColor = Color.White;
-            _plusButton.Location = new Point(166, -11);
-            _plusButton.Size = new Size(50, 50);
+            _plusButton.Location = new Point(180, 1);
+            _plusButton.Size = new Size(30, 30);
             _plusButton.TabIndex = 3;
             _plusButton.TextColor = Color.White;
             _plusButton.UseVisualStyleBackColor = false;
@@ -105,8 +104,8 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             _minusButton.FlatAppearance.BorderSize = 0;
             _minusButton.FlatStyle = FlatStyle.Flat;
             _minusButton.ForeColor = Color.White;
-            _minusButton.Location = new Point(3, -13);
-            _minusButton.Size = new Size(50, 50);
+            _minusButton.Location = new Point(40, 1);
+            _minusButton.Size = new Size(30, 30);
             _minusButton.TabIndex = 3;
             _minusButton.TextColor = Color.White;
             _minusButton.UseVisualStyleBackColor = false;

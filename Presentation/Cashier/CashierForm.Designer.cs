@@ -30,36 +30,19 @@ namespace Rayiha.Presentation.Cashier
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashierForm));
-            btnClose = new Button();
-            btnCheckout = new RayihaRestaurant.Presentation.Components.CustomButton();
+            btnCheckout = new CustomButton();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
             lblAmount = new Label();
             lblQuantity = new Label();
             lblProductName = new Label();
-            customPanel1 = new RayihaRestaurant.Presentation.Components.CustomPanel();
+            customPanel1 = new CustomPanel();
             panel2 = new Panel();
             lblTotalAmount = new Label();
             panel1.SuspendLayout();
             customPanel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // btnClose
-            // 
-            btnClose.AutoSize = true;
-            btnClose.BackColor = Color.Transparent;
-            btnClose.BackgroundImage = (Image)resources.GetObject("btnClose.BackgroundImage");
-            btnClose.BackgroundImageLayout = ImageLayout.Stretch;
-            btnClose.FlatAppearance.BorderSize = 0;
-            btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.Location = new Point(757, 12);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(59, 47);
-            btnClose.TabIndex = 2;
-            btnClose.UseVisualStyleBackColor = false;
-            btnClose.Click += btnClose_Click;
             // 
             // btnCheckout
             // 
@@ -72,9 +55,10 @@ namespace Rayiha.Presentation.Cashier
             btnCheckout.FlatStyle = FlatStyle.Flat;
             btnCheckout.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCheckout.ForeColor = Color.White;
-            btnCheckout.Location = new Point(574, 672);
+            btnCheckout.Location = new Point(502, 504);
+            btnCheckout.Margin = new Padding(3, 2, 3, 2);
             btnCheckout.Name = "btnCheckout";
-            btnCheckout.Size = new Size(199, 54);
+            btnCheckout.Size = new Size(174, 40);
             btnCheckout.TabIndex = 4;
             btnCheckout.Text = "Hesabı Al";
             btnCheckout.TextColor = Color.White;
@@ -86,10 +70,11 @@ namespace Rayiha.Presentation.Cashier
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = Color.White;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(0, 85);
+            flowLayoutPanel1.Location = new Point(0, 64);
+            flowLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Padding = new Padding(0, 0, 10, 0);
-            flowLayoutPanel1.Size = new Size(398, 512);
+            flowLayoutPanel1.Padding = new Padding(0, 0, 9, 0);
+            flowLayoutPanel1.Size = new Size(348, 384);
             flowLayoutPanel1.TabIndex = 5;
             flowLayoutPanel1.WrapContents = false;
             // 
@@ -99,18 +84,19 @@ namespace Rayiha.Presentation.Cashier
             panel1.Controls.Add(lblAmount);
             panel1.Controls.Add(lblQuantity);
             panel1.Controls.Add(lblProductName);
-            panel1.Location = new Point(3, 14);
+            panel1.Location = new Point(3, 10);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(507, 74);
+            panel1.Size = new Size(444, 56);
             panel1.TabIndex = 0;
             // 
             // lblAmount
             // 
             lblAmount.AutoSize = true;
             lblAmount.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAmount.Location = new Point(310, 23);
+            lblAmount.Location = new Point(271, 17);
             lblAmount.Name = "lblAmount";
-            lblAmount.Size = new Size(75, 23);
+            lblAmount.Size = new Size(62, 19);
             lblAmount.TabIndex = 2;
             lblAmount.Text = "Amount";
             // 
@@ -119,9 +105,9 @@ namespace Rayiha.Presentation.Cashier
             lblQuantity.AutoSize = true;
             lblQuantity.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblQuantity.ForeColor = Color.Gray;
-            lblQuantity.Location = new Point(210, 23);
+            lblQuantity.Location = new Point(184, 17);
             lblQuantity.Name = "lblQuantity";
-            lblQuantity.Size = new Size(80, 23);
+            lblQuantity.Size = new Size(66, 19);
             lblQuantity.TabIndex = 1;
             lblQuantity.Text = "Quantity";
             // 
@@ -130,9 +116,9 @@ namespace Rayiha.Presentation.Cashier
             lblProductName.AutoSize = true;
             lblProductName.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblProductName.ForeColor = Color.FromArgb(0, 147, 44);
-            lblProductName.Location = new Point(19, 23);
+            lblProductName.Location = new Point(17, 17);
             lblProductName.Name = "lblProductName";
-            lblProductName.Size = new Size(125, 23);
+            lblProductName.Size = new Size(106, 19);
             lblProductName.TabIndex = 0;
             lblProductName.Text = "Product Name";
             // 
@@ -143,38 +129,37 @@ namespace Rayiha.Presentation.Cashier
             customPanel1.Controls.Add(panel2);
             customPanel1.Controls.Add(flowLayoutPanel1);
             customPanel1.Controls.Add(panel1);
-            customPanel1.Location = new Point(155, 62);
+            customPanel1.Location = new Point(136, 46);
+            customPanel1.Margin = new Padding(3, 2, 3, 2);
             customPanel1.Name = "customPanel1";
-            customPanel1.Size = new Size(401, 664);
+            customPanel1.Size = new Size(351, 498);
             customPanel1.TabIndex = 6;
             // 
             // panel2
             // 
             panel2.Controls.Add(lblTotalAmount);
-            panel2.Location = new Point(3, 594);
+            panel2.Location = new Point(3, 446);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(504, 67);
+            panel2.Size = new Size(441, 50);
             panel2.TabIndex = 6;
             // 
             // lblTotalAmount
             // 
             lblTotalAmount.AutoSize = true;
             lblTotalAmount.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblTotalAmount.Location = new Point(171, 25);
+            lblTotalAmount.Location = new Point(150, 19);
             lblTotalAmount.Name = "lblTotalAmount";
-            lblTotalAmount.Size = new Size(119, 23);
+            lblTotalAmount.Size = new Size(98, 19);
             lblTotalAmount.TabIndex = 0;
             lblTotalAmount.Text = "Total Amount";
             // 
             // CashierForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(828, 767);
             Controls.Add(customPanel1);
             Controls.Add(btnCheckout);
-            Controls.Add(btnClose);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "CashierForm";
             Text = "CashierForm";
             panel1.ResumeLayout(false);
@@ -183,12 +168,9 @@ namespace Rayiha.Presentation.Cashier
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Button btnClose;
         private CustomButton btnCheckout;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel1;
