@@ -16,6 +16,7 @@ namespace RayihaRestaurant.Core.Base
             lblWindowPanel.Text = WindowPanelName;
             lblWindowPanel.Size = new Size(Width, 20);
             lblWindowPanel.Location = new Point(Width / 2 - WindowPanelName.Length / 2, 0);
+            btnClose.Location = new Point(Width - btnClose.Size.Width, 30);
         }
 
 

@@ -53,9 +53,9 @@
             btnClose.Dock = DockStyle.Right;
             btnClose.FlatAppearance.BorderSize = 0;
             btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.Location = new Point(772, 0);
+            btnClose.Location = new Point(764, 0);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(28, 31);
+            btnClose.Size = new Size(36, 31);
             btnClose.TabIndex = 1;
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += _btnClose;

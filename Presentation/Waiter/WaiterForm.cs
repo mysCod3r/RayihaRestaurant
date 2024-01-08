@@ -13,7 +13,7 @@ namespace RayihaRestaurant.Presentation.Waiter
     public partial class WaiterForm : BaseForm, IMessageHandler
     {
         public ClientType ClientType => ClientType.Waiter;
-        public override Size WindowSize => new Size(1024, 768);
+        public override Size WindowSize => new Size(1100, 600);
         public override string WindowPanelName => "Waiter";
         public int tableId { get; set; }
         private readonly WaiterService _service;
@@ -37,57 +37,57 @@ namespace RayihaRestaurant.Presentation.Waiter
 
         private void customButtonMenu1_MouseEnter(object sender, EventArgs e)
         {
-            customButtonMenu1.BackColor = ColorTranslator.FromHtml("#00932c");
-            customButtonMenu1.ForeColor = Color.White;
+            btnTables.BackColor = ColorTranslator.FromHtml("#00932c");
+            btnTables.ForeColor = Color.White;
             string? tableWhite = PicturesEnumExtension.PictureConverter((int)Pictures.Table_white);
-            customButtonMenu1.Image = Image.FromFile(tableWhite ?? "");
-            customButtonMenu1.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTables.Image = Image.FromFile(tableWhite ?? "");
+            btnTables.ImageAlign = ContentAlignment.MiddleLeft;
         }
 
         private void customButtonMenu1_MouseLeave(object sender, EventArgs e)
         {
-            customButtonMenu1.BackColor = Color.White;
-            customButtonMenu1.ForeColor = Color.Black;
+            btnTables.BackColor = Color.White;
+            btnTables.ForeColor = Color.Black;
             string? table = PicturesEnumExtension.PictureConverter((int)Pictures.Table);
-            customButtonMenu1.Image = Image.FromFile(table ?? "");
-            customButtonMenu1.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTables.Image = Image.FromFile(table ?? "");
+            btnTables.ImageAlign = ContentAlignment.MiddleLeft;
         }
 
-        private void customButtonMenu2_MouseEnter(object sender, EventArgs e)
+        private void _btnLogoutMouseEnter(object sender, EventArgs e)
         {
-            customButtonMenu2.BackColor = ColorTranslator.FromHtml("#00932c");
-            customButtonMenu2.ForeColor = Color.White;
+            btnLogout.BackColor = ColorTranslator.FromHtml("#00932c");
+            btnLogout.ForeColor = Color.White;
             string? img = PicturesEnumExtension.PictureConverter((int)Pictures.Logout_white);
-            customButtonMenu2.Image = Image.FromFile(img ?? "");
-            customButtonMenu1.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLogout.Image = Image.FromFile(img ?? "");
+            btnTables.ImageAlign = ContentAlignment.MiddleLeft;
         }
 
-        private void customButtonMenu2_MouseLeave(object sender, EventArgs e)
+        private void _btnLogoutMouseLeave(object sender, EventArgs e)
         {
-            customButtonMenu2.BackColor = Color.White;
-            customButtonMenu2.ForeColor = Color.Black;
+            btnLogout.BackColor = Color.White;
+            btnLogout.ForeColor = Color.Black;
             string? img = PicturesEnumExtension.PictureConverter((int)Pictures.Logout);
-            customButtonMenu2.Image = Image.FromFile(img ?? "");
-            customButtonMenu2.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLogout.Image = Image.FromFile(img ?? "");
+            btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
         }
 
         private void GetCategoryPanel(Category category)
         {
             CategoryPanelMenu menu = new CategoryPanelMenu(category, customPanel_Click);
-            flowLayoutCategoryPanel.Controls.Add(menu);
+            flpCategories.Controls.Add(menu);
         }
 
 
         private void CopyProductPanel(Product product)
         {
 
-            ProductPanelMenu productPanelMenu = new ProductPanelMenu(product, flowLayoutPanelCart);
-            flowLayoutProductPanel.Controls.Add(productPanelMenu);
+            ProductPanelMenu productPanelMenu = new ProductPanelMenu(product, flpCart);
+            flpProducts.Controls.Add(productPanelMenu);
         }
 
         private void customPanel_Click(object? sender, EventArgs e)
         {
-            flowLayoutProductPanel.Controls.Clear();
+            flpProducts.Controls.Clear();
 
             if (sender is CategoryPanelMenu clickedPanel)
             {
@@ -104,7 +104,7 @@ namespace RayihaRestaurant.Presentation.Waiter
         private void customButtonMenu3_Click(object sender, EventArgs e)
         {
             List<OrderItem> orderItems = new List<OrderItem>();
-            foreach (CartItem item in flowLayoutPanelCart.Controls)
+            foreach (CartItem item in flpCart.Controls)
             {
                 orderItems.Add(item.orderItem);
             }
@@ -118,8 +118,8 @@ namespace RayihaRestaurant.Presentation.Waiter
 
         public void Open()
         {
-            flowLayoutProductPanel.Controls.Clear();
-            flowLayoutPanelCart.Controls.Clear();
+            flpProducts.Controls.Clear();
+            flpCart.Controls.Clear();
             lblTableNo.Text = "Table No: " + tableId.ToString();
             Visible = true;
         }
