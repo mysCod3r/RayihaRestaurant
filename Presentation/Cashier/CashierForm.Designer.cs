@@ -69,14 +69,12 @@ namespace Rayiha.Presentation.Cashier
             // 
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = Color.White;
-            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(0, 64);
             flowLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Padding = new Padding(0, 0, 9, 0);
-            flowLayoutPanel1.Size = new Size(348, 384);
+            flowLayoutPanel1.Size = new Size(400, 384);
             flowLayoutPanel1.TabIndex = 5;
-            flowLayoutPanel1.WrapContents = false;
             // 
             // panel1
             // 
@@ -87,7 +85,7 @@ namespace Rayiha.Presentation.Cashier
             panel1.Location = new Point(3, 10);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(444, 56);
+            panel1.Size = new Size(380, 56);
             panel1.TabIndex = 0;
             // 
             // lblAmount

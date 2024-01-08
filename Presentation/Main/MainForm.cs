@@ -21,5 +21,6 @@ namespace RayihaRestaurant
             new LoginForm(_socketServer, this).Show();
         }
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e) => _socketServer.Dispose();
+
     }
 }

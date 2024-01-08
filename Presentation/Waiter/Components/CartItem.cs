@@ -37,14 +37,14 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
 
         void _init()
         {
-            _writeProductName(orderItem.Product);
+            _writeProductName();
             _writePrice();
             _writeQuantity();
             _writeTotal();
-            _writeImage(orderItem.Product);
+            _writeImage();
 
         }
-        private void _writeImage(Product product)
+        private void _writeImage()
         {
             PictureBox pbProduct = new PictureBox();
             pbProduct.Location = new Point(10, 14);
@@ -57,7 +57,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             Controls.Add(pbProduct);
         }
 
-        void _writeProductName(Product product)
+        void _writeProductName()
         {
             _lblProductName.AutoSize = true;
             _lblProductName.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);

@@ -8,7 +8,7 @@ namespace RayihaRestaurant.Core.Extensions
         private static readonly Dictionary<CategoryPictures, Bitmap> turMappings = new Dictionary<CategoryPictures, Bitmap>
         {
             {CategoryPictures.Corbalar, Properties.Resources.ic_mercimek_corbasi },
-            {CategoryPictures.Tostlar, Properties.Resources.ic_karısık_tost },
+            {CategoryPictures.Tostlar, Properties.Resources.ic_karisik_tost },
             {CategoryPictures.KahvaltiCesitleri, Properties.Resources.ic_rayiha_special_kahvalti_tabagi },
             {CategoryPictures.Salatalar, Properties.Resources.ic_coban_salata },
             {CategoryPictures.BurgerCesitleri, Properties.Resources.ic_hamburger },

@@ -14,7 +14,7 @@ namespace RayihaRestaurant.Presentation.Components
             _tableId = tableId;
             Text = _tableId.ToString();
             Click += (_, __) => _openForm();
-            Bitmap? img = PicturesEnumExtension.PictureConverter((int)Pictures.Restaurant_table);
+            Bitmap? img = PicturesEnumExtension.PictureConverter((int)Pictures.Restaurant_table_on);
             BackgroundImage = img;
             AutoSize = true;
             BackColor = Color.Transparent;

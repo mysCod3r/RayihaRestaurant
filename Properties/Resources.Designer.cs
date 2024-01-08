@@ -733,9 +733,19 @@ namespace RayihaRestaurant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap ic_restaurant_table {
+        public static System.Drawing.Bitmap ic_restaurant_table_off {
             get {
-                object obj = ResourceManager.GetObject("ic_restaurant_table", resourceCulture);
+                object obj = ResourceManager.GetObject("ic_restaurant_table_off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ic_restaurant_table_on {
+            get {
+                object obj = ResourceManager.GetObject("ic_restaurant_table_on", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -883,9 +893,9 @@ namespace RayihaRestaurant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap ic_tavuk_pirzola1 {
+        public static System.Drawing.Bitmap ic_tavuk_pirzola {
             get {
-                object obj = ResourceManager.GetObject("ic_tavuk_pirzola1", resourceCulture);
+                object obj = ResourceManager.GetObject("ic_tavuk_pirzola", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

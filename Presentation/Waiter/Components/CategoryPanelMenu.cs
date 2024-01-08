@@ -22,10 +22,10 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
 
         private void _init()
         {
-            _writeName(_category);
-            _writeImage(_category);
+            _writeName();
+            _writeImage();
         }
-        private void _writeImage(Category category)
+        private void _writeImage()
         {
             PictureBox pbProduct = new PictureBox();
             pbProduct.Location = new Point(28, 16);
@@ -33,12 +33,12 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             pbProduct.TabIndex = 0;
             pbProduct.TabStop = false;
             pbProduct.SizeMode = PictureBoxSizeMode.StretchImage;
-            Bitmap? img = CategoryPicturesEnumExtension.PictureConverter(category.ID);
+            Bitmap? img = CategoryPicturesEnumExtension.PictureConverter(_category.ID);
             pbProduct.Image = img;
             Controls.Add(pbProduct);
         }
 
-        private void _writeName(Category category)
+        private void _writeName()
         {
             Label lblName = new Label();
             lblName.AutoSize = true;
@@ -48,7 +48,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             lblName.Location = new Point(5, 80);
             lblName.Size = new Size(35, 25);
             lblName.TabIndex = 1;
-            lblName.Text = category.Name;
+            lblName.Text = _category.Name;
             Controls.Add(lblName);
         }
 

@@ -44,12 +44,23 @@ namespace RayihaRestaurant.Presentation.Cashier.Components
             Controls.Add(_lblProdcutName);
         }
 
+        private void _writeQuantity()
+        {
+            _lblQuantity.AutoSize = true;
+            _lblQuantity.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            _lblQuantity.ForeColor = Color.Black;
+            _lblQuantity.Location = new Point(207, 23);
+            _lblQuantity.Size = new Size(79, 23);
+            _lblQuantity.TabIndex = 1;
+            _lblQuantity.Text = orderDetail.Quantity.ToString();
+            Controls.Add(_lblQuantity);
+        }
         private void _writeAmount()
         {
             _lblAmount.AutoSize = true;
             _lblAmount.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             _lblAmount.ForeColor = Color.Black;
-            _lblAmount.Location = new Point(310, 23);
+            _lblAmount.Location = new Point(277, 23);
             _lblAmount.Size = new Size(50, 4);
             _lblAmount.TabIndex = 2;
             double itemTotal = (orderDetail.Quantity ?? 0) * (orderDetail?.Product?.Price ?? 0);
@@ -57,17 +68,7 @@ namespace RayihaRestaurant.Presentation.Cashier.Components
             Controls.Add(_lblAmount);
         }
 
-        private void _writeQuantity()
-        {
-            _lblQuantity.AutoSize = true;
-            _lblQuantity.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            _lblQuantity.ForeColor = Color.Black;
-            _lblQuantity.Location = new Point(240, 23);
-            _lblQuantity.Size = new Size(79, 23);
-            _lblQuantity.TabIndex = 1;
-            _lblQuantity.Text = orderDetail.Quantity.ToString();
-            Controls.Add(_lblQuantity);
-        }
+       
 
 
     }

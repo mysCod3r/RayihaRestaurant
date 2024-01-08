@@ -2,13 +2,13 @@
 using Rayiha.Presentation.Cashier;
 using Rayiha.Presentation.Kitchen;
 using RayihaRestaurant;
-using RayihaRestaurant.Core.Base;
 using RayihaRestaurant.Core.Models;
 using RayihaRestaurant.Core.Socket;
 using RayihaRestaurant.Data;
 using RayihaRestaurant.Data.Service;
 using RayihaRestaurant.Presentation.Module.Views;
 using RayihaRestaurant.Presentation.Waiter;
+using System.Runtime.InteropServices;
 
 namespace Rayiha.Presentation.Waiter
 {
@@ -75,6 +75,22 @@ namespace Rayiha.Presentation.Waiter
         {
             this.Close();
             _mainForm.Show();
+        }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HTCAPTION = 0x2;
+        [DllImport("User32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("User32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        private void OnMouseDown(object? sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
         }
     }
 }

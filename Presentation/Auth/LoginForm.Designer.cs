@@ -39,9 +39,11 @@
             txtUsername = new TextBox();
             btnLogin = new Button();
             btnClose = new Button();
+            scrollPanel = new Panel();
             pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picPassword).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picUsername).BeginInit();
+            scrollPanel.SuspendLayout();
             SuspendLayout();
             // 
             // pnlContent
@@ -87,7 +89,7 @@
             lblLogin.ForeColor = Color.White;
             lblLogin.Location = new Point(161, 26);
             lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(53, 21);
+            lblLogin.Size = new Size(64, 28);
             lblLogin.TabIndex = 9;
             lblLogin.Text = "Login";
             // 
@@ -98,7 +100,7 @@
             lblPassword.ForeColor = Color.White;
             lblPassword.Location = new Point(63, 154);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(59, 15);
+            lblPassword.Size = new Size(76, 20);
             lblPassword.TabIndex = 8;
             lblPassword.Text = "Password";
             // 
@@ -106,7 +108,7 @@
             // 
             txtPassword.Location = new Point(63, 177);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(268, 23);
+            txtPassword.Size = new Size(268, 27);
             txtPassword.TabIndex = 7;
             txtPassword.UseSystemPasswordChar = true;
             // 
@@ -117,7 +119,7 @@
             lblUsername.ForeColor = Color.White;
             lblUsername.Location = new Point(63, 97);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(64, 15);
+            lblUsername.Size = new Size(80, 20);
             lblUsername.TabIndex = 6;
             lblUsername.Text = "Username";
             // 
@@ -125,7 +127,7 @@
             // 
             txtUsername.Location = new Point(63, 120);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(268, 23);
+            txtUsername.Size = new Size(268, 27);
             txtUsername.TabIndex = 5;
             // 
             // btnLogin
@@ -144,27 +146,40 @@
             // 
             // btnClose
             // 
+            btnClose.BackColor = Color.Black;
+            btnClose.Dock = DockStyle.Right;
             btnClose.FlatAppearance.BorderColor = Color.White;
             btnClose.FlatAppearance.MouseOverBackColor = Color.FromArgb(87, 73, 76);
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.ForeColor = Color.White;
-            btnClose.Location = new Point(655, 30);
+            btnClose.Location = new Point(806, 0);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(187, 50);
+            btnClose.Size = new Size(73, 40);
             btnClose.TabIndex = 12;
             btnClose.Text = "Kapat";
-            btnClose.UseVisualStyleBackColor = true;
+            btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
+            // 
+            // scrollPanel
+            // 
+            scrollPanel.BackColor = Color.Transparent;
+            scrollPanel.Controls.Add(btnClose);
+            scrollPanel.Dock = DockStyle.Top;
+            scrollPanel.Location = new Point(0, 0);
+            scrollPanel.Name = "scrollPanel";
+            scrollPanel.Size = new Size(879, 40);
+            scrollPanel.TabIndex = 13;
+            scrollPanel.MouseDown += OnMouseDown;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(879, 531);
-            Controls.Add(btnClose);
+            Controls.Add(scrollPanel);
             Controls.Add(pnlContent);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ForeColor = Color.White;
@@ -176,6 +191,7 @@
             pnlContent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picPassword).EndInit();
             ((System.ComponentModel.ISupportInitialize)picUsername).EndInit();
+            scrollPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -190,5 +206,6 @@
         private TextBox txtUsername;
         private Button btnLogin;
         private Button btnClose;
+        private Panel scrollPanel;
     }
 }

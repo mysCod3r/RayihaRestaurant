@@ -25,12 +25,12 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
 
         private void _init()
         {
-            _writeName(_product);
-            _writePrice(_product);
-            _addToCart(_product);
-            _writeImage(_product);
+            _writeName();
+            _writePrice();
+            _addToCart();
+            _writeImage();
         }
-        private void _writeImage(Product product)
+        private void _writeImage()
         {
             PictureBox pbProduct = new PictureBox();
             pbProduct.Location = new Point(28, 23);
@@ -38,11 +38,11 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             pbProduct.TabIndex = 0;
             pbProduct.TabStop = false;
             pbProduct.SizeMode = PictureBoxSizeMode.StretchImage;
-            Bitmap? img = PicturesEnumExtension.PictureConverter(product.ID);
+            Bitmap? img = ProductPicturesEnumExtension.PictureConverter(_product.ID);
             pbProduct.Image = img;
             Controls.Add(pbProduct);
         }
-        private void _writeName(Product product)
+        private void _writeName()
         {
             Label lblFoodName = new Label();
             lblFoodName.AutoSize = true;
@@ -53,11 +53,11 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             lblFoodName.Location = new Point(18, 156);
             lblFoodName.Size = new Size(109, 25);
             lblFoodName.TabIndex = 0;
-            lblFoodName.Text = product.Name;
+            lblFoodName.Text = _product.Name;
             Controls.Add(lblFoodName);
         }
 
-        private void _writePrice(Product product)
+        private void _writePrice()
         {
             Label lblPrice = new Label();
             lblPrice.AutoSize = true;
@@ -67,14 +67,14 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             lblPrice.Location = new Point(19, 181);
             lblPrice.Size = new Size(25, 19);
             lblPrice.TabIndex = 1;
-            lblPrice.Text = product.Price.ToString();
+            lblPrice.Text = _product.Price.ToString();
             Controls.Add(lblPrice);
         }
 
 
-        private void _addToCart(Product product)
+        private void _addToCart()
         {
-            AddToCartPanel addToCartPanel = new AddToCartPanel(product, _flowLayoutCart);
+            AddToCartPanel addToCartPanel = new AddToCartPanel(_product, _flowLayoutCart);
             Controls.Add(addToCartPanel);
         }
     }
