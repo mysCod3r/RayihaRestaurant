@@ -2,6 +2,7 @@
 using Rayiha.Presentation.Cashier;
 using Rayiha.Presentation.Kitchen;
 using RayihaRestaurant;
+using RayihaRestaurant.Core.Base;
 using RayihaRestaurant.Core.Models;
 using RayihaRestaurant.Core.Socket;
 using RayihaRestaurant.Data;
@@ -19,12 +20,15 @@ namespace Rayiha.Presentation.Waiter
         private KitchenForm _kitchenForm = new KitchenForm();
         private WaiterForm _waiterForm = new WaiterForm();
         private CashierForm _cashierForm = new CashierForm();
-
+        private TablesForm _tablesWaiter;
+        private TablesForm _tablesCashier;
         public LoginForm(SocketServer socketServer, MainForm mainForm)
         {
             _service = new AuthService(new DatabaseContext());
-            _mainForm = mainForm;
             _socketServer = socketServer;
+            _mainForm = mainForm;
+            _tablesWaiter = new TablesForm(form: _waiterForm);
+            _tablesCashier = new TablesForm(form: _cashierForm);
             _registerServer();
             InitializeComponent();
         }
@@ -33,6 +37,8 @@ namespace Rayiha.Presentation.Waiter
             _socketServer.AddMessageHandler(_kitchenForm);
             _socketServer.AddMessageHandler(_waiterForm);
             _socketServer.AddMessageHandler(_cashierForm);
+            _socketServer.AddMessageHandler(_tablesWaiter);
+            _socketServer.AddMessageHandler(_tablesCashier);
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -46,10 +52,10 @@ namespace Rayiha.Presentation.Waiter
                 switch (_user.Type)
                 {
                     case UserType.Waiter:
-                        new TablesForm(form: _waiterForm).Show();
+                        _tablesWaiter.Show();
                         break;
                     case UserType.Cashier:
-                        new TablesForm(form: _cashierForm).Show();
+                        _tablesCashier.Show();
                         break;
                     case UserType.Chef:
                         _kitchenForm.Open();

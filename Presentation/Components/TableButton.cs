@@ -1,7 +1,6 @@
 ﻿using RayihaRestaurant.Core.Base;
 using RayihaRestaurant.Core.Enums;
 using RayihaRestaurant.Core.Extensions;
-using RayihaRestaurant.Core.Socket;
 
 namespace RayihaRestaurant.Presentation.Components
 {
@@ -9,7 +8,7 @@ namespace RayihaRestaurant.Presentation.Components
     {
         private int _tableId;
         private BaseForm _form;
-        public TableButton(int tableId, BaseForm form)
+        public TableButton(int tableId,bool isAvailable, BaseForm form)
         {
             _form = form;
             _tableId = tableId;
