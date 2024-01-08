@@ -8,6 +8,6 @@ namespace RayihaRestaurant.Core.Models
         public int ID { get; init; }
         public string? Number { get; init; }
         [Column("TableStatus")]
-        public required bool TableStatus { get; init; }
+        public required bool TableStatus { get; set; }
     }
 }
