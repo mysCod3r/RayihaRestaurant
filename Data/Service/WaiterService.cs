@@ -73,6 +73,13 @@ namespace RayihaRestaurant.Data.Service
             return categories;
         }
         
+        public void UpdateTableStatusToUnavailable(Table table)
+        {
+            table.TableStatus = false;
+
+            _context.Update(table);
+            _context.SaveChanges();
+        }
     }
 
 
