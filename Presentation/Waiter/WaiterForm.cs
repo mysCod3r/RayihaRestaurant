@@ -13,7 +13,7 @@ namespace RayihaRestaurant.Presentation.Waiter
     public partial class WaiterForm : BaseForm, IMessageHandler
     {
         public ClientType ClientType => ClientType.Waiter;
-        public override Size WindowSize => new Size(1100, 600);
+        public override Size WindowSize => new Size(1100, 700);
         public override string WindowPanelName => "Waiter";
         public int tableId { get; set; }
         private readonly WaiterService _service;

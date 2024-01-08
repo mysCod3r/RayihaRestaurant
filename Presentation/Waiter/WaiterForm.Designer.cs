@@ -91,12 +91,12 @@ namespace RayihaRestaurant.Presentation.Waiter
             pictureBox1.Location = new Point(16, 50);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(pnlLeft.Width-32, 90);
+            pictureBox1.Size = new Size(pnlLeft.Width - 32, 90);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
-            // customButtonMenu2
+            // btnLogout
             // 
             btnLogout.BackColor = Color.Transparent;
             btnLogout.BackgroundColor = Color.Transparent;
@@ -110,10 +110,8 @@ namespace RayihaRestaurant.Presentation.Waiter
             btnLogout.ForeColor = Color.Black;
             btnLogout.Image = (Image)resources.GetObject("customButtonMenu2.Image");
             btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogout.Location = new Point(22, pnlLeft.Height - 64);
-            btnLogout.Margin = new Padding(3, 2, 3, 2);
+            btnLogout.Location = new Point(22, pnlLeft.Height - 4);
             btnLogout.Name = "customButtonMenu2";
-            btnLogout.Padding = new Padding(9, 2, 2, 2);
             btnLogout.Size = new Size(141, 38);
             btnLogout.TabIndex = 6;
             btnLogout.Text = "Logout";
@@ -122,7 +120,7 @@ namespace RayihaRestaurant.Presentation.Waiter
             btnLogout.MouseEnter += _btnLogoutMouseEnter;
             btnLogout.MouseLeave += _btnLogoutMouseLeave;
             // 
-            // customButtonMenu1
+            // btnTables
             // 
             btnTables.BackColor = Color.Transparent;
             btnTables.BackgroundColor = Color.Transparent;
@@ -148,8 +146,6 @@ namespace RayihaRestaurant.Presentation.Waiter
             btnTables.Click += _tablesButton;
             btnTables.MouseEnter += customButtonMenu1_MouseEnter;
             btnTables.MouseLeave += customButtonMenu1_MouseLeave;
-           
-            
             // 
             // cbAddOrder
             // 
@@ -161,12 +157,11 @@ namespace RayihaRestaurant.Presentation.Waiter
             cbAddOrder.FlatAppearance.BorderSize = 0;
             cbAddOrder.FlatStyle = FlatStyle.Flat;
             cbAddOrder.ForeColor = Color.White;
-            cbAddOrder.Location = new Point(58, 551);
-            cbAddOrder.Margin = new Padding(3, 2, 3, 2);
-            cbAddOrder.Name = "cbAddOrder";
-            cbAddOrder.Size = new Size(164, 38);
-            cbAddOrder.TabIndex = 0;
             cbAddOrder.Text = "Siparişi Onayla";
+            cbAddOrder.Size = new Size(120, 40);
+            cbAddOrder.Location = new Point((pnlRight.Width / 2) - (60), pnlLeft.Height - 4);
+            cbAddOrder.Name = "cbAddOrder";
+            cbAddOrder.TabIndex = 0;
             cbAddOrder.TextColor = Color.White;
             cbAddOrder.UseVisualStyleBackColor = false;
             cbAddOrder.Click += customButtonMenu3_Click;
@@ -174,7 +169,6 @@ namespace RayihaRestaurant.Presentation.Waiter
             // flpCart
             // 
             flpCart.AutoScroll = true;
-            flpCart.FlowDirection = FlowDirection.TopDown;
             flpCart.Location = new Point(0, 98);
             flpCart.Margin = new Padding(3, 2, 3, 2);
             flpCart.Name = "flpCart";
@@ -182,13 +176,21 @@ namespace RayihaRestaurant.Presentation.Waiter
             flpCart.Size = new Size(pnlRight.Width, pnlRight.Height - 100);
             flpCart.TabIndex = 7;
             // 
+            // flpCategories
+            // 
+            flpCategories.AutoScroll = true;
+            flpCategories.Location = new Point(3, 2);
+            flpCategories.Name = "flpCategories";
+            flpCategories.Size = new Size(pnlCenter.Width, 130);
+            flpCategories.TabIndex = 6;
+            // 
             // flpProducts
             // 
-            flpProducts.Location = new Point(3, 98);
-            flpProducts.Margin = new Padding(3, 2, 3, 2);
+            flpProducts.Location = new Point(3, 138);
             flpProducts.Name = "flpProducts";
-            flpProducts.Size = new Size(600, 533);
+            flpProducts.Size = new Size(pnlCenter.Width, Height - (flpCategories.Height + 60));
             flpProducts.TabIndex = 7;
+            flpProducts.AutoScroll = true;
             // 
             // lblTableNo
             // 
@@ -199,17 +201,6 @@ namespace RayihaRestaurant.Presentation.Waiter
             lblTableNo.Size = new Size(90, 25);
             lblTableNo.TabIndex = 0;
             lblTableNo.Text = "Table No";
-            // 
-            // flpCategories
-            // 
-            flpCategories.AutoScroll = true;
-            flpCategories.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flpCategories.Location = new Point(3, 2);
-            flpCategories.Margin = new Padding(3, 2, 3, 2);
-            flpCategories.Name = "flpCategories";
-            flpCategories.Padding = new Padding(35, 15, 35, 15);
-            flpCategories.Size = new Size(600, 92);
-            flpCategories.TabIndex = 6;
             // 
             // WaiterForm
             // 
@@ -234,18 +225,18 @@ namespace RayihaRestaurant.Presentation.Waiter
 
         #endregion
 
-        private Panel pnlLeft;
-        private Panel pnlRight;
-        private CustomButton btnTables;
-        private PictureBox pictureBox1;
         private Label lblCount;
         private Label lblTableNo;
         private Label lblCategoriName;
+        private Panel pnlLeft;
+        private Panel pnlCenter;
+        private Panel pnlRight;
         private FlowLayoutPanel flpCategories;
         private FlowLayoutPanel flpProducts;
         private FlowLayoutPanel flpCart;
+        private CustomButton btnTables;
         private CustomButton cbAddOrder;
         private CustomButton btnLogout;
-        private Panel pnlCenter;
+        private PictureBox pictureBox1;
     }
 }

@@ -60,7 +60,6 @@ namespace RayihaRestaurant.Presentation.Components
         {
             FlatStyle = FlatStyle.Flat;
             FlatAppearance.BorderSize = 0;
-            Size = new Size(150, 40);
             BackColor = Color.MediumSlateBlue;
             ForeColor = Color.White;
             Resize += new EventHandler(Button_Resize);
