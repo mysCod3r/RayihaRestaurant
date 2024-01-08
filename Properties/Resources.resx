@@ -148,9 +148,6 @@
   <data name="ic_cheeseburger" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\ic_cheeseburger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_karısık_tost" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_karısık_tost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ic_sprite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\ic_sprite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -376,9 +373,6 @@
   <data name="ic_su" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\ic_su.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_tavuk_pirzola" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_tavuk_pirzola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ic_ozel_izgara_kofte" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\ic_ozel_izgara_kofte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -390,5 +384,20 @@
   </data>
   <data name="ic_kavurmalı_kasarlı_tost" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\ic_kavurmalı_kasarlı_tost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_cola1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_cola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_karisik_tost" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_karisik_tost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_kiymali_pide1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_kiymali_pide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_tavuk_pirzola1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_tavuk-pirzola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_urfa_durum1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_urfa_durum.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
