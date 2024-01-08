@@ -1,4 +1,5 @@
-﻿using RayihaRestaurant.Core.Models;
+﻿using RayihaRestaurant.Core.Extensions;
+using RayihaRestaurant.Core.Models;
 using RayihaRestaurant.Presentation.Components;
 
 namespace RayihaRestaurant.Presentation.Waiter.Components
@@ -8,6 +9,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
         
         private Category _category;
         public Category category => _category;
+
         public CategoryPanelMenu(Category category, EventHandler onClick)
         {
             _category = category;
@@ -21,6 +23,19 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
         private void _init()
         {
             _writeName(_category);
+            _writeImage(_category);
+        }
+        private void _writeImage(Category category)
+        {
+            PictureBox pbProduct = new PictureBox();
+            pbProduct.Location = new Point(28, 16);
+            pbProduct.Size = new Size(80, 60);
+            pbProduct.TabIndex = 0;
+            pbProduct.TabStop = false;
+            pbProduct.SizeMode = PictureBoxSizeMode.StretchImage;
+            Bitmap? img = CategoryPicturesEnumExtension.PictureConverter(category.ID);
+            pbProduct.Image = img;
+            Controls.Add(pbProduct);
         }
 
         private void _writeName(Category category)

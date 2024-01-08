@@ -15,7 +15,7 @@ namespace RayihaRestaurant.Assets
         public xXX()
         {
             InitializeComponent();
-            pictureBox1.Image = Properties.Resources.ic_adana_kebap;
+            pictureBox1.Image = Properties.Resources.ic_adana_durum;
         }
 
     }

@@ -34,9 +34,10 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = Properties.Resources.ic_kuzu_ciger;
             pictureBox1.Location = new Point(301, 105);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 50);
+            pictureBox1.Size = new Size(182, 119);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 

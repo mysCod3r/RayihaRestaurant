@@ -118,161 +118,83 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ic_adana_durum" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_adana_durum.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_logout_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_logout_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_adana_kebap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_adana_kebap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_soda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_soda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_antrikot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_antrikot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_ayran" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_ayran.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_cappuccino" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_cappuccino.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_cappy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_cappy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_cay" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_cay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_cheeseburger" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_cheeseburger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_citir_salata" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_citir_salata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_coban_salata" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_coban_salata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_cola" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_cola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_cop_sis" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_cop_sis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_cop_sis_durum" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_cop_sis_durum.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_dinner_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_dinner_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_dondurma_tatlisi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_dondurma_tatlisi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_pilic_sinitzel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_pilic_sinitzel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_elma_dilim_patates" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\ic_elma_dilim_patates.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_espresso" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_espresso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_rayiha_special" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_rayiha_special.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_ezogelin_corbasi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_ezogelin_corbasi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_cop_sis_durum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_cop_sis_durum.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_fanta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_fanta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_password" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_fincan_cay" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_fincan_cay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_salep" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_salep.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_fırın_sutlac" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_fırın_sutlac.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_adana_kebap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_adana_kebap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_gunun_corbasi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_gunun_corbasi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_hamburger" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_hamburger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_icli_kofte" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_icli_kofte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_iskender_kebap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_iskender_kebap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_kabak_tatlisi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_kabak_tatlisi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_karisik_kebap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_karisik_kebap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_karisik_pide" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_karisik_pide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_cheeseburger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_cheeseburger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_karısık_tost" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\ic_karısık_tost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_kasarli_kofte" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_kasarli_kofte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_sprite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_sprite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_kasarlı_pide" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_kasarlı_pide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_kasarli_tost" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_kasarli_tost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_kavurmalı_kasarlı_tost" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_kavurmalı_kasarlı_tost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_kavurmali_pide" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_kavurmali_pide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_kiymali_pide" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_kiymali_pide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_klasik_kahvaltı_tabagi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_klasik_kahvaltı_tabagi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_kori_soslu_tavuk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_kori_soslu_tavuk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_kunefe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_kunefe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_kusbasili_pide" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_kusbasili_pide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_kuzu_ciger" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_kuzu_ciger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_kuzu_pirzola" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_kuzu_pirzola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_restaurant_table" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_restaurant_table.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_kuzu_sis" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\ic_kuzu_sis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_lahmacun" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_lahmacun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_cola" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_cola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_sucuklu_pide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_sucuklu_pide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_urfa_durum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_urfa_durum.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_kori_soslu_tavuk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_kori_soslu_tavuk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_tavuk_sote" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_tavuk_sote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_kasarlı_pide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_kasarlı_pide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_kunefe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_kunefe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_fırın_sutlac" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_fırın_sutlac.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_sucuklu_tost" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_sucuklu_tost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\ic_logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_logout_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_logout_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_mantar_soslu_tavuk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_mantar_soslu_tavuk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ic_mercimek_corbasi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\ic_mercimek_corbasi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_mevsim_salata" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_mevsim_salata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_meyve_caylari" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_meyve_caylari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_meyveli_soda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_meyveli_soda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_ton_balıklı_sandwich" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_ton_balıklı_sandwich.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\ic_minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,115 +202,193 @@
   <data name="ic_nescafe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\ic_nescafe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_ozel_izgara_kofte" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_ozel_izgara_kofte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_turk_kahvesi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_turk_kahvesi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_ozel_lahmacun" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\ic_ozel_lahmacun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_pacanga_boregi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_pacanga_boregi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_hamburger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_hamburger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_password" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_mevsim_salata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_mevsim_salata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_pastirmali_pide" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_pastirmali_pide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_kusbasili_pide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_kusbasili_pide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_patates_kizartmasi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_patates_kizartmasi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_iskender_kebap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_iskender_kebap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_pilic_salata" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_pilic_salata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_pilic_sinitzel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_pilic_sinitzel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_rayiha_special" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_rayiha_special.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_rayiha_special_kahvalti_tabagi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_rayiha_special_kahvalti_tabagi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_restaurant_table" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_restaurant_table.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_salep" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_salep.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_serpme_kahvalti" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_serpme_kahvalti.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_sicak_cikolata" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_sicak_cikolata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_sigara_boregi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_sigara_boregi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_soda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_soda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_soya_soslu_tavuk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_soya_soslu_tavuk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_sprite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_sprite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_su" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_su.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_sucuk_izgara" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_sucuk_izgara.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_sucuklu_pide" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_sucuklu_pide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_sucuklu_tost" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_sucuklu_tost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_table" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_table.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_table_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_table_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_tavuk_kanat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_tavuk_kanat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_tavuk_pirzola" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_tavuk_pirzola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_tavuk_sis" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_tavuk_sis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_tavuk_sis_durum" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_tavuk_sis_durum.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_tavuk_sote" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_tavuk_sote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_ton_balıklı_sandwich" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_ton_balıklı_sandwich.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_tonbalıklı_salata" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_tonbalıklı_salata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_turk_kahvesi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_turk_kahvesi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ic_urfa_durum" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Pictures\ic_urfa_durum.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_dondurma_tatlisi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_dondurma_tatlisi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_urfa_kavurma" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\ic_urfa_kavurma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ic_kasarli_kofte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_kasarli_kofte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_karisik_pide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_karisik_pide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_espresso" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_espresso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_lahmacun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_lahmacun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_icli_kofte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_icli_kofte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_cop_sis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_cop_sis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_pastirmali_pide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_pastirmali_pide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ic_urfa_kebap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\ic_urfa_kebap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ic_citir_salata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_citir_salata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_gunun_corbasi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_gunun_corbasi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_sucuk_izgara" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_sucuk_izgara.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_kavurmali_pide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_kavurmali_pide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_fanta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_fanta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_kuzu_ciger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_kuzu_ciger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_serpme_kahvalti" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_serpme_kahvalti.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_table" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_table.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_tonbalıklı_salata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_tonbalıklı_salata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_mantar_soslu_tavuk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_mantar_soslu_tavuk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_sigara_boregi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_sigara_boregi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_soya_soslu_tavuk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_soya_soslu_tavuk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_tavuk_kanat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_tavuk_kanat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_pacanga_boregi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_pacanga_boregi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_antrikot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_antrikot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ic_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Pictures\ic_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_meyve_caylari" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_meyve_caylari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_karisik_kebap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_karisik_kebap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_tavuk_sis_durum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_tavuk_sis_durum.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_meyveli_soda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_meyveli_soda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_kiymali_pide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_kiymali_pide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_sicak_cikolata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_sicak_cikolata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_patates_kizartmasi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_patates_kizartmasi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_kuzu_pirzola" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_kuzu_pirzola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_pilic_salata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_pilic_salata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_klasik_kahvaltı_tabagi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_klasik_kahvaltı_tabagi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_dinner_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_dinner_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_cay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_cay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_kabak_tatlisi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_kabak_tatlisi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_fincan_cay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_fincan_cay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_cappuccino" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_cappuccino.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_tavuk_sis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_tavuk_sis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_ezogelin_corbasi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_ezogelin_corbasi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_adana_durum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_adana_durum.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_kasarli_tost" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_kasarli_tost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_rayiha_special_kahvalti_tabagi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_rayiha_special_kahvalti_tabagi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_table_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_table_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_ayran" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_ayran.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_su" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_su.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_tavuk_pirzola" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_tavuk_pirzola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_ozel_izgara_kofte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_ozel_izgara_kofte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_cappy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_cappy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_coban_salata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_coban_salata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_kavurmalı_kasarlı_tost" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Pictures\ic_kavurmalı_kasarlı_tost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
