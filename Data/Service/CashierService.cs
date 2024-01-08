@@ -44,9 +44,11 @@ namespace RayihaRestaurant.Data.Service
             return tables;
         }
 
-        public void UpdateTableStatusToAvailable(Table table)
+        public void UpdateTableStatusToUnavailable(int tableId)
         {
-            table.TableStatus = true;
+            var table = _context.Tables.Where(p => p.ID == tableId).FirstOrDefault();
+            if (table == null) return;
+            table.TableStatus = false ;
 
             _context.Update(table);
             _context.SaveChanges();
