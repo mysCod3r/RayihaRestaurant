@@ -13,6 +13,16 @@ namespace RayihaRestaurant.Data.Service
         }
 
         // update status
+        public void UpdateOrderStatus(Order order)
+        {
+
+            OrderStatus status = order.OrderStatus ?? OrderStatus.Pending;
+
+            order.OrderStatus = status == OrderStatus.Pending ? OrderStatus.InProgress : status == OrderStatus.InProgress ? OrderStatus.Completed : OrderStatus.Completed;
+            _context.Update(order);
+            _context.SaveChanges();
+        }
+
 
         public List<Order> GetOrders()
         {

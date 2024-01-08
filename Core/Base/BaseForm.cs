@@ -6,6 +6,8 @@ namespace RayihaRestaurant.Core.Base
     {
         public abstract Size WindowSize { get; }
         public abstract string WindowPanelName { get; }
+        public abstract void Open();
+        public abstract void SetTable(int tableId);
         public BaseForm()
         {
             InitializeComponent();

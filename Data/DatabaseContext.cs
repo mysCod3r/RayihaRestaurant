@@ -31,6 +31,13 @@ namespace RayihaRestaurant.Data
                        v => (UserType)Enum.Parse(typeof(UserType), v ?? "Waiter")
                  );
 
+            modelBuilder.Entity<Order>()
+                .Property(e => e.OrderStatus)
+                .HasConversion(
+                       v => v.ToString(),
+                       v => (OrderStatus)Enum.Parse(typeof(OrderStatus), v ?? "Pending")
+                 );
+
             modelBuilder.Entity<Product>()
                 .HasOne(e => e.Category)
                 .WithMany()

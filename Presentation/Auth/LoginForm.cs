@@ -1,11 +1,14 @@
 ﻿
+using Rayiha.Presentation.Cashier;
 using Rayiha.Presentation.Kitchen;
 using RayihaRestaurant;
+using RayihaRestaurant.Core.Base;
 using RayihaRestaurant.Core.Models;
 using RayihaRestaurant.Core.Socket;
 using RayihaRestaurant.Data;
 using RayihaRestaurant.Data.Service;
 using RayihaRestaurant.Presentation.Module.Views;
+using RayihaRestaurant.Presentation.Waiter;
 
 namespace Rayiha.Presentation.Waiter
 {
@@ -15,16 +18,28 @@ namespace Rayiha.Presentation.Waiter
         private SocketServer _socketServer;
         private MainForm _mainForm;
         private KitchenForm _kitchenForm = new KitchenForm();
-
+        private WaiterForm _waiterForm = new WaiterForm();
+        private CashierForm _cashierForm = new CashierForm();
+        private TablesForm _tablesWaiter;
+        private TablesForm _tablesCashier;
         public LoginForm(SocketServer socketServer, MainForm mainForm)
         {
             _service = new AuthService(new DatabaseContext());
-            _mainForm = mainForm;
             _socketServer = socketServer;
-            _socketServer.AddMessageHandler(_kitchenForm);
+            _mainForm = mainForm;
+            _tablesWaiter = new TablesForm(form: _waiterForm);
+            _tablesCashier = new TablesForm(form: _cashierForm);
+            _registerServer();
             InitializeComponent();
         }
-
+        private void _registerServer()
+        {
+            _socketServer.AddMessageHandler(_kitchenForm);
+            _socketServer.AddMessageHandler(_waiterForm);
+            _socketServer.AddMessageHandler(_cashierForm);
+            _socketServer.AddMessageHandler(_tablesWaiter);
+            _socketServer.AddMessageHandler(_tablesCashier);
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
@@ -37,10 +52,10 @@ namespace Rayiha.Presentation.Waiter
                 switch (_user.Type)
                 {
                     case UserType.Waiter:
-                        new TablesForm(socketServer: _socketServer, clientType: ClientType.Waiter).Show();
+                        _tablesWaiter.Show();
                         break;
                     case UserType.Cashier:
-                        new TablesForm(socketServer: _socketServer, clientType: ClientType.Cashier).Show();
+                        _tablesCashier.Show();
                         break;
                     case UserType.Chef:
                         _kitchenForm.Open();

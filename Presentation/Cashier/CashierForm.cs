@@ -4,7 +4,6 @@ using RayihaRestaurant.Core.Socket;
 using RayihaRestaurant.Data;
 using RayihaRestaurant.Data.Service;
 using RayihaRestaurant.Presentation.Cashier.Components;
-using System.Runtime.InteropServices;
 
 
 namespace Rayiha.Presentation.Cashier
@@ -14,8 +13,8 @@ namespace Rayiha.Presentation.Cashier
         public override Size WindowSize => new Size(700, 580);
         public override string WindowPanelName => "Cashier";
         public ClientType ClientType => ClientType.Cashier;
-        public int tableId { get; set; }
-        private List<Order>? _orders;
+        private int _tableId;
+        private List<Order> _orders = new List<Order>();
         private readonly SocketClient _socketClient;
         private readonly CashierService _service;
         public CashierForm()
@@ -28,27 +27,31 @@ namespace Rayiha.Presentation.Cashier
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
+            if (_orders.Count == 0) return;
             _service.Checkout(_orders);
             MessageBox.Show("Ödeme Alındı.");
+            _socketClient.SendMessage(new MessageModel { message = "Ödeme alındı.", sender = ClientType});
             Hide();
         }
 
-        public void Open()
+        public override void Open()
         {
             flowLayoutPanel1.Controls.Clear();
             _init();
             Visible = true;
         }
+
+        public override void SetTable(int tableId) => _tableId = tableId;
+
         private void _init()
         {
-            _orders = _getOrders();
+            _getOrders();
             _writeCart();
             _writeTotalAmount();
         }
         
         private void _writeCart()
         {
-            if (_orders == null) return;
             foreach (Order order in _orders)
             {
                 foreach (OrderDetail detail in order.OrderDetails)
@@ -61,7 +64,6 @@ namespace Rayiha.Presentation.Cashier
 
         private void _writeTotalAmount()
         {
-            if (_orders == null) return;
             double totalAmount = 0;
             foreach (Order order in _orders)
             {
@@ -86,7 +88,7 @@ namespace Rayiha.Presentation.Cashier
         {
             _reInit();
         }
-        private List<Order> _getOrders() => _service.GetOrders(tableId);
+        private void _getOrders() => _orders = _service.GetOrders(_tableId);
 
     }
 }

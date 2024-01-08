@@ -4,8 +4,6 @@ using RayihaRestaurant.Core.Socket;
 using RayihaRestaurant.Data;
 using RayihaRestaurant.Data.Service;
 using RayihaRestaurant.Presentation.Kitchen.Components;
-using System.Runtime.InteropServices;
-
 
 namespace Rayiha.Presentation.Kitchen
 {
@@ -40,7 +38,7 @@ namespace Rayiha.Presentation.Kitchen
 
         private void btnClose_Click(object sender, EventArgs e) => Hide();
 
-        public void Open()
+        public override void Open()
         {
             _init();
             Visible = true;
@@ -79,5 +77,7 @@ namespace Rayiha.Presentation.Kitchen
         {
             _reInit();
         }
+
+        public override void SetTable(int tableId) { }
     }
 }
