@@ -38,7 +38,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             pbProduct.TabIndex = 0;
             pbProduct.TabStop = false;
             pbProduct.SizeMode = PictureBoxSizeMode.StretchImage;
-            Bitmap? img = PicturesEnumExtension.PictureConverter(_product.ID);
+            Bitmap? img = ProductPicturesEnumExtension.PictureConverter(_product.ID);
             pbProduct.Image = img;
             Controls.Add(pbProduct);
         }
