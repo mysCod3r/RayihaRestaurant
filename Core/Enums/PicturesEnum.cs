@@ -2,7 +2,7 @@
 {
     public enum Pictures
     {
-        Close,
+        Close = -12,
         Dinner,
         Logout,
         Logout_white,
@@ -12,7 +12,8 @@
         Table,
         Table_white,
         User,
-        wp9443719,
-        Restaurant_table
+        Backgorund,
+        Restaurant_table_on,
+        Restaurant_table_off,
     }
 }

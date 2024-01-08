@@ -28,17 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnWelcome = new Button();
+            label1 = new Label();
+            btnWelcome = new Presentation.Components.CustomButton();
             SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Location = new Point(241, 158);
+            label1.Name = "label1";
+            label1.Size = new Size(187, 25);
+            label1.TabIndex = 1;
+            label1.Text = "Rayiha Restaurant";
             // 
             // btnWelcome
             // 
-            btnWelcome.Location = new Point(154, 295);
+            btnWelcome.BackColor = Color.FromArgb(0, 147, 44);
+            btnWelcome.BackgroundColor = Color.FromArgb(0, 147, 44);
+            btnWelcome.BorderColor = Color.PaleVioletRed;
+            btnWelcome.BorderRadius = 19;
+            btnWelcome.BorderSize = 0;
+            btnWelcome.FlatAppearance.BorderSize = 0;
+            btnWelcome.FlatStyle = FlatStyle.Flat;
+            btnWelcome.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnWelcome.ForeColor = Color.White;
+            btnWelcome.Location = new Point(173, 201);
             btnWelcome.Name = "btnWelcome";
-            btnWelcome.Size = new Size(348, 84);
-            btnWelcome.TabIndex = 0;
-            btnWelcome.Text = "Hoş Geldin";
-            btnWelcome.UseVisualStyleBackColor = true;
+            btnWelcome.Size = new Size(336, 102);
+            btnWelcome.TabIndex = 2;
+            btnWelcome.Text = "Hoş geldiniz";
+            btnWelcome.TextColor = Color.White;
+            btnWelcome.UseVisualStyleBackColor = false;
             btnWelcome.Click += btnWelcome_Click;
             // 
             // MainForm
@@ -47,14 +68,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(702, 450);
             Controls.Add(btnWelcome);
+            Controls.Add(label1);
             Name = "MainForm";
             Text = "Main";
             FormClosed += MainForm_FormClosed;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button btnWelcome;
+        private Label label1;
+        private Presentation.Components.CustomButton btnWelcome;
     }
 }

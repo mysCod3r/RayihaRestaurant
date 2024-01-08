@@ -41,7 +41,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             _plusIcon();
             _minusIcon();
         }
-
+        
         void _labelAddToDish()
         {
             _lblAddToDish.AutoSize = true;
@@ -62,7 +62,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             _lblCount.ForeColor = Color.Black;
             _lblCount.Location = new Point(112, 5);
             _lblCount.Text = _quantity.ToString();
-            _lblCount.Size = new Size(20, 23);
+            _lblCount.Size = new Size(40, 23);
             _lblCount.TabIndex = 4;
             _lblCount.Hide();
             Controls.Add(_lblCount);
@@ -72,8 +72,8 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
         {
             _plusButton.BackColor = Color.Transparent;
             _plusButton.BackgroundColor = Color.Transparent;
-            string? imgPlus = PicturesEnumExtension.PictureConverter((int)Pictures.Plus);
-            _plusButton.BackgroundImage = Image.FromFile(imgPlus ?? "");
+            Bitmap? imgPlus = PicturesEnumExtension.PictureConverter((int)Pictures.Plus);
+            _plusButton.BackgroundImage = imgPlus;
             _plusButton.BackgroundImageLayout = ImageLayout.Center;
             _plusButton.BorderColor = Color.PaleVioletRed;
             _plusButton.BorderRadius = 20;
@@ -81,7 +81,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             _plusButton.FlatAppearance.BorderSize = 0;
             _plusButton.FlatStyle = FlatStyle.Flat;
             _plusButton.ForeColor = Color.White;
-            _plusButton.Location = new Point(180, 1);
+            _plusButton.Location = new Point(190, 1);
             _plusButton.Size = new Size(30, 30);
             _plusButton.TabIndex = 3;
             _plusButton.TextColor = Color.White;
@@ -95,8 +95,8 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
         {
             _minusButton.BackColor = Color.Transparent;
             _minusButton.BackgroundColor = Color.Transparent;
-            string? imgMinus = PicturesEnumExtension.PictureConverter((int)Pictures.Minus);
-            _minusButton.BackgroundImage = Image.FromFile(imgMinus ?? "");
+            Bitmap? imgMinus = PicturesEnumExtension.PictureConverter((int)Pictures.Minus);
+            _minusButton.BackgroundImage = imgMinus;
             _minusButton.BackgroundImageLayout = ImageLayout.Center;
             _minusButton.BorderColor = Color.PaleVioletRed;
             _minusButton.BorderRadius = 20;
@@ -104,7 +104,7 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
             _minusButton.FlatAppearance.BorderSize = 0;
             _minusButton.FlatStyle = FlatStyle.Flat;
             _minusButton.ForeColor = Color.White;
-            _minusButton.Location = new Point(40, 1);
+            _minusButton.Location = new Point(30, 1);
             _minusButton.Size = new Size(30, 30);
             _minusButton.TabIndex = 3;
             _minusButton.TextColor = Color.White;
