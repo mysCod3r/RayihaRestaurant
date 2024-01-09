@@ -123,8 +123,8 @@ namespace RayihaRestaurant.Presentation.Waiter
             // 
             // cbAddOrder
             // 
-            cbAddOrder.BackColor = Color.MediumSlateBlue;
-            cbAddOrder.BackgroundColor = Color.MediumSlateBlue;
+            cbAddOrder.BackColor = Color.FromArgb(0, 147, 44);
+            cbAddOrder.BackgroundColor = Color.FromArgb(0, 147, 44);
             cbAddOrder.BorderColor = Color.PaleVioletRed;
             cbAddOrder.BorderRadius = 20;
             cbAddOrder.BorderSize = 0;
