@@ -20,7 +20,7 @@ namespace RayihaRestaurant.Presentation.Waiter
         private List<Category> _categories;
         private List<Product> _products;
         private readonly SocketClient _socketClient;
-       
+
         public WaiterForm()
         {
             _socketClient = new SocketClient();
@@ -28,11 +28,7 @@ namespace RayihaRestaurant.Presentation.Waiter
             _categories = _service.GetCategories();
             _products = _service.GetProducts();
             InitializeComponent();
-
-            foreach (Category category in _categories)
-            {
-                GetCategoryPanel(category);
-            }
+            GetCategoryPanel();
         }
 
         private void customButtonMenu1_MouseEnter(object sender, EventArgs e)
@@ -53,28 +49,13 @@ namespace RayihaRestaurant.Presentation.Waiter
             btnTables.ImageAlign = ContentAlignment.MiddleLeft;
         }
 
-        private void _btnLogoutMouseEnter(object sender, EventArgs e)
+        private void GetCategoryPanel()
         {
-            btnLogout.BackColor = ColorTranslator.FromHtml("#00932c");
-            btnLogout.ForeColor = Color.White;
-            Bitmap? img = PicturesEnumExtension.PictureConverter((int)Pictures.Logout_white);
-            btnLogout.Image = img;
-            btnTables.ImageAlign = ContentAlignment.MiddleLeft;
-        }
-
-        private void _btnLogoutMouseLeave(object sender, EventArgs e)
-        {
-            btnLogout.BackColor = Color.White;
-            btnLogout.ForeColor = Color.Black;
-            Bitmap? img = PicturesEnumExtension.PictureConverter((int)Pictures.Logout);
-            btnLogout.Image = img;
-            btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
-        }
-
-        private void GetCategoryPanel(Category category)
-        {
-            CategoryPanelMenu menu = new CategoryPanelMenu(category, customPanel_Click);
-            flpCategories.Controls.Add(menu);
+            foreach (Category category in _categories)
+            {
+                CategoryPanelMenu menu = new CategoryPanelMenu(category, customPanel_Click);
+                flpCategories.Controls.Add(menu);
+            }
         }
 
 
@@ -108,13 +89,18 @@ namespace RayihaRestaurant.Presentation.Waiter
             {
                 orderItems.Add(item.orderItem);
             }
+            if (orderItems.Count == 0)
+            {
+                MessageBox.Show("Sipariş listesi boş!");
+                return;
+            }
             _service.AddNewOrder(_tableId, orderItems);
-            _service.UpdateTableStatusToUnavailable(_tableId);
             MessageModel msg = new MessageModel { sender = ClientType, message = "Sipariş mutfağa iletildi" };
             _socketClient.SendMessage(msg);
+            Hide();
             // MessageBox.Show(msg.message);
         }
-        
+
         private void _tablesButton(object sender, EventArgs e) => Hide();
 
         public override void Open()
@@ -124,7 +110,7 @@ namespace RayihaRestaurant.Presentation.Waiter
             lblTableNo.Text = "Table No: " + _tableId.ToString();
             Visible = true;
         }
-        
+
         public override void SetTable(int tableId) => _tableId = tableId;
 
         public void HandleMessageFromSocket(MessageModel message) { }

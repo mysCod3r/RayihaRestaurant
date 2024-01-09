@@ -4,7 +4,7 @@ using RayihaRestaurant.Data.Service;
 using RayihaRestaurant.Data;
 using RayihaRestaurant.Presentation.Components;
 using RayihaRestaurant.Core.Base;
-using System.Windows.Forms;
+using RayihaRestaurant.Presentation.Waiter;
 
 
 namespace RayihaRestaurant.Presentation.Module.Views
@@ -18,14 +18,13 @@ namespace RayihaRestaurant.Presentation.Module.Views
         public ClientType ClientType => ClientType.Waiter;
 
         private List<Table> _tables = new List<Table>();
-        private readonly CashierService _service;
+        private readonly TablesService _service;
         private BaseForm _form;
 
 
         public TablesForm(BaseForm form)
         {
-            _service = new CashierService(new DatabaseContext());
-            _fetchTables();
+            _service = new TablesService(new DatabaseContext());
             _form = form;
             InitializeComponent();
             _init();
@@ -39,7 +38,12 @@ namespace RayihaRestaurant.Presentation.Module.Views
             }        
         }
 
-        private void _init() => _createTables();
+        private void _init()
+        {
+            _fetchTables();
+            _createTables();
+        }
+
         private void _reInit()
         {
             if (InvokeRequired)
@@ -52,7 +56,7 @@ namespace RayihaRestaurant.Presentation.Module.Views
             _init();
         }
 
-        private void _fetchTables() => _tables = _service.GetTables();
+        private void _fetchTables() => _tables = _service.GetTables(isAll: _form is WaiterForm);
 
         public override void Open() => Show();
 

@@ -34,7 +34,6 @@ namespace RayihaRestaurant.Presentation.Waiter
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WaiterForm));
             pnlLeft = new Panel();
             pictureBox1 = new PictureBox();
-            btnLogout = new CustomButton();
             btnTables = new CustomButton();
             pnlRight = new Panel();
             cbAddOrder = new CustomButton();
@@ -53,7 +52,6 @@ namespace RayihaRestaurant.Presentation.Waiter
             // 
             pnlLeft.BackColor = Color.White;
             pnlLeft.Controls.Add(pictureBox1);
-            pnlLeft.Controls.Add(btnLogout);
             pnlLeft.Controls.Add(btnTables);
             pnlLeft.Dock = DockStyle.Left;
             pnlLeft.Location = new Point(0, 40);
@@ -95,30 +93,6 @@ namespace RayihaRestaurant.Presentation.Waiter
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
-            // 
-            // btnLogout
-            // 
-            btnLogout.BackColor = Color.Transparent;
-            btnLogout.BackgroundColor = Color.Transparent;
-            btnLogout.BorderColor = Color.PaleVioletRed;
-            btnLogout.BorderRadius = 20;
-            btnLogout.BorderSize = 0;
-            btnLogout.FlatAppearance.BorderSize = 0;
-            btnLogout.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 147, 44);
-            btnLogout.FlatStyle = FlatStyle.Flat;
-            btnLogout.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLogout.ForeColor = Color.Black;
-            btnLogout.Image = (Image)resources.GetObject("customButtonMenu2.Image");
-            btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogout.Location = new Point(22, pnlLeft.Height - 4);
-            btnLogout.Name = "customButtonMenu2";
-            btnLogout.Size = new Size(141, 38);
-            btnLogout.TabIndex = 6;
-            btnLogout.Text = "Logout";
-            btnLogout.TextColor = Color.Black;
-            btnLogout.UseVisualStyleBackColor = false;
-            btnLogout.MouseEnter += _btnLogoutMouseEnter;
-            btnLogout.MouseLeave += _btnLogoutMouseLeave;
             // 
             // btnTables
             // 
@@ -236,7 +210,6 @@ namespace RayihaRestaurant.Presentation.Waiter
         private FlowLayoutPanel flpCart;
         private CustomButton btnTables;
         private CustomButton cbAddOrder;
-        private CustomButton btnLogout;
         private PictureBox pictureBox1;
     }
 }

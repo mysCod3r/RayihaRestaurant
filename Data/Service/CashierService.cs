@@ -12,16 +12,16 @@ namespace RayihaRestaurant.Data.Service
             _context = context;
         }
 
-
-        public void Checkout(List<Order> orders) 
+        public void Checkout(int tableId) 
         {
-
+            List<Order> orders = GetOrders(tableId);
+            _updateTableStatusToUnavailable(tableId);
             foreach (var order in orders)
             {
                 order.IsPaid = true;
                 _context.Update(order);
-                _context.SaveChanges();
             }
+            _context.SaveChanges();
         }
 
         public List<Order> GetOrders(int tableId)
@@ -37,22 +37,13 @@ namespace RayihaRestaurant.Data.Service
             return orders;
         }
 
-        public List<Table> GetTables()
-        {
-            var tables = _context.Tables.ToList();
-
-            return tables;
-        }
-
-        public void UpdateTableStatusToUnavailable(int tableId)
+        public void _updateTableStatusToUnavailable(int tableId)
         {
             var table = _context.Tables.Where(p => p.ID == tableId).FirstOrDefault();
             if (table == null) return;
-            table.TableStatus = false ;
+            table.TableStatus = true;
 
             _context.Update(table);
-            _context.SaveChanges();
         }
-
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RayihaRestaurant.Core.Enums;
 using RayihaRestaurant.Core.Models;
 
 namespace RayihaRestaurant.Data.Service
@@ -27,7 +28,7 @@ namespace RayihaRestaurant.Data.Service
         public List<Order> GetOrders()
         {
             var orders = _context.Orders
-                .Where((e) => e.IsPaid == false)
+                .Where((e) => e.IsPaid == false && e.OrderStatus != OrderStatus.Completed)
                 .Include(p => p.OrderDetails)
                     .ThenInclude(b => b.Product)
                         .ThenInclude(a => a.Category)

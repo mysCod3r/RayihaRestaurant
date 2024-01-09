@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using RayihaRestaurant.Core.Enums;
 using RayihaRestaurant.Core.Models;
 
 namespace RayihaRestaurant.Data.Service
@@ -16,7 +12,6 @@ namespace RayihaRestaurant.Data.Service
         {
             _context = context;
         }
-
 
         public void AddNewOrder(int tableId, List<OrderItem> item)
         {
@@ -45,16 +40,9 @@ namespace RayihaRestaurant.Data.Service
                 TotalPrice = totalPrice,
                 
             };
-
+            UpdateTableStatusToUnavailable(tableId);
             _context.Orders.Add(order);
             _context.SaveChanges();
-        }
-
-        public List<Table> GetTables()
-        {
-            var tables = _context.Tables.ToList();
-
-            return tables;
         }
 
         public List<Product> GetProducts()
@@ -76,12 +64,10 @@ namespace RayihaRestaurant.Data.Service
         public void UpdateTableStatusToUnavailable(int tableId)
         {
             var table = _context.Tables.Where(p => p.ID == tableId).FirstOrDefault();
+            if (table == null) return;
             table.TableStatus = false;
 
             _context.Update(table);
-            _context.SaveChanges();
         }
     }
-
-
 }

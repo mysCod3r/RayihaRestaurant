@@ -24,18 +24,6 @@ namespace Rayiha.Presentation.Kitchen
             InitializeComponent();
         }
 
-        private void KitchenForm_Load(object sender, EventArgs e)
-        {
-            MessageModel messageModel = new MessageModel { sender = ClientType, message = "form açıldı" };
-            _socketClient.SendMessage(messageModel);
-        }
-
-        private void KitchenForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            MessageModel messageModel = new MessageModel { sender = ClientType, message = "form kapandı" };
-            //_socketClient.SendMessage(messageModel);
-        }
-
         private void btnClose_Click(object sender, EventArgs e) => Hide();
 
         public override void Open()
@@ -48,7 +36,7 @@ namespace Rayiha.Presentation.Kitchen
             if (_orders == null) return;
             foreach (Order order in _orders)
             {
-                KitchenOrderCard kitchenOrderCard = new KitchenOrderCard(order);
+                KitchenOrderCard kitchenOrderCard = new KitchenOrderCard(order, onClick: () => _onClick(order: order));
                 flpOrders.Controls.Add(kitchenOrderCard);    
             }
         }
@@ -76,6 +64,12 @@ namespace Rayiha.Presentation.Kitchen
         public void HandleMessageFromSocket(MessageModel message)
         {
             _reInit();
+        }
+
+        private void _onClick(Order order)
+        {
+            _socketClient.SendMessage(new MessageModel { message = "Sipariş durumu güncellendi", sender = ClientType});
+            _service.UpdateOrderStatus(order);
         }
 
         public override void SetTable(int tableId) { }

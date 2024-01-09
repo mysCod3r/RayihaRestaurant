@@ -27,8 +27,8 @@ namespace Rayiha.Presentation.Cashier
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
-            if (_orders.Count == 0) return;
-            _service.Checkout(_orders);
+            //if (_orders.Count == 0) return;
+            _service.Checkout(_tableId);
             MessageBox.Show("Ödeme Alındı.");
             _socketClient.SendMessage(new MessageModel { message = "Ödeme alındı.", sender = ClientType});
             Hide();

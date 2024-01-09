@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using RayihaRestaurant.Core.Enums;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RayihaRestaurant.Core.Models
 {
@@ -15,13 +16,6 @@ namespace RayihaRestaurant.Core.Models
         public OrderStatus? OrderStatus { get; set; }
         public bool? IsPaid { get; set; }
         public List<OrderDetail> OrderDetails { get; init;} = new List<OrderDetail>();
-    }
-
-    public enum OrderStatus
-    {
-        Pending,
-        InProgress,
-        Completed,
     }
 }
 

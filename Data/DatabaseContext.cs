@@ -1,5 +1,6 @@
 ﻿using System.Configuration;
 using Microsoft.EntityFrameworkCore;
+using RayihaRestaurant.Core.Enums;
 using RayihaRestaurant.Core.Models;
 
 namespace RayihaRestaurant.Data

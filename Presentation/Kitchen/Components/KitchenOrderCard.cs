@@ -1,4 +1,5 @@
-﻿using RayihaRestaurant.Core.Models;
+﻿using RayihaRestaurant.Core.Extensions;
+using RayihaRestaurant.Core.Models;
 using RayihaRestaurant.Presentation.Components;
 
 namespace RayihaRestaurant.Presentation.Kitchen.Components
@@ -6,24 +7,24 @@ namespace RayihaRestaurant.Presentation.Kitchen.Components
     internal class KitchenOrderCard : CustomPanel
     {
         public int tableId { get; set; }
-        private bool _isSecondClick;
+        private Action _onClick;
         private Label _tableNo;
         private CustomButton _statusButton;
-        private Order order;
+        private Order _order;
         private FlowLayoutPanel _flpProducts;
-        Label lblQuantity;
-        Label lblProductName;
-        CustomPanel customPanel;
+        private Label lblQuantity;
+        private Label lblProductName;
+        private CustomPanel customPanel;
 
-
-        public KitchenOrderCard(Order order)
+        public KitchenOrderCard(Order order, Action onClick)
         {
+            _order = order;
+            _onClick = onClick;
             BackColor = Color.White;
             BorderRadius = 50;
             Location = new Point(3, 3);
             Size = new Size(338, 541);
             TabIndex = 0;
-            this.order = order;
             _flpProducts = new FlowLayoutPanel();
             _tableNo = new Label();
             _statusButton = new CustomButton();
@@ -47,30 +48,30 @@ namespace RayihaRestaurant.Presentation.Kitchen.Components
             _tableNo.Location = new Point(26, 10);
             _tableNo.Size = new Size(92, 13);
             _tableNo.TabIndex = 0;
-            _tableNo.Text = "Masa no: " + order.TableID;
+            _tableNo.Text = "Masa no: " + _order.TableID;
             Controls.Add(_tableNo);
         }
 
 
         private void _writeStatusButton()
         {
-            _statusButton.BackColor = Color.Red;
-            _statusButton.BackgroundColor = Color.Red;
+            _statusButton.BackColor = OrderStatusExtension.GetColor(_order.OrderStatus);
+            _statusButton.BackgroundColor = OrderStatusExtension.GetColor(_order.OrderStatus);
             _statusButton.BorderColor = Color.PaleVioletRed;
             _statusButton.BorderRadius = 20;
             _statusButton.BorderSize = 0;
             _statusButton.FlatAppearance.BorderSize = 0;
             _statusButton.FlatStyle = FlatStyle.Flat;
             _statusButton.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            _statusButton.ForeColor = Color.White;
+            _statusButton.ForeColor = Color.Black;
             _statusButton.Location = new Point(71, 459);
             _statusButton.Name = "btnStatus";
             _statusButton.Size = new Size(198, 52);
             _statusButton.TabIndex = 1;
-            _statusButton.Text = "Bekliyor...";
-            _statusButton.TextColor = Color.White;
+            _statusButton.Text = OrderStatusExtension.GetText(_order.OrderStatus);
+            _statusButton.TextColor = Color.Black;
             _statusButton.UseVisualStyleBackColor = false;
-            _statusButton.Click += btnStatus_Click;
+            _statusButton.Click += _stButtonclick;
             Controls.Add(_statusButton);
         }
         private void _writeFlpProducts()
@@ -112,30 +113,16 @@ namespace RayihaRestaurant.Presentation.Kitchen.Components
         }
         private void _createAndAddProduct()
         {
-            foreach (OrderDetail detail in order.OrderDetails)
+            foreach (OrderDetail detail in _order.OrderDetails)
             {
                 KitchenOrderCardItem kitchenOrderCardItem = new KitchenOrderCardItem(detail);
                 _flpProducts.Controls.Add(kitchenOrderCardItem);
             }
         }
 
-        private void btnStatus_Click(object? sender, EventArgs e)
+        private void _stButtonclick(object? _, EventArgs? __)
         {
-            if (_isSecondClick)
-            {
-                _statusButton.BackColor = Color.Green;
-                _statusButton.Text = "Hazır";
-                _statusButton.ForeColor = Color.White;
-                _statusButton.Click -= btnStatus_Click;
-            }
-            else
-            {
-                _statusButton.BackColor = Color.Yellow;
-                _statusButton.Text = "Hazırlanıyor";
-                _statusButton.ForeColor = Color.Black;
-            }
-            _isSecondClick = !_isSecondClick;
+            _onClick();
         }
-
     }
 }

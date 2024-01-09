@@ -22,33 +22,34 @@ namespace RayihaRestaurant.Presentation.Waiter.Components
 
         private void _init()
         {
-            _writeName();
             _writeImage();
+            _writeName();
         }
         private void _writeImage()
         {
             PictureBox pbProduct = new PictureBox();
             pbProduct.Location = new Point(28, 16);
             pbProduct.Size = new Size(80, 60);
-            pbProduct.TabIndex = 0;
-            pbProduct.TabStop = false;
             pbProduct.SizeMode = PictureBoxSizeMode.StretchImage;
             Bitmap? img = CategoryPicturesEnumExtension.PictureConverter(_category.ID);
             pbProduct.Image = img;
+            pbProduct.Enabled = false;
             Controls.Add(pbProduct);
         }
 
         private void _writeName()
         {
             Label lblName = new Label();
-            lblName.AutoSize = true;
             lblName.BackColor = Color.Transparent;
             lblName.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblName.ForeColor = Color.Black;
-            lblName.Location = new Point(5, 80);
             lblName.Size = new Size(35, 25);
-            lblName.TabIndex = 1;
+            lblName.Padding = new Padding(left:0, right:0, bottom: 4, top: 0);
+            lblName.Dock = DockStyle.Fill;
+            lblName.AutoSize = false;
+            lblName.TextAlign = ContentAlignment.BottomCenter;
             lblName.Text = _category.Name;
+            lblName.Enabled = false;
             Controls.Add(lblName);
         }
 

@@ -67,8 +67,6 @@
             Name = "KitchenForm";
             SizeGripStyle = SizeGripStyle.Show;
             Text = "KitchenForm";
-            FormClosing += KitchenForm_FormClosing;
-            Load += KitchenForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

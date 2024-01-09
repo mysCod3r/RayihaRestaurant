@@ -48,7 +48,6 @@ namespace Rayiha.Presentation.Waiter
 
             if (_user != null)
             {
-                MessageBox.Show("Giriş Yapıldı");
                 switch (_user.Type)
                 {
                     case UserType.Waiter:

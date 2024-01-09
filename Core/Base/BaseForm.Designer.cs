@@ -44,6 +44,7 @@
             scrollPanel.Size = new Size(800, 31);
             scrollPanel.TabIndex = 0;
             scrollPanel.TabStop = true;
+            scrollPanel.BackColor = Color.DarkGray;
             scrollPanel.MouseDown += OnMouseDown;
             // 
             // btnClose
