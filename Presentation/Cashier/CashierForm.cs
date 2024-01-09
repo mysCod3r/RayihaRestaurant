@@ -69,7 +69,7 @@ namespace Rayiha.Presentation.Cashier
             {
                 totalAmount += (order?.TotalPrice ?? 0);
             }
-            lblTotalAmount.Text = "Total Amount: " + totalAmount.ToString();
+            lblTotalAmount.Text = "Total Amount: " + totalAmount.ToString("0.00");
         }
 
         private void _reInit()
